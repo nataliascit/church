@@ -1,6 +1,6 @@
 # README #
 
-This project is a definition of a application for the management of payments associated to events of a certain church.
+This project is a definition of an application for the management of payments associated to events of a certain church.
 
 ### PROJECT REQUIREMENTS ###
 
