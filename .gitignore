@@ -1,15 +1,9 @@
 payment-management-batch/.settings/*
 payment-management-batch/.project
-payment-management-batch/target/*
 payment-management-core/.settings/*
 payment-management-core/.project
-payment-management-core/target/*
-payment-management-rest/.settings/*
-payment-management-rest/.project
-payment-management-rest/target/*
 payment-management-webapp/.settings/*
 payment-management-webapp/.project
-payment-management-webapp/target/*
 target/
 .idea/
 .project

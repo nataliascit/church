@@ -15,10 +15,9 @@
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
     <modules>
-        <module>payment-management-core</module>
-        <module>payment-management-rest</module>
-        <module>payment-management-webapp</module>
         <module>payment-management-batch</module>
+        <module>payment-management-core</module>
+        <module>payment-management-webapp</module>
     </modules>
 
     <build>

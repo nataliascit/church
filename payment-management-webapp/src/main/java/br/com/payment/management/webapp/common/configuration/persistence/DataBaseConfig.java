@@ -1,4 +1,4 @@
-package br.com.payment.management.rest.configuration.persistence;
+package br.com.payment.management.webapp.common.configuration.persistence;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.bind.RelaxedPropertyResolver;
@@ -7,7 +7,6 @@ import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
-import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -44,7 +43,7 @@ public class DataBaseConfig implements EnvironmentAware {
         }
         entityManagerFactoryBean.setJpaVendorAdapter(jpaVendorAdapter);
         entityManagerFactoryBean.setDataSource(dataSource);
-        entityManagerFactoryBean.setPackagesToScan("br.com.payment.management");
+        entityManagerFactoryBean.setPackagesToScan("com.custodio.spring.application");
         entityManagerFactoryBean.getJpaPropertyMap().putAll(jpaPropertyResolver.getSubProperties("properties."));
 
         final Map<String, Object> properties = entityManagerFactoryBean.getJpaPropertyMap();
