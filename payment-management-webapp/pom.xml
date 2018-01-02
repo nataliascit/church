@@ -18,8 +18,8 @@
                 <!-- DATASOURCE -->
                 <datasource.url>jdbc:h2:mem:app-test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</datasource.url>
                 <datasource.platform>h2</datasource.platform>
-                <datasource.username>payment-management</datasource.username>
-                <datasource.password>payment-management</datasource.password>
+                <datasource.username>church-payment</datasource.username>
+                <datasource.password>church-payment</datasource.password>
                 <datasource.driver>org.h2.Driver</datasource.driver>
                 <!-- JPA -->
                 <jpa.database.platform>org.hibernate.dialect.H2Dialect</jpa.database.platform>
@@ -50,8 +50,8 @@
                 <!-- DATASOURCE -->
                 <datasource.url>jdbc:mysql://localhost:3306/payment-management</datasource.url>
                 <datasource.platform>mysql</datasource.platform>
-                <datasource.username>payment-management</datasource.username>
-                <datasource.password>payment-management</datasource.password>
+                <datasource.username>church-payment</datasource.username>
+                <datasource.password>church-payment</datasource.password>
                 <datasource.driver>com.mysql.jdbc.Driver</datasource.driver>
                 <!-- JPA -->
                 <jpa.database.platform>org.hibernate.dialect.MySQLDialect</jpa.database.platform>

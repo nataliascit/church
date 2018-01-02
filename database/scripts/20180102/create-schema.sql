@@ -1,0 +1,1 @@
+CREATE SCHEMA 'payment-management' DEFAULT CHARACTER SET utf8mb4;
