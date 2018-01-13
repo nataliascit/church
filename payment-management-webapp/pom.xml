@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>payment-management-parent</artifactId>
@@ -16,10 +16,10 @@
             <id>local</id>
             <properties>
                 <!-- DATASOURCE -->
-                <datasource.url>jdbc:h2:mem:app-test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</datasource.url>
+                <datasource.url>jdbc:h2:mem:saojoaquim;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</datasource.url>
                 <datasource.platform>h2</datasource.platform>
-                <datasource.username>church-payment</datasource.username>
-                <datasource.password>church-payment</datasource.password>
+                <datasource.username>saojoaquim</datasource.username>
+                <datasource.password>saojoaquim</datasource.password>
                 <datasource.driver>org.h2.Driver</datasource.driver>
                 <!-- JPA -->
                 <jpa.database.platform>org.hibernate.dialect.H2Dialect</jpa.database.platform>
@@ -48,10 +48,10 @@
             </activation>
             <properties>
                 <!-- DATASOURCE -->
-                <datasource.url>jdbc:mysql://localhost:3306/payment-management</datasource.url>
+                <datasource.url>jdbc:mysql://localhost:3306/saojoaquim</datasource.url>
                 <datasource.platform>mysql</datasource.platform>
-                <datasource.username>church-payment</datasource.username>
-                <datasource.password>church-payment</datasource.password>
+                <datasource.username>saojoaquim</datasource.username>
+                <datasource.password>saojoaquim</datasource.password>
                 <datasource.driver>com.mysql.jdbc.Driver</datasource.driver>
                 <!-- JPA -->
                 <jpa.database.platform>org.hibernate.dialect.MySQLDialect</jpa.database.platform>
