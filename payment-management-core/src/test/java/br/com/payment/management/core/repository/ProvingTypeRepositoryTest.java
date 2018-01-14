@@ -20,7 +20,7 @@ public class ProvingTypeRepositoryTest extends BaseTestRunner {
     /**
      * Expected results used by the unit tests.
      */
-    private static final int EXPECTED_PROVING_TYPES = 1;
+    private static final int EXPECTED_PROVING_TYPES = 2;
 
     @Autowired
     private ProvingTypeRepository provingTypeRepository;

@@ -20,7 +20,7 @@ public class CampaignRepositoryTest extends BaseTestRunner {
     /**
      * Expected results used by the unit tests.
      */
-    private static final int EXPECTED_CAMPAIGNS = 1;
+    private static final int EXPECTED_CAMPAIGNS = 2;
 
     /**
      * Constants used as parameters by the unit tests.

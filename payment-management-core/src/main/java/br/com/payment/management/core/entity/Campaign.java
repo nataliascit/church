@@ -42,28 +42,15 @@ public class Campaign implements Serializable {
     @OneToMany(mappedBy = "campaign")
     private List<Contribution> contributions;
 
+    @OneToMany(mappedBy = "campaign")
+    private List<Bead> beads;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Church getChurch() {
-        return church;
-    }
-
-    public void setChurch(Church church) {
-        this.church = church;
-    }
-
-    public ProvingType getProvingType() {
-        return provingType;
-    }
-
-    public void setProvingType(ProvingType provingType) {
-        this.provingType = provingType;
     }
 
     public String getName() {
@@ -96,5 +83,37 @@ public class Campaign implements Serializable {
 
     public void setFinalDate(Date finalDate) {
         this.finalDate = finalDate;
+    }
+
+    public Church getChurch() {
+        return church;
+    }
+
+    public void setChurch(Church church) {
+        this.church = church;
+    }
+
+    public ProvingType getProvingType() {
+        return provingType;
+    }
+
+    public void setProvingType(ProvingType provingType) {
+        this.provingType = provingType;
+    }
+
+    public List<Contribution> getContributions() {
+        return contributions;
+    }
+
+    public void setContributions(List<Contribution> contributions) {
+        this.contributions = contributions;
+    }
+
+    public List<Bead> getBeads() {
+        return beads;
+    }
+
+    public void setBeads(List<Bead> beads) {
+        this.beads = beads;
     }
 }

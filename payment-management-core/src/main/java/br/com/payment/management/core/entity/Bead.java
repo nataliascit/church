@@ -25,6 +25,10 @@ public class Bead implements Serializable {
     @JoinColumn(name = "ID_CONTRIBUTOR")
     private Contributor contributor;
 
+    @ManyToOne
+    @JoinColumn(name = "ID_CAMPAIGN")
+    private Campaign campaign;
+
     @OneToMany
     @JoinTable(
             name = "BEAD_CONTRIBUTION",
@@ -55,6 +59,14 @@ public class Bead implements Serializable {
 
     public void setContributor(Contributor contributor) {
         this.contributor = contributor;
+    }
+
+    public Campaign getCampaign() {
+        return campaign;
+    }
+
+    public void setCampaign(Campaign campaign) {
+        this.campaign = campaign;
     }
 
     public List<Contribution> getContributions() {

@@ -20,7 +20,7 @@ public class ContributionRepositoryTest extends BaseTestRunner {
     /**
      * Expected results used by the unit tests.
      */
-    private static final int EXPECTED_CONTRIBUTIONS = 1;
+    private static final int EXPECTED_CONTRIBUTIONS = 2;
 
     @Autowired
     private ContributionRepository contributionRepository;
