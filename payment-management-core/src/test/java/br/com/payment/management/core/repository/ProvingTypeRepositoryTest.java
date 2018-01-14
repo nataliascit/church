@@ -34,8 +34,6 @@ public class ProvingTypeRepositoryTest extends BaseTestRunner {
         Assert.assertNotNull(entities);
         Assert.assertFalse(entities.isEmpty());
         Assert.assertEquals(EXPECTED_PROVING_TYPES, entities.size());
-        for (final ProvingType entity : entities) {
-            Assert.assertNotNull(entity.getId());
-        }
+        entities.forEach(entity -> Assert.assertNotNull(entity.getId()));
     }
 }

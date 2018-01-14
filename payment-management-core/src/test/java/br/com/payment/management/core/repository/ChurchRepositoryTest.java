@@ -49,8 +49,6 @@ public class ChurchRepositoryTest extends BaseTestRunner {
         Assert.assertNotNull(entities);
         Assert.assertFalse(entities.isEmpty());
         Assert.assertEquals(EXPECTED_CHURCHS, entities.size());
-        for (final Church entity : entities) {
-            Assert.assertNotNull(entity.getId());
-        }
+        entities.forEach(entity -> Assert.assertNotNull(entity.getId()));
     }
 }

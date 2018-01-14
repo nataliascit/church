@@ -34,8 +34,6 @@ public class ContributionRepositoryTest extends BaseTestRunner {
         Assert.assertNotNull(entities);
         Assert.assertFalse(entities.isEmpty());
         Assert.assertEquals(EXPECTED_CONTRIBUTIONS, entities.size());
-        for (final Contribution entity : entities) {
-            Assert.assertNotNull(entity.getId());
-        }
+        entities.forEach(entity -> Assert.assertNotNull(entity.getId()));
     }
 }

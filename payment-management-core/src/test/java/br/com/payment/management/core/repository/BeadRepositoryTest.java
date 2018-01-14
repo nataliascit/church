@@ -34,8 +34,6 @@ public class BeadRepositoryTest extends BaseTestRunner {
         Assert.assertNotNull(entities);
         Assert.assertFalse(entities.isEmpty());
         Assert.assertEquals(EXPECTED_BEADS, entities.size());
-        for (final Bead entity : entities) {
-            Assert.assertNotNull(entity.getId());
-        }
+        entities.forEach(entity -> Assert.assertNotNull(entity.getId()));
     }
 }
