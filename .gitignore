@@ -11,3 +11,6 @@ target/
 .metadata/*
 *.iml
 *.log
+payment-management-webapp/.classpath
+payment-management-core/.classpath
+payment-management-batch/.classpath
