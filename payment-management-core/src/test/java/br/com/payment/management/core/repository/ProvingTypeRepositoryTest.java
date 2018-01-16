@@ -29,7 +29,7 @@ public class ProvingTypeRepositoryTest extends BaseTestRunner {
      * Test the search for all registered proving types in database.
      */
     @Test
-    public void findAll() {
+    public void testFindAll() {
         final List<ProvingType> entities = this.provingTypeRepository.findAll();
         Assert.assertNotNull(entities);
         Assert.assertFalse(entities.isEmpty());
