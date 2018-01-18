@@ -5,6 +5,7 @@ import br.com.payment.management.core.entity.Contribution;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
+import org.mapstruct.factory.Mappers;
 
 import java.sql.Date;
 
@@ -16,19 +17,15 @@ import java.sql.Date;
 @Mapper(imports = {Date.class})
 public interface ContributionMapper {
 
+    ContributionMapper MAPPER = Mappers.getMapper(ContributionMapper.class);
+
     @Mappings({
-            @Mapping(target="id", source="id"),
-            @Mapping(target="creationDate", source="creationDate"),
-            @Mapping(target="amount", source="amount"),
             @Mapping(target="campaign", ignore = true),
             @Mapping(target="contributor", ignore = true)
     })
     ContributionTO contributionToContributionTO(Contribution entity);
 
     @Mappings({
-            @Mapping(target="id", source="id"),
-            @Mapping(target="creationDate", source="creationDate"),
-            @Mapping(target="amount", source="amount"),
             @Mapping(target="campaign", ignore = true),
             @Mapping(target="contributor", ignore = true)
     })

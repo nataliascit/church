@@ -4,7 +4,7 @@ import br.com.payment.management.core.bean.ProvingTypeTO;
 import br.com.payment.management.core.entity.ProvingType;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.Mappings;
+import org.mapstruct.factory.Mappers;
 
 /**
  * Mapper responsible for mapping values from a {@link ProvingType} to a {@link ProvingTypeTO} and vice-versa.
@@ -14,19 +14,11 @@ import org.mapstruct.Mappings;
 @Mapper
 public interface ProvingTypeMapper {
 
-    @Mappings({
-            @Mapping(target="id", source="id"),
-            @Mapping(target="name", source="name"),
-            @Mapping(target="mnemonic", source="mnemonic"),
-            @Mapping(target="campaigns", ignore = true)
-    })
+    ProvingTypeMapper MAPPER = Mappers.getMapper(ProvingTypeMapper.class);
+
+    @Mapping(target="campaigns", ignore = true)
     ProvingTypeTO provingTypeToProvingTypeTO(ProvingType entity);
 
-    @Mappings({
-            @Mapping(target="id", source="id"),
-            @Mapping(target="name", source="name"),
-            @Mapping(target="mnemonic", source="mnemonic"),
-            @Mapping(target="campaigns", ignore = true)
-    })
+    @Mapping(target="campaigns", ignore = true)
     ProvingTypeTO provingTypeTOToProvingType(ProvingTypeTO to);
 }
