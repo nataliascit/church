@@ -1,6 +1,6 @@
 package br.com.payment.management.core.bean;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * Transition Object which represents the table with the definition of a certain contribution associated to a specific {@link CampaignTO}.
@@ -11,7 +11,7 @@ public class ContributionTO {
 
     private Long id;
 
-    private LocalDateTime creationDate;
+    private Date creationDate;
 
     private Long amount;
 
@@ -27,11 +27,11 @@ public class ContributionTO {
         this.id = id;
     }
 
-    public LocalDateTime getCreationDate() {
+    public Date getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(LocalDateTime creationDate) {
+    public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
 

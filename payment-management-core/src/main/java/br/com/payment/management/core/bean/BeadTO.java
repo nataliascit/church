@@ -15,6 +15,8 @@ public class BeadTO {
 
     private ContributorTO contributor;
 
+    private CampaignTO campaign;
+
     private List<ContributionTO> contributions;
 
     public Long getId() {
@@ -39,6 +41,14 @@ public class BeadTO {
 
     public void setContributor(ContributorTO contributor) {
         this.contributor = contributor;
+    }
+
+    public CampaignTO getCampaign() {
+        return campaign;
+    }
+
+    public void setCampaign(CampaignTO campaign) {
+        this.campaign = campaign;
     }
 
     public List<ContributionTO> getContributions() {

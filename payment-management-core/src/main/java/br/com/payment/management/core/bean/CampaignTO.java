@@ -1,6 +1,6 @@
 package br.com.payment.management.core.bean;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,17 +14,19 @@ public class CampaignTO {
 
     private String name;
 
-    private LocalDateTime creationDate;
+    private Date creationDate;
 
-    private LocalDateTime initialDate;
+    private Date initialDate;
 
-    private LocalDateTime finalDate;
+    private Date finalDate;
 
     private ChurchTO church;
 
     private ProvingTypeTO provingType;
 
     private List<ContributionTO> contributions;
+
+    private List<BeadTO> beads;
 
     public Long getId() {
         return id;
@@ -42,27 +44,27 @@ public class CampaignTO {
         this.name = name;
     }
 
-    public LocalDateTime getCreationDate() {
+    public Date getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(LocalDateTime creationDate) {
+    public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
 
-    public LocalDateTime getInitialDate() {
+    public Date getInitialDate() {
         return initialDate;
     }
 
-    public void setInitialDate(LocalDateTime initialDate) {
+    public void setInitialDate(Date initialDate) {
         this.initialDate = initialDate;
     }
 
-    public LocalDateTime getFinalDate() {
+    public Date getFinalDate() {
         return finalDate;
     }
 
-    public void setFinalDate(LocalDateTime finalDate) {
+    public void setFinalDate(Date finalDate) {
         this.finalDate = finalDate;
     }
 
@@ -88,5 +90,13 @@ public class CampaignTO {
 
     public void setContributions(List<ContributionTO> contributions) {
         this.contributions = contributions;
+    }
+
+    public List<BeadTO> getBeads() {
+        return beads;
+    }
+
+    public void setBeads(List<BeadTO> beads) {
+        this.beads = beads;
     }
 }

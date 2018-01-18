@@ -1,6 +1,6 @@
 package br.com.payment.management.core.bean;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -22,9 +22,9 @@ public class ContributorTO {
 
     private String address;
 
-    private LocalDateTime birthDate;
+    private Date birthDate;
 
-    private LocalDateTime marriageDate;
+    private Date marriageDate;
 
     private String partnerName;
 
@@ -84,19 +84,19 @@ public class ContributorTO {
         this.address = address;
     }
 
-    public LocalDateTime getBirthDate() {
+    public Date getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDateTime birthDate) {
+    public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
 
-    public LocalDateTime getMarriageDate() {
+    public Date getMarriageDate() {
         return marriageDate;
     }
 
-    public void setMarriageDate(LocalDateTime marriageDate) {
+    public void setMarriageDate(Date marriageDate) {
         this.marriageDate = marriageDate;
     }
 
