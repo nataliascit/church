@@ -15,14 +15,14 @@ import org.mapstruct.Mappings;
 public interface ChurchMapper {
 
     @Mappings({
-            @Mapping(target="id", source="entity.id"),
-            @Mapping(target="name", source="entity.name")
+            @Mapping(target="id", source="id"),
+            @Mapping(target="name", source="name")
     })
     ChurchTO churchToChurchTO(Church entity);
 
     @Mappings({
-            @Mapping(target="id", source="to.id"),
-            @Mapping(target="name", source="to.name")
+            @Mapping(target="id", source="id"),
+            @Mapping(target="name", source="name")
     })
     ChurchTO churchTOToChurch(ChurchTO to);
 }

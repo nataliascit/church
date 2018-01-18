@@ -1,6 +1,6 @@
 package br.com.payment.management.core.bean;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -14,11 +14,11 @@ public class CampaignTO {
 
     private String name;
 
-    private Date creationDate;
+    private LocalDate creationDate;
 
-    private Date initialDate;
+    private LocalDate initialDate;
 
-    private Date finalDate;
+    private LocalDate finalDate;
 
     private ChurchTO church;
 
@@ -44,27 +44,27 @@ public class CampaignTO {
         this.name = name;
     }
 
-    public Date getCreationDate() {
+    public LocalDate getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
     }
 
-    public Date getInitialDate() {
+    public LocalDate getInitialDate() {
         return initialDate;
     }
 
-    public void setInitialDate(Date initialDate) {
+    public void setInitialDate(LocalDate initialDate) {
         this.initialDate = initialDate;
     }
 
-    public Date getFinalDate() {
+    public LocalDate getFinalDate() {
         return finalDate;
     }
 
-    public void setFinalDate(Date finalDate) {
+    public void setFinalDate(LocalDate finalDate) {
         this.finalDate = finalDate;
     }
 

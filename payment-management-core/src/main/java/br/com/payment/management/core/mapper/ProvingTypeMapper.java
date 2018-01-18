@@ -15,17 +15,17 @@ import org.mapstruct.Mappings;
 public interface ProvingTypeMapper {
 
     @Mappings({
-            @Mapping(target="id", source="entity.id"),
-            @Mapping(target="name", source="entity.name"),
-            @Mapping(target="mnemonic", source="entity.mnemonic"),
+            @Mapping(target="id", source="id"),
+            @Mapping(target="name", source="name"),
+            @Mapping(target="mnemonic", source="mnemonic"),
             @Mapping(target="campaigns", ignore = true)
     })
     ProvingTypeTO provingTypeToProvingTypeTO(ProvingType entity);
 
     @Mappings({
-            @Mapping(target="id", source="to.id"),
-            @Mapping(target="name", source="to.name"),
-            @Mapping(target="mnemonic", source="to.mnemonic"),
+            @Mapping(target="id", source="id"),
+            @Mapping(target="name", source="name"),
+            @Mapping(target="mnemonic", source="mnemonic"),
             @Mapping(target="campaigns", ignore = true)
     })
     ProvingTypeTO provingTypeTOToProvingType(ProvingTypeTO to);

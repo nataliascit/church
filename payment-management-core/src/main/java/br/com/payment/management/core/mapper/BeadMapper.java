@@ -15,8 +15,8 @@ import org.mapstruct.Mappings;
 public interface BeadMapper {
 
     @Mappings({
-            @Mapping(target="id", source="entity.id"),
-            @Mapping(target="identificationNumber", source="entity.identificationNumber"),
+            @Mapping(target="id", source="id"),
+            @Mapping(target="identificationNumber", source="identificationNumber"),
             @Mapping(target="contributor", ignore = true),
             @Mapping(target="campaign", ignore = true),
             @Mapping(target="contributions", ignore = true)
@@ -24,8 +24,8 @@ public interface BeadMapper {
     BeadTO beadToBeadTO(Bead entity);
 
     @Mappings({
-            @Mapping(target="id", source="to.id"),
-            @Mapping(target="identificationNumber", source="to.identificationNumber"),
+            @Mapping(target="id", source="id"),
+            @Mapping(target="identificationNumber", source="identificationNumber"),
             @Mapping(target="contributor", ignore = true),
             @Mapping(target="campaign", ignore = true),
             @Mapping(target="contributions", ignore = true)
