@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * Class responsible for setting up the local database configuration.
  *
- * @author wcustodio.
+ * @author wcustodio
  */
 @Configuration
 public class DataBaseConfig implements EnvironmentAware {
@@ -35,7 +35,7 @@ public class DataBaseConfig implements EnvironmentAware {
 
     @Bean
     @DependsOn("jdbcTemplate")
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory( DataSource dataSource, JpaVendorAdapter jpaVendorAdapter) {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource, JpaVendorAdapter jpaVendorAdapter) {
 
         final LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         if (persistenceUnitManager != null) {
@@ -43,7 +43,7 @@ public class DataBaseConfig implements EnvironmentAware {
         }
         entityManagerFactoryBean.setJpaVendorAdapter(jpaVendorAdapter);
         entityManagerFactoryBean.setDataSource(dataSource);
-        entityManagerFactoryBean.setPackagesToScan("com.custodio.spring.application");
+        entityManagerFactoryBean.setPackagesToScan("br.com.payment.management.core");
         entityManagerFactoryBean.getJpaPropertyMap().putAll(jpaPropertyResolver.getSubProperties("properties."));
 
         final Map<String, Object> properties = entityManagerFactoryBean.getJpaPropertyMap();
