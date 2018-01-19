@@ -8,4 +8,4 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  *
  * @author wcustodio.
  */
-public interface CampaignRepository extends PagingAndSortingRepository<Campaign, Long> {}
+public interface CampaignRestRepository extends PagingAndSortingRepository<Campaign, Long> {}

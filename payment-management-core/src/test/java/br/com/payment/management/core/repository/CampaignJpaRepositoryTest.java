@@ -15,12 +15,12 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Class responsible for executing unit tests for {@link CampaignRepository}.
+ * Class responsible for executing unit tests for {@link CampaignJpaRepository}.
  *
  * @author wcustodio.
  */
 @Transactional
-public class CampaignRepositoryTest extends BaseTestRunner {
+public class CampaignJpaRepositoryTest extends BaseTestRunner {
 
     /**
      * Expected results used by the unit tests.
@@ -33,14 +33,14 @@ public class CampaignRepositoryTest extends BaseTestRunner {
     private static final Long TITHE_ID = 1L;
 
     @Autowired
-    private CampaignRepository campaignRepository;
+    private CampaignJpaRepository campaignJpaRepository;
 
     /**
      * Search for a certain campaign by its id.
      */
     @Test
     public void testFindById() {
-        final Campaign entity = this.campaignRepository.findOne(TITHE_ID);
+        final Campaign entity = this.campaignJpaRepository.findOne(TITHE_ID);
         Assert.assertNotNull(entity);
         Assert.assertEquals(TITHE_ID, entity.getId());
     }
@@ -50,7 +50,7 @@ public class CampaignRepositoryTest extends BaseTestRunner {
      */
     @Test
     public void testFindAll() {
-        final List<Campaign> entities = this.campaignRepository.findAll();
+        final List<Campaign> entities = this.campaignJpaRepository.findAll();
         Assert.assertNotNull(entities);
         Assert.assertFalse(entities.isEmpty());
         Assert.assertEquals(EXPECTED_NUMBER_OF_CAMPAIGNS, entities.size());
@@ -69,9 +69,9 @@ public class CampaignRepositoryTest extends BaseTestRunner {
         campaign.setId(null);
 
         // Performs the persistence of the new campaign.
-        this.campaignRepository.save(campaign);
+        this.campaignJpaRepository.save(campaign);
 
         // Verifies if the number of campaigns were increased by 1.
-        Assert.assertEquals(EXPECTED_NUMBER_OF_CAMPAIGNS + 1, this.campaignRepository.findAll().size());
+        Assert.assertEquals(EXPECTED_NUMBER_OF_CAMPAIGNS + 1, this.campaignJpaRepository.findAll().size());
     }
 }

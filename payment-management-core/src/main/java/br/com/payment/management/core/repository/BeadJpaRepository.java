@@ -8,4 +8,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author wcustodio.
  */
-public interface BeadRepository extends JpaRepository<Bead, Long> {}
+public interface BeadJpaRepository extends JpaRepository<Bead, Long> {}

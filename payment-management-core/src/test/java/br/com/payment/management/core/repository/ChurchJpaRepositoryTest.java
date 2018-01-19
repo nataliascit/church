@@ -15,12 +15,12 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Class responsible for executing unit tests for {@link ChurchRepository}.
+ * Class responsible for executing unit tests for {@link ChurchJpaRepository}.
  *
  * @author wcustodio.
  */
 @Transactional
-public class ChurchRepositoryTest extends BaseTestRunner {
+public class ChurchJpaRepositoryTest extends BaseTestRunner {
 
     /**
      * Expected results used by the unit tests.
@@ -33,14 +33,14 @@ public class ChurchRepositoryTest extends BaseTestRunner {
     private static final Long SAO_JOAQUIM_ID = 1L;
 
     @Autowired
-    private ChurchRepository churchRepository;
+    private ChurchJpaRepository churchJpaRepository;
 
     /**
      * Search for a certain church by its id.
      */
     @Test
     public void testFindById() {
-        final Church entity = this.churchRepository.findOne(SAO_JOAQUIM_ID);
+        final Church entity = this.churchJpaRepository.findOne(SAO_JOAQUIM_ID);
         Assert.assertNotNull(entity);
         Assert.assertEquals(SAO_JOAQUIM_ID, entity.getId());
     }
@@ -50,7 +50,7 @@ public class ChurchRepositoryTest extends BaseTestRunner {
      */
     @Test
     public void testFindAll() {
-        final List<Church> entities = this.churchRepository.findAll();
+        final List<Church> entities = this.churchJpaRepository.findAll();
         Assert.assertNotNull(entities);
         Assert.assertFalse(entities.isEmpty());
         Assert.assertEquals(EXPECTED_NUMBER_OF_CHURCHS, entities.size());
@@ -69,9 +69,9 @@ public class ChurchRepositoryTest extends BaseTestRunner {
         church.setId(null);
 
         // Performs the persistence of the new church.
-        this.churchRepository.save(church);
+        this.churchJpaRepository.save(church);
 
         // Verifies if the number of churchs were increased by 1.
-        Assert.assertEquals(EXPECTED_NUMBER_OF_CHURCHS + 1, this.churchRepository.findAll().size());
+        Assert.assertEquals(EXPECTED_NUMBER_OF_CHURCHS + 1, this.churchJpaRepository.findAll().size());
     }
 }

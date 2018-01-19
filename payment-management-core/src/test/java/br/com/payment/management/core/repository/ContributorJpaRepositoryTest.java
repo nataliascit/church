@@ -15,12 +15,12 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Class responsible for executing unit tests for {@link ContributorRepository}.
+ * Class responsible for executing unit tests for {@link ContributorJpaRepository}.
  *
  * @author wcustodio.
  */
 @Transactional
-public class ContributorRepositoryTest extends BaseTestRunner {
+public class ContributorJpaRepositoryTest extends BaseTestRunner {
 
     /**
      * Expected results used by the unit tests.
@@ -28,14 +28,14 @@ public class ContributorRepositoryTest extends BaseTestRunner {
     private static final int EXPECTED_NUMBER_OF_CONTRIBUTORS = 1;
 
     @Autowired
-    private ContributorRepository contributorRepository;
+    private ContributorJpaRepository contributorJpaRepository;
 
     /**
      * Test the search for all registered contributors in database.
      */
     @Test
     public void testFindAll() {
-        final List<Contributor> entities = this.contributorRepository.findAll();
+        final List<Contributor> entities = this.contributorJpaRepository.findAll();
         Assert.assertNotNull(entities);
         Assert.assertFalse(entities.isEmpty());
         Assert.assertEquals(EXPECTED_NUMBER_OF_CONTRIBUTORS, entities.size());
@@ -54,9 +54,9 @@ public class ContributorRepositoryTest extends BaseTestRunner {
         contributor.setId(null);
 
         // Performs the persistence of the new contributor.
-        this.contributorRepository.save(contributor);
+        this.contributorJpaRepository.save(contributor);
 
         // Verifies if the number of contributors were increased by 1.
-        Assert.assertEquals(EXPECTED_NUMBER_OF_CONTRIBUTORS + 1, this.contributorRepository.findAll().size());
+        Assert.assertEquals(EXPECTED_NUMBER_OF_CONTRIBUTORS + 1, this.contributorJpaRepository.findAll().size());
     }
 }

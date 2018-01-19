@@ -8,4 +8,4 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  *
  * @author wcustodio.
  */
-public interface ProvingTypeRepository extends PagingAndSortingRepository<ProvingType, Long> {}
+public interface ProvingTypeRestRepository extends PagingAndSortingRepository<ProvingType, Long> {}

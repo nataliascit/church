@@ -8,4 +8,4 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  *
  * @author wcustodio.
  */
-public interface BeadRepository extends PagingAndSortingRepository<Bead, Long> {}
+public interface BeadRestRepository extends PagingAndSortingRepository<Bead, Long> {}

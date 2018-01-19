@@ -15,12 +15,12 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Class responsible for executing unit tests for {@link ContributionRepository}.
+ * Class responsible for executing unit tests for {@link ContributionJpaRepository}.
  *
  * @author wcustodio.
  */
 @Transactional
-public class ContributionRepositoryTest extends BaseTestRunner {
+public class ContributionJpaRepositoryTest extends BaseTestRunner {
 
     /**
      * Expected results used by the unit tests.
@@ -28,14 +28,14 @@ public class ContributionRepositoryTest extends BaseTestRunner {
     private static final int EXPECTED_NUMBER_OF_CONTRIBUTIONS = 2;
 
     @Autowired
-    private ContributionRepository contributionRepository;
+    private ContributionJpaRepository contributionJpaRepository;
 
     /**
      * Test the search for all registered contributions in database.
      */
     @Test
     public void testFindAll() {
-        final List<Contribution> entities = this.contributionRepository.findAll();
+        final List<Contribution> entities = this.contributionJpaRepository.findAll();
         Assert.assertNotNull(entities);
         Assert.assertFalse(entities.isEmpty());
         Assert.assertEquals(EXPECTED_NUMBER_OF_CONTRIBUTIONS, entities.size());
@@ -54,9 +54,9 @@ public class ContributionRepositoryTest extends BaseTestRunner {
         contribution.setId(null);
 
         // Performs the persistence of the new contribution.
-        this.contributionRepository.save(contribution);
+        this.contributionJpaRepository.save(contribution);
 
         // Verifies if the number of contributions were increased by 1.
-        Assert.assertEquals(EXPECTED_NUMBER_OF_CONTRIBUTIONS + 1, this.contributionRepository.findAll().size());
+        Assert.assertEquals(EXPECTED_NUMBER_OF_CONTRIBUTIONS + 1, this.contributionJpaRepository.findAll().size());
     }
 }

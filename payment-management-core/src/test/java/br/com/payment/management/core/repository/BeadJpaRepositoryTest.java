@@ -15,12 +15,12 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Class responsible for executing unit tests for {@link BeadRepository}.
+ * Class responsible for executing unit tests for {@link BeadJpaRepository}.
  *
  * @author wcustodio
  */
 @Transactional
-public class BeadRepositoryTest extends BaseTestRunner {
+public class BeadJpaRepositoryTest extends BaseTestRunner {
 
     /**
      * Expected results used by the unit tests.
@@ -28,14 +28,14 @@ public class BeadRepositoryTest extends BaseTestRunner {
     private static final int EXPECTED_NUMBER_OF_BEADS = 1;
 
     @Autowired
-    private BeadRepository beadRepository;
+    private BeadJpaRepository beadJpaRepository;
 
     /**
      * Test the search for all registered beads in database.
      */
     @Test
     public void testFindAll() {
-        final List<Bead> entities = this.beadRepository.findAll();
+        final List<Bead> entities = this.beadJpaRepository.findAll();
         Assert.assertNotNull(entities);
         Assert.assertFalse(entities.isEmpty());
         Assert.assertEquals(EXPECTED_NUMBER_OF_BEADS, entities.size());
@@ -54,9 +54,9 @@ public class BeadRepositoryTest extends BaseTestRunner {
         bead.setId(null);
 
         // Performs the persistence of the new bead.
-        this.beadRepository.save(bead);
+        this.beadJpaRepository.save(bead);
 
         // Verifies if the number of beads were increased by 1.
-        Assert.assertEquals(EXPECTED_NUMBER_OF_BEADS + 1, this.beadRepository.findAll().size());
+        Assert.assertEquals(EXPECTED_NUMBER_OF_BEADS + 1, this.beadJpaRepository.findAll().size());
     }
 }

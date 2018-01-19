@@ -10,12 +10,12 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 /**
- * Class responsible for executing unit tests for {@link ProvingTypeRepository}.
+ * Class responsible for executing unit tests for {@link ProvingTypeJpaRepository}.
  *
  * @author wcustodio.
  */
 @Transactional
-public class ProvingTypeRepositoryTest extends BaseTestRunner {
+public class ProvingTypeJpaRepositoryTest extends BaseTestRunner {
 
     /**
      * Expected results used by the unit tests.
@@ -23,14 +23,14 @@ public class ProvingTypeRepositoryTest extends BaseTestRunner {
     private static final int EXPECTED_PROVING_TYPES = 2;
 
     @Autowired
-    private ProvingTypeRepository provingTypeRepository;
+    private ProvingTypeJpaRepository provingTypeJpaRepository;
 
     /**
      * Test the search for all registered proving types in database.
      */
     @Test
     public void testFindAll() {
-        final List<ProvingType> entities = this.provingTypeRepository.findAll();
+        final List<ProvingType> entities = this.provingTypeJpaRepository.findAll();
         Assert.assertNotNull(entities);
         Assert.assertFalse(entities.isEmpty());
         Assert.assertEquals(EXPECTED_PROVING_TYPES, entities.size());
