@@ -8,4 +8,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  *
  * @author wcustodio
  */
-public interface ChurchRestRepository extends PagingAndSortingRepository<Church, Long> {}
+public interface ChurchRestRepository extends PagingAndSortingRepository<Church, Long> {
+}

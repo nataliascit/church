@@ -14,7 +14,7 @@ import java.util.List;
 public class Bead implements Serializable {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private Long id;
 

@@ -16,10 +16,12 @@ public final class JSONUtil {
     /**
      * Prevents the class to be instantiated.
      */
-    private JSONUtil() {}
+    private JSONUtil() {
+    }
 
     /**
      * Read a certain JSON file and map its value to a certain bean type.
+     *
      * @param path The of the file to be read.
      * @param type The {@link JavaType} used for the conversion.
      * @return The representation of the file content as a bean.

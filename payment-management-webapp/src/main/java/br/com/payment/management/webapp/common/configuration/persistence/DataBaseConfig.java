@@ -35,7 +35,7 @@ public class DataBaseConfig implements EnvironmentAware {
 
     @Bean
     @DependsOn("jdbcTemplate")
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory( DataSource dataSource, JpaVendorAdapter jpaVendorAdapter) {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource, JpaVendorAdapter jpaVendorAdapter) {
 
         final LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         if (persistenceUnitManager != null) {

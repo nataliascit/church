@@ -8,4 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author wcustodio
  */
-public interface ChurchJpaRepository extends JpaRepository<Church, Long> {}
+public interface ChurchJpaRepository extends JpaRepository<Church, Long> {
+}

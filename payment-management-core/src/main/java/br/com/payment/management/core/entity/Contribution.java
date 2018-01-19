@@ -14,7 +14,7 @@ import java.sql.Date;
 public class Contribution implements Serializable {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private Long id;
 
