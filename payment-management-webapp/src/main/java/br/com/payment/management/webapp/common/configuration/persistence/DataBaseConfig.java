@@ -43,7 +43,7 @@ public class DataBaseConfig implements EnvironmentAware {
         }
         entityManagerFactoryBean.setJpaVendorAdapter(jpaVendorAdapter);
         entityManagerFactoryBean.setDataSource(dataSource);
-        entityManagerFactoryBean.setPackagesToScan("com.custodio.spring.application");
+        entityManagerFactoryBean.setPackagesToScan("br.com.payment.management.core");
         entityManagerFactoryBean.getJpaPropertyMap().putAll(jpaPropertyResolver.getSubProperties("properties."));
 
         final Map<String, Object> properties = entityManagerFactoryBean.getJpaPropertyMap();
