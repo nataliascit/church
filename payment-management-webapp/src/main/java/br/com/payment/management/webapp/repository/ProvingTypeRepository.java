@@ -1,4 +1,4 @@
-package br.com.payment.management.webapp.controller;
+package br.com.payment.management.webapp.repository;
 
 import br.com.payment.management.core.entity.ProvingType;
 import org.springframework.data.repository.PagingAndSortingRepository;
@@ -8,4 +8,4 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  *
  * @author wcustodio.
  */
-public interface ProvingTypeController extends PagingAndSortingRepository<ProvingType, Long> {}
+public interface ProvingTypeRepository extends PagingAndSortingRepository<ProvingType, Long> {}

@@ -1,4 +1,4 @@
-package br.com.payment.management.webapp.controller;
+package br.com.payment.management.webapp.repository;
 
 import br.com.payment.management.core.entity.Contribution;
 import org.springframework.data.repository.PagingAndSortingRepository;
@@ -8,4 +8,4 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  *
  * @author wcustodio.
  */
-public interface ContributionController extends PagingAndSortingRepository<Contribution, Long> {}
+public interface ContributionRepository extends PagingAndSortingRepository<Contribution, Long> {}
