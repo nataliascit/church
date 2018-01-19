@@ -4,8 +4,8 @@ import br.com.payment.management.core.entity.Bead;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
- * {@link Bead} Data Access Object.
+ * Repository responsible for mapping the entry points for a {@link Bead}.
  *
- * @author wcustodio.
+ * @author wcustodio
  */
 public interface BeadRestRepository extends PagingAndSortingRepository<Bead, Long> {}

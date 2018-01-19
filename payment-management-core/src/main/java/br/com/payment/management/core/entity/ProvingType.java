@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Entity which represents the table with the definition of a certain proving type used by a {@link Contributor} when doing their {@link Contribution}.
  *
- * @author wcustodio.
+ * @author wcustodio
  */
 @Entity
 @Table(name = "PROVING_TYPE")

@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Entity which represents the table with the definition of the main entity owner of all {@link Contribution}.
  *
- * @author wcustodio.
+ * @author wcustodio
  */
 @Entity
 @Table(name = "CHURCH")

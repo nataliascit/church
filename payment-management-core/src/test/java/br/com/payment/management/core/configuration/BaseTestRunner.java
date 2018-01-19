@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 /**
  * Class used as basis for the unit tests.
  *
- * @author wcustodio.
+ * @author wcustodio
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = TestRootConfig.class)

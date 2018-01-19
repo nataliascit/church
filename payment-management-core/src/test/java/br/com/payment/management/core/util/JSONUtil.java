@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * Class responsible for manipulating the data related to a JSON object.
  *
- * @author wcustodio.
+ * @author wcustodio
  */
 public final class JSONUtil {
 

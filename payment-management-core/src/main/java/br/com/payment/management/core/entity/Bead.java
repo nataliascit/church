@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Entity which represents the table with the definition of a certain bead.
  *
- * @author wcustodio.
+ * @author wcustodio
  */
 @Entity
 @Table(name = "BEAD")

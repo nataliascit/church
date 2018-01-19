@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Entity which represents the table with the definition of a person who will make contributions for a certain {@link Church}.
  *
- * @author wcustodio.
+ * @author wcustodio
  */
 @Entity
 @Table(name = "CONTRIBUTOR")

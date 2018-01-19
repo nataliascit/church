@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 /**
  * Class responsible for setting up the unit tests context.
  *
- * @author wcustodio.
+ * @author wcustodio
  */
 @Configuration
 @SpringBootApplication

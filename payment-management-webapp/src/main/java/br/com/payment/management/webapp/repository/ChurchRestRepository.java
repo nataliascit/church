@@ -4,8 +4,8 @@ import br.com.payment.management.core.entity.Church;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
- * {@link Church} Data Access Object.
+ * Repository responsible for mapping the entry points for a {@link Church}.
  *
- * @author wcustodio.
+ * @author wcustodio
  */
 public interface ChurchRestRepository extends PagingAndSortingRepository<Church, Long> {}

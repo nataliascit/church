@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * {@link Contribution} Data Access Object.
  *
- * @author wcustodio.
+ * @author wcustodio
  */
 public interface ContributionJpaRepository extends JpaRepository<Contribution, Long> {}

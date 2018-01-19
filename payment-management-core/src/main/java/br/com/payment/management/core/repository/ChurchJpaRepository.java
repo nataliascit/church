@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * {@link Church} Data Access Object.
  *
- * @author wcustodio.
+ * @author wcustodio
  */
 public interface ChurchJpaRepository extends JpaRepository<Church, Long> {}

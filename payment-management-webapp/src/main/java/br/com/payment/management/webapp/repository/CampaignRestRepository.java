@@ -4,8 +4,8 @@ import br.com.payment.management.core.entity.Campaign;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
- * {@link Campaign} Data Access Object.
+ * Repository responsible for mapping the entry points for a {@link Campaign}.
  *
- * @author wcustodio.
+ * @author wcustodio
  */
 public interface CampaignRestRepository extends PagingAndSortingRepository<Campaign, Long> {}

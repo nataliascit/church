@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Class responsible for executing unit tests for {@link CampaignJpaRepository}.
  *
- * @author wcustodio.
+ * @author wcustodio
  */
 @Transactional
 public class CampaignJpaRepositoryTest extends BaseTestRunner {

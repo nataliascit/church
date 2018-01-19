@@ -4,8 +4,8 @@ import br.com.payment.management.core.entity.Contributor;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
- * {@link Contributor} Data Access Object.
+ * Repository responsible for mapping the entry points for a {@link Contributor}.
  *
- * @author wcustodio.
+ * @author wcustodio
  */
 public interface ContributorRestRepository extends PagingAndSortingRepository<Contributor, Long> {}

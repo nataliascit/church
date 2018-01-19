@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * {@link Campaign} Data Access Object.
  *
- * @author wcustodio.
+ * @author wcustodio
  */
 public interface CampaignJpaRepository extends JpaRepository<Campaign, Long> {}

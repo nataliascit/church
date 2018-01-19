@@ -4,8 +4,8 @@ import br.com.payment.management.core.entity.ProvingType;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
- * {@link ProvingType} Data Access Object.
+ * Repository responsible for mapping the entry points for a {@link ProvingType}.
  *
- * @author wcustodio.
+ * @author wcustodio
  */
 public interface ProvingTypeRestRepository extends PagingAndSortingRepository<ProvingType, Long> {}

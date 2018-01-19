@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * Class responsible for setting up the local database configuration.
  *
- * @author wcustodio.
+ * @author wcustodio
  */
 @Configuration
 public class DataBaseConfig implements EnvironmentAware {
