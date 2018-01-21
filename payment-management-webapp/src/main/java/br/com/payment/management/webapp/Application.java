@@ -2,13 +2,15 @@ package br.com.payment.management.webapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
  * Class responsible for setting up the application.
  *
  * @author wcustodio
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"br.com.payment.management.core", "br.com.payment.management.webapp"})
+@EnableJpaRepositories(basePackages = {"br.com.payment.management.core.repository"})
 public class Application {
 
     public static void main(String[] args) {

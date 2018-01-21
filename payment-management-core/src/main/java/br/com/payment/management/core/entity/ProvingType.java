@@ -1,7 +1,6 @@
 package br.com.payment.management.core.entity;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -11,10 +10,10 @@ import java.util.List;
  */
 @Entity
 @Table(name = "PROVING_TYPE")
-public class ProvingType implements Serializable {
+public class ProvingType {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
 

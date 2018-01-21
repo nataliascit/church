@@ -1,7 +1,6 @@
 package br.com.payment.management.core.entity;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.sql.Date;
 
 /**
@@ -11,10 +10,10 @@ import java.sql.Date;
  */
 @Entity
 @Table(name = "CONTRIBUTION")
-public class Contribution implements Serializable {
+public class Contribution {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
 
