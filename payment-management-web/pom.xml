@@ -9,5 +9,6 @@
     </parent>
     <packaging>jar</packaging>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>payment-management-webapp</artifactId>
+    <artifactId>payment-management-web</artifactId>
+    <description>The module responsible for handling the static content.</description>
 </project>

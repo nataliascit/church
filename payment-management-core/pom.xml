@@ -10,6 +10,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>payment-management-core</artifactId>
+    <description>The module responsible for handling the core with the main business rule.</description>
 
     <dependencies>
         <!-- SPRING DEPENDENCIES -->
