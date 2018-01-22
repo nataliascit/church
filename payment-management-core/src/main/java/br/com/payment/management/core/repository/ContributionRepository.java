@@ -8,5 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author wcustodio
  */
-public interface ContributionJpaRepository extends JpaRepository<Contribution, Long> {
+public interface ContributionRepository extends JpaRepository<Contribution, Long> {
 }

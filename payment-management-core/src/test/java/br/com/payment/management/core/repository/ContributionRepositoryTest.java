@@ -13,14 +13,15 @@ import org.springframework.test.annotation.Rollback;
 import javax.transaction.Transactional;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 /**
- * Class responsible for executing unit tests for {@link ContributionJpaRepository}.
+ * Class responsible for executing unit tests for {@link ContributionRepository}.
  *
  * @author wcustodio
  */
 @Transactional
-public class ContributionJpaRepositoryTest extends BaseTestRunner {
+public class ContributionRepositoryTest extends BaseTestRunner {
 
     /**
      * Expected results used by the unit tests.
@@ -28,14 +29,14 @@ public class ContributionJpaRepositoryTest extends BaseTestRunner {
     private static final int EXPECTED_NUMBER_OF_CONTRIBUTIONS = 2;
 
     @Autowired
-    private ContributionJpaRepository contributionJpaRepository;
+    private ContributionRepository contributionRepository;
 
     /**
      * Test the search for all registered contributions in database.
      */
     @Test
     public void testFindAll() {
-        final List<Contribution> entities = this.contributionJpaRepository.findAll();
+        final List<Contribution> entities = this.contributionRepository.findAll();
         Assert.assertNotNull(entities);
         Assert.assertFalse(entities.isEmpty());
         Assert.assertEquals(EXPECTED_NUMBER_OF_CONTRIBUTIONS, entities.size());
@@ -48,15 +49,27 @@ public class ContributionJpaRepositoryTest extends BaseTestRunner {
     @Test
     @Rollback
     public void testSaveWithValidInformation() throws IOException {
-
         // Get the mocked information to be used as base.
         final Contribution contribution = (Contribution) JSONUtil.fileToBean(ConfigurationCatalog.CONTRIBUTION_FILE_PATH.getValue(), TypeFactory.defaultInstance().constructType(Contribution.class));
-        contribution.setId(null);
-
         // Performs the persistence of the new contribution.
-        this.contributionJpaRepository.save(contribution);
-
+        this.contributionRepository.save(contribution);
         // Verifies if the number of contributions were increased by 1.
-        Assert.assertEquals(EXPECTED_NUMBER_OF_CONTRIBUTIONS + 1, this.contributionJpaRepository.findAll().size());
+        Assert.assertEquals(EXPECTED_NUMBER_OF_CONTRIBUTIONS + 1, this.contributionRepository.findAll().size());
+    }
+
+    /**
+     * Test the deletion of a existing {@link Contribution} with valid information.
+     */
+    @Test
+    @Rollback
+    public void testDeleteWithValidInformation() {
+        // Get the entity to be deleted.
+        final List<Contribution> entities = this.contributionRepository.findAll();
+        final Optional<Contribution> entity = entities.stream().findFirst();
+        Assert.assertTrue(entity.isPresent());
+        // Performs the deletion of the new contribution.
+        this.contributionRepository.delete(entity.get());
+        // Verifies if the number of entities were decreased by 1.
+        Assert.assertEquals(EXPECTED_NUMBER_OF_CONTRIBUTIONS - 1, this.contributionRepository.findAll().size());
     }
 }

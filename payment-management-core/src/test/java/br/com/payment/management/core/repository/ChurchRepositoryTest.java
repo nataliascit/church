@@ -13,14 +13,15 @@ import org.springframework.test.annotation.Rollback;
 import javax.transaction.Transactional;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 /**
- * Class responsible for executing unit tests for {@link ChurchJpaRepository}.
+ * Class responsible for executing unit tests for {@link ChurchRepository}.
  *
  * @author wcustodio
  */
 @Transactional
-public class ChurchJpaRepositoryTest extends BaseTestRunner {
+public class ChurchRepositoryTest extends BaseTestRunner {
 
     /**
      * Expected results used by the unit tests.
@@ -33,14 +34,14 @@ public class ChurchJpaRepositoryTest extends BaseTestRunner {
     private static final Long SAO_JOAQUIM_ID = 1L;
 
     @Autowired
-    private ChurchJpaRepository churchJpaRepository;
+    private ChurchRepository churchRepository;
 
     /**
      * Search for a certain church by its id.
      */
     @Test
     public void testFindById() {
-        final Church entity = this.churchJpaRepository.findOne(SAO_JOAQUIM_ID);
+        final Church entity = this.churchRepository.findOne(SAO_JOAQUIM_ID);
         Assert.assertNotNull(entity);
         Assert.assertEquals(SAO_JOAQUIM_ID, entity.getId());
     }
@@ -50,7 +51,7 @@ public class ChurchJpaRepositoryTest extends BaseTestRunner {
      */
     @Test
     public void testFindAll() {
-        final List<Church> entities = this.churchJpaRepository.findAll();
+        final List<Church> entities = this.churchRepository.findAll();
         Assert.assertNotNull(entities);
         Assert.assertFalse(entities.isEmpty());
         Assert.assertEquals(EXPECTED_NUMBER_OF_CHURCHS, entities.size());
@@ -63,15 +64,27 @@ public class ChurchJpaRepositoryTest extends BaseTestRunner {
     @Test
     @Rollback
     public void testSaveWithValidInformation() throws IOException {
-
         // Get the mocked information to be used as base.
         final Church church = (Church) JSONUtil.fileToBean(ConfigurationCatalog.CHURCH_FILE_PATH.getValue(), TypeFactory.defaultInstance().constructType(Church.class));
-        church.setId(null);
-
         // Performs the persistence of the new church.
-        this.churchJpaRepository.save(church);
-
+        this.churchRepository.save(church);
         // Verifies if the number of churchs were increased by 1.
-        Assert.assertEquals(EXPECTED_NUMBER_OF_CHURCHS + 1, this.churchJpaRepository.findAll().size());
+        Assert.assertEquals(EXPECTED_NUMBER_OF_CHURCHS + 1, this.churchRepository.findAll().size());
+    }
+
+    /**
+     * Test the deletion of a existing {@link Church} with valid information.
+     */
+    @Test
+    @Rollback
+    public void testDeleteWithValidInformation() {
+        // Get the entity to be deleted.
+        final List<Church> entities = this.churchRepository.findAll();
+        final Optional<Church> entity = entities.stream().findFirst();
+        Assert.assertTrue(entity.isPresent());
+        // Performs the deletion of the new church.
+        this.churchRepository.delete(entity.get());
+        // Verifies if the number of entities were decreased by 1.
+        Assert.assertEquals(EXPECTED_NUMBER_OF_CHURCHS - 1, this.churchRepository.findAll().size());
     }
 }

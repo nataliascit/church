@@ -8,5 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author wcustodio
  */
-public interface ProvingTypeJpaRepository extends JpaRepository<ProvingType, Long> {
+public interface ProvingTypeRepository extends JpaRepository<ProvingType, Long> {
 }

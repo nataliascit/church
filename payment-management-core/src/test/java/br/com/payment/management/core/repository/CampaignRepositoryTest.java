@@ -13,14 +13,15 @@ import org.springframework.test.annotation.Rollback;
 import javax.transaction.Transactional;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 /**
- * Class responsible for executing unit tests for {@link CampaignJpaRepository}.
+ * Class responsible for executing unit tests for {@link CampaignRepository}.
  *
  * @author wcustodio
  */
 @Transactional
-public class CampaignJpaRepositoryTest extends BaseTestRunner {
+public class CampaignRepositoryTest extends BaseTestRunner {
 
     /**
      * Expected results used by the unit tests.
@@ -33,14 +34,14 @@ public class CampaignJpaRepositoryTest extends BaseTestRunner {
     private static final Long TITHE_ID = 1L;
 
     @Autowired
-    private CampaignJpaRepository campaignJpaRepository;
+    private CampaignRepository campaignRepository;
 
     /**
      * Search for a certain campaign by its id.
      */
     @Test
     public void testFindById() {
-        final Campaign entity = this.campaignJpaRepository.findOne(TITHE_ID);
+        final Campaign entity = this.campaignRepository.findOne(TITHE_ID);
         Assert.assertNotNull(entity);
         Assert.assertEquals(TITHE_ID, entity.getId());
     }
@@ -50,11 +51,19 @@ public class CampaignJpaRepositoryTest extends BaseTestRunner {
      */
     @Test
     public void testFindAll() {
-        final List<Campaign> entities = this.campaignJpaRepository.findAll();
+
+        final List<Campaign> entities = this.campaignRepository.findAll();
         Assert.assertNotNull(entities);
         Assert.assertFalse(entities.isEmpty());
         Assert.assertEquals(EXPECTED_NUMBER_OF_CAMPAIGNS, entities.size());
-        entities.forEach(entity -> Assert.assertNotNull(entity.getId()));
+
+        entities.forEach(entity -> {
+            Assert.assertNotNull(entity.getId());
+            Assert.assertNotNull(entity.getChurch());
+            Assert.assertNotNull(entity.getProvingType());
+            Assert.assertNotNull(entity.getContributions());
+            Assert.assertFalse(entity.getContributions().isEmpty());
+        });
     }
 
     /**
@@ -63,15 +72,27 @@ public class CampaignJpaRepositoryTest extends BaseTestRunner {
     @Test
     @Rollback
     public void testSaveWithValidInformation() throws IOException {
-
         // Get the mocked information to be used as base.
         final Campaign campaign = (Campaign) JSONUtil.fileToBean(ConfigurationCatalog.CAMPAIGN_FILE_PATH.getValue(), TypeFactory.defaultInstance().constructType(Campaign.class));
-        campaign.setId(null);
-
         // Performs the persistence of the new campaign.
-        this.campaignJpaRepository.save(campaign);
-
+        this.campaignRepository.save(campaign);
         // Verifies if the number of campaigns were increased by 1.
-        Assert.assertEquals(EXPECTED_NUMBER_OF_CAMPAIGNS + 1, this.campaignJpaRepository.findAll().size());
+        Assert.assertEquals(EXPECTED_NUMBER_OF_CAMPAIGNS + 1, this.campaignRepository.findAll().size());
+    }
+
+    /**
+     * Test the deletion of a existing {@link Campaign} with valid information.
+     */
+    @Test
+    @Rollback
+    public void testDeleteWithValidInformation() {
+        // Get the entity to be deleted.
+        final List<Campaign> entities = this.campaignRepository.findAll();
+        final Optional<Campaign> entity = entities.stream().findFirst();
+        Assert.assertTrue(entity.isPresent());
+        // Performs the deletion of the new campaign.
+        this.campaignRepository.delete(entity.get());
+        // Verifies if the number of entities were decreased by 1.
+        Assert.assertEquals(EXPECTED_NUMBER_OF_CAMPAIGNS - 1, this.campaignRepository.findAll().size());
     }
 }
