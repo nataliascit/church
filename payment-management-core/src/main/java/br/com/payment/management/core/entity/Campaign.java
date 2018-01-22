@@ -1,6 +1,9 @@
 package br.com.payment.management.core.entity;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.sql.Date;
 import java.util.List;
 
@@ -18,9 +21,11 @@ public class Campaign {
     @Column(name = "ID")
     private Long id;
 
+    @NotEmpty(message = "campaign.name.empty.error")
     @Column(name = "NAME")
     private String name;
 
+    @NotNull(message = "campaign.creation.date.empty.error")
     @Column(name = "CREATION_DATE")
     private Date creationDate;
 
@@ -30,10 +35,12 @@ public class Campaign {
     @Column(name = "FINAL_DATE")
     private Date finalDate;
 
+    @NotNull(message = "campaign.church.empty.error")
     @ManyToOne
     @JoinColumn(name = "ID_CHURCH")
     private Church church;
 
+    @NotNull(message = "campaign.proving.type.empty.error")
     @ManyToOne
     @JoinColumn(name = "ID_PROVING_TYPE")
     private ProvingType provingType;

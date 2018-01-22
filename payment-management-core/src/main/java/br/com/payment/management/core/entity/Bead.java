@@ -1,7 +1,7 @@
 package br.com.payment.management.core.entity;
 
 import javax.persistence.*;
-import java.io.Serializable;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
@@ -11,20 +11,23 @@ import java.util.List;
  */
 @Entity
 @Table(name = "BEAD")
-public class Bead implements Serializable {
+public class Bead {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
 
+    @NotNull(message = "bead.identification.number.empty.error")
     @Column(name = "IDENTIFICATION_NUMBER")
     private Long identificationNumber;
 
+    @NotNull(message = "bead.contributor.empty.error")
     @ManyToOne
     @JoinColumn(name = "ID_CONTRIBUTOR")
     private Contributor contributor;
 
+    @NotNull(message = "bead.campaign.empty.error")
     @ManyToOne
     @JoinColumn(name = "ID_CAMPAIGN")
     private Campaign campaign;

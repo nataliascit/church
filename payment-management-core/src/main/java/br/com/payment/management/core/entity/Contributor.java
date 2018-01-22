@@ -1,6 +1,12 @@
 package br.com.payment.management.core.entity;
 
+import br.com.payment.management.core.enumerable.CivilStateType;
+import br.com.payment.management.core.enumerable.GenderType;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.sql.Date;
 import java.util.List;
 
@@ -18,21 +24,30 @@ public class Contributor {
     @Column(name = "ID")
     private Long id;
 
+    @NotEmpty(message = "contributor.name.empty.error")
     @Column(name = "NAME")
     private String name;
 
     @Column(name = "FISCAL_NUMBER")
     private Long fiscalNumber;
 
+    @Enumerated(EnumType.STRING)
+    @Size(max = 1, message = "contributor.gender.size.error")
+    @NotEmpty(message = "contributor.gender.empty.error")
     @Column(name = "GENDER")
-    private String gender;
+    private GenderType gender;
 
+    @Enumerated(EnumType.STRING)
+    @Size(max = 1, message = "contributor.civil.state.size.error")
+    @NotEmpty(message = "contributor.gender.empty.error")
     @Column(name = "CIVIL_STATE")
-    private String civilState;
+    private CivilStateType civilState;
 
+    @NotEmpty(message = "contributor.address.empty.error")
     @Column(name = "ADDRESS")
     private String address;
 
+    @NotNull(message = "contributor.birth.date.empty.error")
     @Column(name = "BIRTH_DATE")
     private Date birthDate;
 
@@ -80,19 +95,19 @@ public class Contributor {
         this.fiscalNumber = fiscalNumber;
     }
 
-    public String getGender() {
+    public GenderType getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(GenderType gender) {
         this.gender = gender;
     }
 
-    public String getCivilState() {
+    public CivilStateType getCivilState() {
         return civilState;
     }
 
-    public void setCivilState(String civilState) {
+    public void setCivilState(CivilStateType civilState) {
         this.civilState = civilState;
     }
 

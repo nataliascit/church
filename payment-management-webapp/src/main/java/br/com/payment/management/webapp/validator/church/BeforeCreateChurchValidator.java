@@ -1,4 +1,4 @@
-package br.com.payment.management.webapp.validator;
+package br.com.payment.management.webapp.validator.church;
 
 import br.com.payment.management.core.entity.Church;
 import org.springframework.stereotype.Component;

@@ -1,5 +1,7 @@
 package br.com.payment.management.core.entity;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -17,9 +19,11 @@ public class ProvingType {
     @Column(name = "ID")
     private Long id;
 
+    @NotEmpty(message = "proving.type.name.empty.error")
     @Column(name = "NAME")
     private String name;
 
+    @NotEmpty(message = "proving.type.mnemonic.empty.error")
     @Column(name = "MNEMONIC")
     private String mnemonic;
 

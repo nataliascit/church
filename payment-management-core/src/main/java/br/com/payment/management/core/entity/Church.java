@@ -1,7 +1,8 @@
 package br.com.payment.management.core.entity;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -11,13 +12,14 @@ import java.util.List;
  */
 @Entity
 @Table(name = "CHURCH")
-public class Church implements Serializable {
+public class Church {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
 
+    @NotEmpty(message = "church.name.empty.error")
     @Column(name = "NAME")
     private String name;
 

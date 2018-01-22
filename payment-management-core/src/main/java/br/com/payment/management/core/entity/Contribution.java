@@ -1,6 +1,7 @@
 package br.com.payment.management.core.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.sql.Date;
 
 /**
@@ -17,16 +18,20 @@ public class Contribution {
     @Column(name = "ID")
     private Long id;
 
+    @NotNull(message = "contribution.creation.date.empty.error")
     @Column(name = "CREATION_DATE")
     private Date creationDate;
 
+    @NotNull(message = "contribution.amount.empty.error")
     @Column(name = "AMOUNT")
     private Long amount;
 
+    @NotNull(message = "contribution.campaign.empty.error")
     @ManyToOne
     @JoinColumn(name = "ID_CAMPAIGN")
     private Campaign campaign;
 
+    @NotNull(message = "contribution.contributor.empty.error")
     @ManyToOne
     @JoinColumn(name = "ID_CONTRIBUTOR")
     private Contributor contributor;
