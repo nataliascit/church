@@ -21,7 +21,8 @@ public class Church implements Serializable {
     @Column(name = "NAME")
     private String name;
 
-    @OneToMany(mappedBy = "church")
+    @OneToMany
+    @JoinColumn(name="ID_CHURCH", referencedColumnName = "ID")
     private List<Campaign> campaigns;
 
     public Long getId() {

@@ -38,10 +38,12 @@ public class Campaign {
     @JoinColumn(name = "ID_PROVING_TYPE")
     private ProvingType provingType;
 
-    @OneToMany(mappedBy = "campaign")
+    @OneToMany
+    @JoinColumn(name="ID_CAMPAIGN", referencedColumnName = "ID")
     private List<Contribution> contributions;
 
-    @OneToMany(mappedBy = "campaign")
+    @OneToMany
+    @JoinColumn(name="ID_CAMPAIGN", referencedColumnName = "ID")
     private List<Bead> beads;
 
     public Long getId() {

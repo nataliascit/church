@@ -48,10 +48,12 @@ public class Contributor {
     @Column(name = "CELLPHONE")
     private Long cellphone;
 
-    @OneToMany(mappedBy = "contributor")
+    @OneToMany
+    @JoinColumn(name="ID_CONTRIBUTOR", referencedColumnName = "ID")
     private List<Contribution> contributions;
 
-    @OneToMany(mappedBy = "contributor")
+    @OneToMany
+    @JoinColumn(name="ID_CONTRIBUTOR", referencedColumnName = "ID")
     private List<Bead> beads;
 
     public Long getId() {

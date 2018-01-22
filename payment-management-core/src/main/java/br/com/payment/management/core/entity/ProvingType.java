@@ -23,7 +23,8 @@ public class ProvingType {
     @Column(name = "MNEMONIC")
     private String mnemonic;
 
-    @OneToMany(mappedBy = "provingType")
+    @OneToMany
+    @JoinColumn(name="ID_PROVING_TYPE", referencedColumnName = "ID")
     private List<Campaign> campaigns;
 
     public Long getId() {
