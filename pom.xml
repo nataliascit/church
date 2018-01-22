@@ -17,6 +17,7 @@
     <modules>
         <module>payment-management-batch</module>
         <module>payment-management-core</module>
+        <module>payment-management-rest</module>
         <module>payment-management-webapp</module>
     </modules>
 
