@@ -91,7 +91,7 @@
         <!-- MODULE DEPENDENCY -->
         <dependency>
             <groupId>br.com.church.payment.management</groupId>
-            <artifactId>payment-management-webapp</artifactId>
+            <artifactId>payment-management-web</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
