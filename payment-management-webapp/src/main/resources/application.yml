@@ -2,6 +2,9 @@
 #   Database Settings
 ###
 spring:
+  data:
+    rest:
+      basePath: api
   datasource:
     url: @datasource.url@
     platform: @datasource.platform@

@@ -1,4 +1,4 @@
 (function(){
-    "use strict";
-    angular.module("paymentManagement", ["ngRoute","ngMessages","ui.router"]);
+    'use strict';
+    angular.module('paymentManagement', ['ngMessages', 'ui.router']);
 })();

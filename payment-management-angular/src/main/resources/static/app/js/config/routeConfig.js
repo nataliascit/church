@@ -1,13 +1,13 @@
 (function(){
-    "use strict";
+    'use strict';
 
-    angular.module("paymentManagement").config(function ($stateProvider, $urlRouterProvider) {
+    angular.module('paymentManagement').config(function ($stateProvider) {
 
-        $urlRouterProvider.otherwise('/home');
-
-        $stateProvider.state('home', {
-            url: '/home',
-            templateUrl: 'index.html'
-        });
+        $stateProvider
+            .state('application', {
+                url: '/',
+                templateUrl: 'index.html',
+                controller: 'homeController as vm'
+            });
     });
 })();

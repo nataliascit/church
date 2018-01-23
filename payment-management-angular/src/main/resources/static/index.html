@@ -1,15 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="paymentManagement">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <!-- BEGIN APPLICATION STYLESHEET -->
+        <link rel="stylesheet" href="./webjars/bootstrap/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="./webjars/bootstrap/css/bootstrap.min.css"/>
+        <!-- END APPLICATION STYLESHEET -->
     </head>
     <body>
         <div>
-            TEST2
+            <section ui-view></section>
         </div>
     </body>
     <footer>
+        <!-- BEGIN ANGULAR SCRIPTS -->
         <script type="text/javascript" src="./webjars/angularjs/angular.min.js"></script>
+        <script type="text/javascript" src="./webjars/angular-ui-router/angular-ui-router.min.js"></script>
+        <script type="text/javascript" src="./webjars/angularjs/angular-messages.min.js"></script>
+        <!-- END ANGULAR SCRIPTS -->
+
+        <!-- BEGIN BOOTSTRAP SCRIPTS -->
+        <script type="text/javascript" src="./webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="./webjars/bootstrap/js/bootstrap.min.js"></script>
+        <!-- END BOOTSTRAP SCRIPTS -->
+
+        <!-- BEGIN APPLICATION SCRIPTS -->
         <script type="text/javascript" src="./app/app.js"></script>
+        <script type="text/javascript" src="./app/js/config/routeConfig.js"></script>
+        <!-- END APPLICATION SCRIPTS -->
     </footer>
 </html>

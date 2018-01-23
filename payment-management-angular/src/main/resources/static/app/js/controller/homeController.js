@@ -1,7 +1,6 @@
 (function(){
-    "use strict";
+    'use strict';
 
-    angular.module("paymentManagement").controller("homeController", function ($scope, $location, config) {
-
+    angular.module('paymentManagement').controller('homeController', function () {
     });
 })();
