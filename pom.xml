@@ -17,9 +17,20 @@
     <modules>
         <module>payment-management-batch</module>
         <module>payment-management-core</module>
-        <module>payment-management-rest</module>
-        <module>payment-management-web</module>
+        <module>payment-management-webapp</module>
     </modules>
+
+    <profiles>
+        <profile>
+            <id>angular</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>payment-management-angular</module>
+            </modules>
+        </profile>
+    </profiles>
 
     <build>
         <pluginManagement>

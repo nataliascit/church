@@ -9,8 +9,8 @@
     </parent>
     <packaging>jar</packaging>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>payment-management-rest</artifactId>
-    <description>The module responsible for handling the rest content.</description>
+    <artifactId>payment-management-webapp</artifactId>
+    <description>The module responsible for defining the web application.</description>
 
     <profiles>
         <profile>
@@ -74,6 +74,19 @@
                 </dependency>
             </dependencies>
         </profile>
+        <profile>
+            <id>angular</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>br.com.church.payment.management</groupId>
+                    <artifactId>payment-management-angular</artifactId>
+                    <version>${project.parent.version}</version>
+                </dependency>
+            </dependencies>
+        </profile>
     </profiles>
 
     <dependencies>
@@ -82,22 +95,12 @@
             <groupId>org.webjars</groupId>
             <artifactId>webjars-locator</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>angularjs</artifactId>
-            <version>1.6.6</version>
-        </dependency>
 
         <!-- MODULE DEPENDENCY -->
         <dependency>
             <groupId>br.com.church.payment.management</groupId>
-            <artifactId>payment-management-web</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>br.com.church.payment.management</groupId>
             <artifactId>payment-management-core</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <!-- SPRING DEPENDENCIES -->
