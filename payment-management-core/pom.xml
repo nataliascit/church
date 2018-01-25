@@ -2,14 +2,16 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
     <parent>
         <artifactId>payment-management-parent</artifactId>
         <groupId>br.com.church.payment.management</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-
-    <modelVersion>4.0.0</modelVersion>
+    
     <artifactId>payment-management-core</artifactId>
+
     <description>The module responsible for handling the core with the main business rule.</description>
 
     <dependencies>
