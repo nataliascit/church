@@ -2,6 +2,7 @@ package br.com.payment.management.webapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
@@ -10,7 +11,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  * @author wcustodio
  */
 @SpringBootApplication(scanBasePackages = {"br.com.payment.management.core", "br.com.payment.management.webapp"})
-@EnableJpaRepositories(basePackages = {"br.com.payment.management.core.repository"})
+@EntityScan(basePackages = "br.com.payment.management.core")
+@EnableJpaRepositories(basePackages = {"br.com.payment.management.core"})
 public class Application {
 
     public static void main(String[] args) {
