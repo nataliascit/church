@@ -13,8 +13,6 @@
     <artifactId>payment-management-webapp</artifactId>
     <packaging>jar</packaging>
     
-    <description>The module responsible for defining the web application.</description>
-
     <dependencies>
         <!-- STATIC DEPENDENCIES -->
         <dependency>
