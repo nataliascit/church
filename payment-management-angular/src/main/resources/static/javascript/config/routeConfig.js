@@ -1,12 +1,14 @@
 (function(){
     'use strict';
 
-    angular.module('paymentManagement').config(function ($stateProvider) {
+    angular.module('paymentManagement').config(function ($stateProvider, $urlRouterProvider) {
+
+        $urlRouterProvider.otherwise('/');
 
         $stateProvider
             .state('application', {
                 url: '/',
-                templateUrl: 'index.html',
+                templateUrl: 'view/home.html',
                 controller: 'homeController as vm'
             });
     });

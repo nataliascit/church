@@ -2,31 +2,46 @@
 <html lang="en" ng-app="paymentManagement">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <!-- BEGIN APPLICATION STYLESHEET -->
-        <link rel="stylesheet" href="./webjars/bootstrap/css/bootstrap-theme.min.css"/>
-        <link rel="stylesheet" href="./webjars/bootstrap/css/bootstrap.min.css"/>
-        <!-- END APPLICATION STYLESHEET -->
     </head>
     <body>
+        <header>
+            <!-- BEGIN APPLICATION STYLESHEET -->
+            <link rel="stylesheet" href="./webjars/bootstrap/css/bootstrap-theme.min.css"/>
+            <link rel="stylesheet" href="./webjars/bootstrap/css/bootstrap.min.css"/>
+            <!-- END APPLICATION STYLESHEET -->
+        </header>
         <div>
-            <section ui-view></section>
+            <section data-ui-view></section>
         </div>
+        <footer>
+            <!-- BEGIN ANGULAR SCRIPTS -->
+            <script type="text/javascript" src="./webjars/angularjs/angular.min.js"></script>
+            <script type="text/javascript" src="./webjars/angularjs/angular-resource.min.js"></script>
+            <script type="text/javascript" src="./webjars/angular-ui-router/angular-ui-router.min.js"></script>
+            <script type="text/javascript" src="./webjars/angularjs/angular-messages.min.js"></script>
+            <!-- END ANGULAR SCRIPTS -->
+
+            <!-- BEGIN BOOTSTRAP SCRIPTS -->
+            <script type="text/javascript" src="./webjars/jquery/jquery.min.js"></script>
+            <script type="text/javascript" src="./webjars/bootstrap/js/bootstrap.min.js"></script>
+            <!-- END BOOTSTRAP SCRIPTS -->
+
+            <!-- BEGIN APPLICATION SCRIPTS -->
+
+            <!-- BEGIN CONFIGURATION SCRIPTS -->
+            <script type="text/javascript" src="./javascript/app.js"></script>
+            <script type="text/javascript" src="./javascript/config/routeConfig.js"></script>
+            <!-- END CONFIGURATION SCRIPTS -->
+
+            <!-- BEGIN SERVICE SCRIPTS -->
+            <script type="text/javascript" src="./javascript/service/churchRestService.js"></script>
+            <!-- END SERVICE SCRIPTS -->
+
+            <!-- BEGIN CONTROLLER SCRIPTS -->
+            <script type="text/javascript" src="./javascript/controller/homeController.js"></script>
+            <!-- END CONTROLLER SCRIPTS -->
+
+            <!-- END APPLICATION SCRIPTS -->
+        </footer>
     </body>
-    <footer>
-        <!-- BEGIN ANGULAR SCRIPTS -->
-        <script type="text/javascript" src="./webjars/angularjs/angular.min.js"></script>
-        <script type="text/javascript" src="./webjars/angular-ui-router/angular-ui-router.min.js"></script>
-        <script type="text/javascript" src="./webjars/angularjs/angular-messages.min.js"></script>
-        <!-- END ANGULAR SCRIPTS -->
-
-        <!-- BEGIN BOOTSTRAP SCRIPTS -->
-        <script type="text/javascript" src="./webjars/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="./webjars/bootstrap/js/bootstrap.min.js"></script>
-        <!-- END BOOTSTRAP SCRIPTS -->
-
-        <!-- BEGIN APPLICATION SCRIPTS -->
-        <script type="text/javascript" src="./app/app.js"></script>
-        <script type="text/javascript" src="./app/js/config/routeConfig.js"></script>
-        <!-- END APPLICATION SCRIPTS -->
-    </footer>
 </html>
