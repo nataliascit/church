@@ -65,7 +65,7 @@
     
     <profiles>
         <profile>
-            <id>local</id>
+            <id>dev</id>
             <properties>
                 <!-- DATASOURCE -->
                 <datasource.url>jdbc:h2:mem:saojoaquim;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</datasource.url>
@@ -94,7 +94,7 @@
             </dependencies>
         </profile>
         <profile>
-            <id>remote</id>
+            <id>prod</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
