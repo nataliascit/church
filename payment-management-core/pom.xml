@@ -11,8 +11,7 @@
     </parent>
     
     <artifactId>payment-management-core</artifactId>
-
-    <description>The module responsible for handling the core with the main business rule.</description>
+    <packaging>jar</packaging>
 
     <dependencies>
         <!-- SPRING DEPENDENCIES -->
