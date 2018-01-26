@@ -94,7 +94,7 @@
             </activation>
             <properties>
                 <!-- DATASOURCE -->
-                <datasource.url>jdbc:mysql://localhost:3306/PAYMENT-MANAGEMENT</datasource.url>
+                <datasource.url>jdbc:mysql://localhost:3306/PAYMENT-MANAGEMENT?verifyServerCertificate=false&amp;useSSL=true</datasource.url>
                 <datasource.platform>mysql</datasource.platform>
                 <datasource.username>PAYMENT-MANAGEMENT</datasource.username>
                 <datasource.password>PAYMENT-MANAGEMENT</datasource.password>
