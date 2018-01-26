@@ -2,24 +2,70 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
     <parent>
         <artifactId>payment-management-parent</artifactId>
         <groupId>br.com.church.payment.management</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-    <packaging>jar</packaging>
-    <modelVersion>4.0.0</modelVersion>
+    
     <artifactId>payment-management-webapp</artifactId>
+    <packaging>jar</packaging>
+    
+    <dependencies>
+        <!-- MODULE DEPENDENCY -->
+        <dependency>
+            <groupId>br.com.church.payment.management</groupId>
+            <artifactId>payment-management-core</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
 
+        <!-- SPRING DEPENDENCIES -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-rest</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-rest-hal-browser</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- UNIT TEST DEPENDENCIES -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+    
     <profiles>
         <profile>
-            <id>local</id>
+            <id>dev</id>
             <properties>
                 <!-- DATASOURCE -->
                 <datasource.url>jdbc:h2:mem:saojoaquim;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</datasource.url>
                 <datasource.platform>h2</datasource.platform>
-                <datasource.username>saojoaquim</datasource.username>
-                <datasource.password>saojoaquim</datasource.password>
+                <datasource.username>PAYMENT-MANAGEMENT</datasource.username>
+                <datasource.password>PAYMENT-MANAGEMENT</datasource.password>
                 <datasource.driver>org.h2.Driver</datasource.driver>
                 <!-- JPA -->
                 <jpa.database.platform>org.hibernate.dialect.H2Dialect</jpa.database.platform>
@@ -42,16 +88,16 @@
             </dependencies>
         </profile>
         <profile>
-            <id>remote</id>
+            <id>prod</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
                 <!-- DATASOURCE -->
-                <datasource.url>jdbc:mysql://localhost:3306/saojoaquim</datasource.url>
+                <datasource.url>jdbc:mysql://localhost:3306/PAYMENT-MANAGEMENT?verifyServerCertificate=false&amp;useSSL=true</datasource.url>
                 <datasource.platform>mysql</datasource.platform>
-                <datasource.username>saojoaquim</datasource.username>
-                <datasource.password>saojoaquim</datasource.password>
+                <datasource.username>PAYMENT-MANAGEMENT</datasource.username>
+                <datasource.password>PAYMENT-MANAGEMENT</datasource.password>
                 <datasource.driver>com.mysql.jdbc.Driver</datasource.driver>
                 <!-- JPA -->
                 <jpa.database.platform>org.hibernate.dialect.MySQLDialect</jpa.database.platform>
@@ -73,40 +119,18 @@
                 </dependency>
             </dependencies>
         </profile>
+        <profile>
+            <id>angular</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>br.com.church.payment.management</groupId>
+                    <artifactId>payment-management-angular</artifactId>
+                    <version>${project.parent.version}</version>
+                </dependency>
+            </dependencies>
+        </profile>
     </profiles>
-
-    <dependencies>
-        <!-- MODULE DEPENDENCY -->
-        <dependency>
-            <groupId>br.com.church.payment.management</groupId>
-            <artifactId>payment-management-core</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-
-        <!-- SPRING DEPENDENCIES -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-rest</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
-        <!-- UNIT TEST DEPENDENCIES -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 </project>
