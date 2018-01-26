@@ -1,47 +1,75 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="paymentManagement">
+<html data-ng-app="paymentManagement" lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!-- BEGIN BOOTSTRAP STYLESHEET -->
+		<link rel="stylesheet" href="./webjars/bootstrap/css/bootstrap-theme.min.css"/>
+		<link rel="stylesheet" href="./webjars/bootstrap/css/bootstrap.min.css"/>
+		<!-- END BOOTSTRAP STYLESHEET -->
     </head>
-    <body>
-        <header>
-            <!-- BEGIN APPLICATION STYLESHEET -->
-            <link rel="stylesheet" href="./webjars/bootstrap/css/bootstrap-theme.min.css"/>
-            <link rel="stylesheet" href="./webjars/bootstrap/css/bootstrap.min.css"/>
-            <!-- END APPLICATION STYLESHEET -->
-        </header>
-        <div>
-            <section data-ui-view></section>
-        </div>
-        <footer>
-            <!-- BEGIN ANGULAR SCRIPTS -->
-            <script type="text/javascript" src="./webjars/angularjs/angular.min.js"></script>
-            <script type="text/javascript" src="./webjars/angularjs/angular-resource.min.js"></script>
-            <script type="text/javascript" src="./webjars/angular-ui-router/angular-ui-router.min.js"></script>
-            <script type="text/javascript" src="./webjars/angularjs/angular-messages.min.js"></script>
-            <!-- END ANGULAR SCRIPTS -->
+    <body>        
+        <section data-ui-view></section>
+        <!-- BEGIN ANGULAR SCRIPTS -->
+		<script type="text/javascript" src="./webjars/angularjs/angular.min.js"></script>
+		<script type="text/javascript" src="./webjars/angularjs/angular-resource.min.js"></script>
+		<script type="text/javascript" src="./webjars/angular-ui-router/angular-ui-router.min.js"></script>
+		<script type="text/javascript" src="./webjars/angularjs/angular-messages.min.js"></script>
+		<!-- END ANGULAR SCRIPTS -->
 
-            <!-- BEGIN BOOTSTRAP SCRIPTS -->
-            <script type="text/javascript" src="./webjars/jquery/jquery.min.js"></script>
-            <script type="text/javascript" src="./webjars/bootstrap/js/bootstrap.min.js"></script>
-            <!-- END BOOTSTRAP SCRIPTS -->
+		<!-- BEGIN BOOTSTRAP SCRIPTS -->
+		<script type="text/javascript" src="./webjars/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="./webjars/bootstrap/js/bootstrap.min.js"></script>
+		<!-- END BOOTSTRAP SCRIPTS -->
+		
+		<!-- BEGIN ENVIRONMENT MODULE SCRIPTS -->
+		<script type="text/javascript" src="./app/shared/environment/app.environment.module.js"></script>
+		<script type="text/javascript" src="./app/shared/environment/environmentValue.js"></script>
+		<!-- END ENVIRONMENT MODULE SCRIPTS -->
 
-            <!-- BEGIN APPLICATION SCRIPTS -->
+		<!-- BEGIN BEAD MODULE SCRIPTS -->
+		<script type="text/javascript" src="./app/components/bead/app.bead.module.js"></script>
+		<script type="text/javascript" src="./app/components/bead/beadRestService.js"></script>
+		<script type="text/javascript" src="./app/components/bead/beadController.js"></script>
+		<!-- END BEAD MODULE SCRIPTS -->
+		
+		<!-- BEGIN CAMPAIGN MODULE SCRIPTS -->
+		<script type="text/javascript" src="./app/components/campaign/app.campaign.module.js"></script>
+		<script type="text/javascript" src="./app/components/campaign/campaignRestService.js"></script>
+		<script type="text/javascript" src="./app/components/campaign/campaignController.js"></script>
+		<!-- END CAMPAIGN MODULE SCRIPTS -->
+		
+		<!-- BEGIN CHURCH MODULE SCRIPTS -->
+		<script type="text/javascript" src="./app/components/church/app.church.module.js"></script>
+		<script type="text/javascript" src="./app/components/church/churchRestService.js"></script>
+		<script type="text/javascript" src="./app/components/church/churchController.js"></script>
+		<!-- END CHURCH MODULE SCRIPTS -->
+		
+		<!-- BEGIN CONTRIBUTION MODULE SCRIPTS -->
+		<script type="text/javascript" src="./app/components/contribution/app.contribution.module.js"></script>
+		<script type="text/javascript" src="./app/components/contribution/contributionRestService.js"></script>
+		<script type="text/javascript" src="./app/components/contribution/contributionController.js"></script>
+		<!-- END CONTRIBUTION MODULE SCRIPTS -->
+		
+		<!-- BEGIN CONTRIBUTOR MODULE SCRIPTS -->
+		<script type="text/javascript" src="./app/components/contributor/app.contributor.module.js"></script>
+		<script type="text/javascript" src="./app/components/contributor/contributorRestService.js"></script>
+		<script type="text/javascript" src="./app/components/contributor/contributorController.js"></script>
+		<!-- END CONTRIBUTOR MODULE SCRIPTS -->
+		
+		<!-- BEGIN HOME MODULE SCRIPTS -->
+		<script type="text/javascript" src="app/shared/home/app.home.module.js"></script>
+		<script type="text/javascript" src="app/shared/home/homeController.js"></script>
+		<!-- END HOME MODULE SCRIPTS -->
+		
+		<!-- BEGIN PROVING TYPE MODULE SCRIPTS -->
+		<script type="text/javascript" src="./app/components/provingType/app.provingType.module.js"></script>
+		<script type="text/javascript" src="./app/components/provingType/provingTypeRestService.js"></script>
+		<script type="text/javascript" src="./app/components/provingType/provingTypeController.js"></script>
+		<!-- END PROVING TYPE MODULE SCRIPTS -->
 
-            <!-- BEGIN CONFIGURATION SCRIPTS -->
-            <script type="text/javascript" src="./javascript/app.js"></script>
-            <script type="text/javascript" src="./javascript/config/routeConfig.js"></script>
-            <!-- END CONFIGURATION SCRIPTS -->
-
-            <!-- BEGIN SERVICE SCRIPTS -->
-            <script type="text/javascript" src="./javascript/service/churchRestService.js"></script>
-            <!-- END SERVICE SCRIPTS -->
-
-            <!-- BEGIN CONTROLLER SCRIPTS -->
-            <script type="text/javascript" src="./javascript/controller/homeController.js"></script>
-            <!-- END CONTROLLER SCRIPTS -->
-
-            <!-- END APPLICATION SCRIPTS -->
-        </footer>
+		<!-- BEGIN CONFIGURATION SCRIPTS -->
+		<script type="text/javascript" src="./app/app.module.js"></script>
+		<script type="text/javascript" src="./app/app.routes.js"></script>
+		<!-- END CONFIGURATION SCRIPTS -->
     </body>
 </html>
