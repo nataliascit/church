@@ -14,6 +14,12 @@
     <packaging>jar</packaging>
     
     <dependencies>
+        <!-- STATIC DEPENDENCIES -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>webjars-locator</artifactId>
+        </dependency>
+    
         <!-- ANGULAR DEPENDENCIES -->
         <dependency>
             <groupId>org.webjars</groupId>
