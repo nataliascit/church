@@ -14,12 +14,6 @@
     <packaging>jar</packaging>
     
     <dependencies>
-        <!-- STATIC DEPENDENCIES -->
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>webjars-locator</artifactId>
-        </dependency>
-
         <!-- MODULE DEPENDENCY -->
         <dependency>
             <groupId>br.com.church.payment.management</groupId>
