@@ -1,9 +1,15 @@
+payment-management-angular/.settings/*
+payment-management-angular/.project
+payment-management-angular/.classpath
 payment-management-batch/.settings/*
 payment-management-batch/.project
+payment-management-batch/.classpath
 payment-management-core/.settings/*
 payment-management-core/.project
+payment-management-core/.classpath
 payment-management-webapp/.settings/*
 payment-management-webapp/.project
+payment-management-webapp/.classpath
 target/
 .idea/
 .project
@@ -11,6 +17,3 @@ target/
 .metadata/*
 *.iml
 *.log
-payment-management-webapp/.classpath
-payment-management-core/.classpath
-payment-management-batch/.classpath
