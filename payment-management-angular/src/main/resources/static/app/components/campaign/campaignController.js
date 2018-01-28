@@ -2,13 +2,9 @@
   * @desc This Controller is responsible for handling the view 'campaignView.html'
   * @author wcustodio
   */
-(function(){
-    'use strict';
+var campaignModule = angular.module('paymentManagement.campaign');
 
-    var campaignModule = angular.module('paymentManagement.campaign');
+campaignModule.$inject = [];
 
-    campaignModule.$inject = [];
-
-    campaignModule.controller('campaignController', function () {
-    });
-})();
+campaignModule.controller('campaignController', function () {
+});

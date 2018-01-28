@@ -1,27 +1,33 @@
 /**
-  * @desc Configures the existing application's modules.
-  * @author wcustodio
-  */
-(function(){
-    'use strict';
-	
-    angular.module('paymentManagement', [
+ * @desc Configures the existing application's modules.
+ * @author wcustodio
+ */
+import 'jquery';
+import 'angular';
+import 'angular-route';
+import 'angular-messages';
+import 'angular-resource';
+import '@uirouter/angularjs';
+import 'bootstrap';
 
-        /* angular dependencies. */
-        'ngResource',
-        'ngMessages',
-        'ui.router',
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-        /* application's components dependencies. */
-        'paymentManagement.bead',
-        'paymentManagement.campaign',
-        'paymentManagement.church',
-        'paymentManagement.contribution',
-        'paymentManagement.contributor',
-        'paymentManagement.home',
-        'paymentManagement.provingType',
+angular.module('paymentManagement', [
 
-        /* application's shared dependencies. */
-        'paymentManagement.environment'
-    ]);
-})();
+    /* angular dependencies. */
+    'ngResource',
+    'ngMessages',
+    'ui.router',
+
+    /* application's components dependencies. */
+    'paymentManagement.bead',
+    'paymentManagement.campaign',
+    'paymentManagement.church',
+    'paymentManagement.contribution',
+    'paymentManagement.contributor',
+    'paymentManagement.home',
+    'paymentManagement.provingType',
+
+    /* application's shared dependencies. */
+    'paymentManagement.environment'
+]);
