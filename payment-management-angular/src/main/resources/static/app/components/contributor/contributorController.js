@@ -1,10 +1,17 @@
+import './app.contributor.module';
+import './contributorRestService';
+
 /**
   * @desc This Controller is responsible for handling the view 'contributorView.html'
   * @author wcustodio
   */
-var contributorModule = angular.module('paymentManagement.contributor');
+(function() {
+	'use strict';
 
-contributorModule.$inject = [];
+	var contributorModule = angular.module('paymentManagement.contributor');
 
-contributorModule.controller('contributorController', function () {
-});
+	contributorModule.$inject = [];
+
+	contributorModule.controller('contributorController', function () {
+	});
+}());

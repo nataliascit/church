@@ -1,8 +1,11 @@
-import './campaignController';
-import './campaignRestService';
+import '../../shared/environment/app.environment.module';
 
 /**
  * @desc Configures the campaign module.
  *	@author wcustodio
  */
-angular.module('paymentManagement.campaign', ['paymentManagement.environment']);
+(function() {
+	'use strict';
+	
+	angular.module('paymentManagement.campaign', ['paymentManagement.environment']);
+}());

@@ -1,8 +1,12 @@
-import './contributionController';
-import './contributionRestService';
+import '../../shared/environment/app.environment.module';
+import '../../shared/environment/environmentValue';
 
 /**
  * @desc Configures the contribution module.
  * @author wcustodio
- */
-angular.module('paymentManagement.contribution', ['paymentManagement.environment']);
+ */	
+(function() {
+	'use strict';	
+
+	angular.module('paymentManagement.contribution', ['paymentManagement.environment']);
+}());

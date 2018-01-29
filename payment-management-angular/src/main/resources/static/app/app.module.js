@@ -1,8 +1,3 @@
-/**
- * @desc Configures the existing application's modules.
- * @author wcustodio
- */
-import 'jquery';
 import 'angular';
 import 'angular-route';
 import 'angular-messages';
@@ -12,22 +7,36 @@ import 'bootstrap';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-angular.module('paymentManagement', [
+/**
+ * @desc Configures the existing application's modules.
+ * @author wcustodio
+ */
+(function() {
+	'use strict';
 
-    /* angular dependencies. */
-    'ngResource',
-    'ngMessages',
-    'ui.router',
+	angular.module('paymentManagement', [
 
-    /* application's components dependencies. */
-    'paymentManagement.bead',
-    'paymentManagement.campaign',
-    'paymentManagement.church',
-    'paymentManagement.contribution',
-    'paymentManagement.contributor',
-    'paymentManagement.home',
-    'paymentManagement.provingType',
+	    /* angular dependencies. */
+        'ngResource',
+        'ngMessages',
+        'ui.router',
 
-    /* application's shared dependencies. */
-    'paymentManagement.environment'
-]);
+        /* application's components dependencies. */
+        'paymentManagement.bead',
+        'paymentManagement.campaign',
+        'paymentManagement.church',
+        'paymentManagement.contribution',
+        'paymentManagement.contributor',
+        'paymentManagement.home',
+        'paymentManagement.provingType',
+
+        /* application's shared dependencies. */
+        'paymentManagement.environment'
+    ]);
+
+	//Import all the dependencies.
+    var context = require.context(".", true, /\.js$/);
+    context.keys().forEach(function (key) {
+        context(key);
+    });
+}());
