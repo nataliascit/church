@@ -1,3 +1,5 @@
+import './app.module';
+
 /**
   * @desc Configures the routes used to navigae over the application.
   * @param $stateProvider The responsible for defining the routes.

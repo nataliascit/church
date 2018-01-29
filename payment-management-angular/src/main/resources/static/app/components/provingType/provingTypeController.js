@@ -1,10 +1,17 @@
+import './app.provingType.module';
+import './provingTypeRestService';
+
 /**
   * @desc This Controller is responsible for handling the view 'provingTypeView.html'
   * @author wcustodio
   */
-var provingTypeModule = angular.module('paymentManagement.provingType');
+(function() {
+	'use strict';
 
-provingTypeModule.$inject = [];
+	var provingTypeModule = angular.module('paymentManagement.provingType');
 
-provingTypeModule.controller('provingTypeController', function () {
-});
+	provingTypeModule.$inject = [];
+
+	provingTypeModule.controller('provingTypeController', function () {
+	});
+}());

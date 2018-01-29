@@ -1,6 +1,6 @@
-const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+var path = require('path');
+var webpack = require("webpack");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
     entry: './app/app.module.js',
@@ -33,7 +33,11 @@ const config = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin('style.css')
+        new ExtractTextPlugin('style.css'),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
     ]
 };
 

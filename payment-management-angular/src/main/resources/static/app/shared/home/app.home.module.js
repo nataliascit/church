@@ -1,7 +1,12 @@
-import './homeController';
+import '../../shared/environment/app.environment.module';
+import '../../shared/environment/environmentValue';
 
 /**
   * @desc Configures the home module.
   * @author wcustodio
   */
-angular.module('paymentManagement.home', []);
+(function() {
+	'use strict';
+	
+	angular.module('paymentManagement.home', []);
+}());

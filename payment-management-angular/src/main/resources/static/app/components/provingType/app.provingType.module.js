@@ -1,8 +1,12 @@
-import './provingTypeController';
-import './provingTypeRestService';
+import '../../shared/environment/app.environment.module';
+import '../../shared/environment/environmentValue';
 
 /**
  * @desc Configures the proving type module.
  * @author wcustodio
  */
-angular.module('paymentManagement.provingType', ['paymentManagement.environment']);
+(function() {
+	'use strict';
+
+	angular.module('paymentManagement.provingType', ['paymentManagement.environment']);
+}());

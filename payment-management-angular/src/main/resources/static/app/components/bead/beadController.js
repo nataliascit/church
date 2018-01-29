@@ -1,10 +1,17 @@
+import './app.bead.module';
+import './beadRestService';
+
 /**
   * @desc This Controller is responsible for handling the view 'beadView.html'
   * @author wcustodio
   */
-var beadModule = angular.module('paymentManagement.bead');
+(function() {
+	'use strict';
 
-beadModule.$inject = [];
+	var beadModule = angular.module('paymentManagement.bead');
 
-beadModule.controller('beadController', function () {
-});
+	beadModule.$inject = [];
+
+	beadModule.controller('beadController', function () {
+	});
+}());

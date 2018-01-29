@@ -1,8 +1,12 @@
-import './churchController';
-import './churchRestService';
+import '../../shared/environment/app.environment.module';
+import '../../shared/environment/environmentValue';
 
 /**
  * @desc Configures the existing application's modules.
  *	@authour wcustodio
  */
-angular.module('paymentManagement.church', ['paymentManagement.environment']);
+(function() {
+	'use strict';
+	
+	angular.module('paymentManagement.church', ['paymentManagement.environment']);
+}());

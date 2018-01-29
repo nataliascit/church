@@ -1,10 +1,17 @@
+import './app.campaign.module';
+import './campaignRestService';
+
 /**
   * @desc This Controller is responsible for handling the view 'campaignView.html'
   * @author wcustodio
   */
-var campaignModule = angular.module('paymentManagement.campaign');
+(function() {
+	'use strict';
+	
+	var campaignModule = angular.module('paymentManagement.campaign');
 
-campaignModule.$inject = [];
+	campaignModule.$inject = [];
 
-campaignModule.controller('campaignController', function () {
-});
+	campaignModule.controller('campaignController', function () {
+	});
+}());
