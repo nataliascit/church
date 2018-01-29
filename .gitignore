@@ -1,6 +1,8 @@
 payment-management-angular/.settings/*
 payment-management-angular/.project
 payment-management-angular/.classpath
+payment-management-angular/src/main/resources/static/build/*
+payment-management-angular/src/main/resources/static/node_modules/*
 payment-management-batch/.settings/*
 payment-management-batch/.project
 payment-management-batch/.classpath
