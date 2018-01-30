@@ -1,4 +1,13 @@
-import './app.module';
+import '@uirouter/angularjs';
+
+import './components/bead/beadController';
+import './components/campaign/campaignController';
+import './components/church/churchController';
+import './components/contribution/contributionController';
+import './components/contributor/contributorController';
+import './components/provingType/provingTypeController';
+
+import './shared/home/homeController';
 
 /**
   * @desc Configures the routes used to navigae over the application.
@@ -9,7 +18,9 @@ import './app.module';
 (function(){
     'use strict';
 
-    angular.module('paymentManagement').config(function ($stateProvider, $urlRouterProvider) {
+    angular.module('paymentManagement.routes', ['ui.router']);
+
+    angular.module('paymentManagement.routes').config(function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/');
 
