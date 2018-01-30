@@ -1,9 +1,10 @@
-var path = require('path');
-var webpack = require("webpack");
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const webpack = require("webpack");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const config = {
-    entry: './app/app.module.js',
+const config = {    
+	entry: "./app/app.module",
+	devtool: "source-map",
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js',
@@ -37,6 +38,10 @@ const config = {
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery"
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            include: /\.js$/,
+            minimize: true
         })
     ]
 };

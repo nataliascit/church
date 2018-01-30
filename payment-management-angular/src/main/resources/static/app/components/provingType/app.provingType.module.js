@@ -1,3 +1,5 @@
+import 'angular-resource';
+
 import '../../shared/environment/app.environment.module';
 import '../../shared/environment/environmentValue';
 
@@ -8,5 +10,5 @@ import '../../shared/environment/environmentValue';
 (function() {
 	'use strict';
 
-	angular.module('paymentManagement.provingType', ['paymentManagement.environment']);
+	angular.module('paymentManagement.provingType', ['ngResource', 'paymentManagement.environment']);
 }());

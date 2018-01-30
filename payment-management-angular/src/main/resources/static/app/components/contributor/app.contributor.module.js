@@ -1,3 +1,5 @@
+import 'angular-resource';
+
 import '../../shared/environment/app.environment.module';
 import '../../shared/environment/environmentValue';
 
@@ -8,5 +10,5 @@ import '../../shared/environment/environmentValue';
 (function() {
 	'use strict';
 	
-	angular.module('paymentManagement.contributor', ['paymentManagement.environment']);
+	angular.module('paymentManagement.contributor', ['ngResource', 'paymentManagement.environment']);
 }());
