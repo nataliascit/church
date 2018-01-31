@@ -12,7 +12,7 @@ import './app.bead.module.js';
 
 	beadModule.$inject = ['environmentValue', '$resource'];
 
-	beadModule.service('beadService', function ($resource) {
+	beadModule.service('beadService', function (environmentValue, $resource) {
 
 		var resources = $resource(environmentValue.apiBaseUrl + '/beads/:id', null, {
 			'create': {

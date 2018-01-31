@@ -19,8 +19,10 @@ import './shared/home/homeController';
     'use strict';
 
     angular.module('paymentManagement.routes', ['ui.router']);
-
-    angular.module('paymentManagement.routes').config(function ($stateProvider, $urlRouterProvider) {
+	
+	var routesModule = angular.module('paymentManagement.routes');
+	
+	routesModule.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/');
 
@@ -63,5 +65,5 @@ import './shared/home/homeController';
 				templateUrl: 'app/components/provingType/provingTypeView.html',
 				controller: 'provingTypeController as vm'		
 			});
-    });
+    }]);
 })();

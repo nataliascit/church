@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.module.js",
   "scripts": {
-    "build": "webpack",
+    "build-dev": "webpack --env.dev",
+    "build-prod": "webpack --env.prod",
     "mock-server": "node mock-server/run"
   },
   "author": "wcustodio",

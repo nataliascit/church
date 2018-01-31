@@ -12,8 +12,8 @@
 
     <artifactId>payment-management-angular</artifactId>
     <packaging>jar</packaging>
-
-    <build>
+	
+	<build>
         <plugins>
             <plugin>
                 <groupId>com.github.eirslett</groupId>
@@ -48,11 +48,29 @@
                             <goal>npm</goal>
                         </goals>
                         <configuration>
-                            <arguments>run build</arguments>
+                            <arguments>${npm.run.build.arguments}</arguments>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
+	
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<npm.run.build.arguments>run build-dev</npm.run.build.arguments>
+			</properties>
+		</profile>	
+		<profile>
+			<id>prod</id>
+			<activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+			<properties>
+				<npm.run.build.arguments>run build-prod</npm.run.build.arguments>
+			</properties>
+		</profile>	
+	</profiles>
 </project>
