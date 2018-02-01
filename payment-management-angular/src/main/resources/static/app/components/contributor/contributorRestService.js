@@ -10,11 +10,11 @@ import './app.contributor.module';
 
 	var contributorModule = angular.module('paymentManagement.contributor');
 
-	contributorModule.$inject = ['environmentValue', '$resource'];
+	contributorModule.$inject = ['environmentConfig', '$resource'];
 
-	contributorModule.service('contributionRestService', function (environmentValue, $resource) {
+	contributorModule.service('contributionRestService', function (environmentConfig, $resource) {
 
-		var resources = $resource(environmentValue.apiBaseUrl + '/contributors/:id', null, {
+		var resources = $resource(environmentConfig.apiBaseUrl + '/contributors/:id', null, {
 			'create': {
 				method:'POST'
 			},

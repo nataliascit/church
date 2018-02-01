@@ -1,13 +1,13 @@
-import '@uirouter/angularjs';
+import './app.environment.module';
 
-import './components/bead/beadController';
-import './components/campaign/campaignController';
-import './components/church/churchController';
-import './components/contribution/contributionController';
-import './components/contributor/contributorController';
-import './components/provingType/provingTypeController';
+import '../home/homeController';
 
-import './shared/home/homeController';
+import '../../components/bead/beadController';
+import '../../components/church/churchController';
+import '../../components/campaign/campaignController';
+import '../../components/contributor/contributorController';
+import '../../components/provingType/provingTypeController';
+import '../../components/contribution/contributionController';
 
 /**
   * @desc Configures the routes used to navigae over the application.
@@ -18,11 +18,9 @@ import './shared/home/homeController';
 (function(){
     'use strict';
 
-    angular.module('paymentManagement.routes', ['ui.router']);
+	var environmentModule = angular.module('paymentManagement.environment');
 	
-	var routesModule = angular.module('paymentManagement.routes');
-	
-	routesModule.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+	environmentModule.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/');
 

@@ -10,11 +10,11 @@ import './app.campaign.module';
 
 	var campaignModule = angular.module('paymentManagement.campaign');
 
-	campaignModule.$inject = ['environmentValue', '$resource'];
+	campaignModule.$inject = ['environmentConfig', '$resource'];
 
-	campaignModule.service('campaignRestService', function (environmentValue, $resource) {
+	campaignModule.service('campaignRestService', function (environmentConfig, $resource) {
 
-		var resources = $resource(environmentValue.apiBaseUrl + '/campaigns/:id', null, {
+		var resources = $resource(environmentConfig.apiBaseUrl + '/campaigns/:id', null, {
 			'create': {
 				method:'POST'
 			},

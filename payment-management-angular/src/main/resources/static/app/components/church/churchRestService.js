@@ -10,11 +10,11 @@ import './app.church.module';
 
 	var churchModule = angular.module('paymentManagement.church');
 
-	churchModule.$inject = ['environmentValue', '$resource'];
+	churchModule.$inject = ['environmentConfig', '$resource'];
 
-	churchModule.service('churchRestService', function (environmentValue, $resource) {
+	churchModule.service('churchRestService', function (environmentConfig, $resource) {
 
-		var resources =  $resource(environmentValue.apiBaseUrl + '/churches/:id', null, {
+		var resources =  $resource(environmentConfig.apiBaseUrl + '/churches/:id', null, {
 			'create': {
 				method:'POST'
 			},

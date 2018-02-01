@@ -1,5 +1,5 @@
 import '../../shared/environment/app.environment.module';
-import '../../shared/environment/environmentValue';
+import '../../shared/environment/environmentConfig';
 
 /**
   * @desc Configures the home module.

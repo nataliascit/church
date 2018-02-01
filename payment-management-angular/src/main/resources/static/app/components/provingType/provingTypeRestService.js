@@ -10,11 +10,11 @@ import './app.provingType.module';
 
 	var provingTypeModule = angular.module('paymentManagement.provingType');
 
-	provingTypeModule.$inject = ['environmentValue', '$resource'];
+	provingTypeModule.$inject = ['environmentConfig', '$resource'];
 
-	provingTypeModule.service('provingTypeRestService', function (environmentValue, $resource) {
+	provingTypeModule.service('provingTypeRestService', function (environmentConfig, $resource) {
 
-		var resources = $resource(environmentValue.apiBaseUrl + '/provingTypes/:id', null, {
+		var resources = $resource(environmentConfig.apiBaseUrl + '/provingTypes/:id', null, {
 			'create': {
 				method:'POST'
 			},
