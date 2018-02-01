@@ -1,7 +1,7 @@
 import 'angular-resource';
 
+import '../../shared/environment/environmentConfig';
 import '../../shared/environment/app.environment.module';
-import '../../shared/environment/environmentValue';
 
 /**
  * @desc Configures the contribution module.
