@@ -38,8 +38,10 @@
     "json-loader": "^0.5.7",
     "method-override": "^2.3.10",
     "morgan": "^1.9.0",
+    "node-sass": "^4.7.2",
     "popper.js": "^1.12.9",
     "raw-loader": "^0.5.1",
+    "sass-loader": "^6.0.6",
     "style-loader": "^0.13.1",
     "uglifyjs-webpack-plugin": "^1.1.8",
     "webpack": "^2.7.0"

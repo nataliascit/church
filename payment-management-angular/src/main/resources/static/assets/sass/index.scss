@@ -1,0 +1,56 @@
+/*COLORS
+darkBrown: #2E1E06;
+mediumBrown: #482C01;
+lightBrown: #AD5400;
+lighterBrown: #D18200;
+yellow: #FDD400;
+orange: #F26500;
+white: #fff;
+black: #000;
+*/
+
+.navbar-default {
+  background-color: #482C01;
+  border-color: transparent;
+  height: 120px;
+}
+
+.navbar-brand {
+  height: auto;
+  padding: 0 20px;
+}
+
+.navbar-nav, .navbar-nav>li {
+  height: 100%;
+}
+
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>li>a:hover {
+  color: #fff;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  padding: 10px 22px;
+}
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+  background-color: #D18200;
+  color: #fff;
+}
+.container {
+  height: 100%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #482C01;
+  color: #fff;
+  .text-footer {
+    text-align: center;
+    padding: 20px 0;
+  }
+}
