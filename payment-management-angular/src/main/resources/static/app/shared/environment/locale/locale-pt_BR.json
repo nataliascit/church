@@ -1,0 +1,11 @@
+{
+  "application": {
+    "menu": {
+      "home": "Início",
+      "campaign": "Campanha",
+      "contributor": "Contribuinte",
+      "contribution": "Novo lançamento",
+      "reports": "Relatórios"
+    }
+  }
+}
