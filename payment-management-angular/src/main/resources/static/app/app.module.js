@@ -15,13 +15,15 @@ import './shared/environment/translateConfig';
 import './shared/environment/environmentConfig';
 import './shared/environment/app.environment.module';
 
+import './shared/environment/locale/locale-pt_BR.json';
+
 /**
   * @description Configures the entire applications.  
   * @author wcustodio
   */
 (function(){
     'use strict';
-  
+	
 	angular.module('paymentManagement', [
 		'paymentManagement.bead',
 		'paymentManagement.campaign',
