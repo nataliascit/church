@@ -1,12 +1,9 @@
 module.exports = function(env) {
 
 	const path = require('path');
-	const webpack = require("webpack");
-    const CopyWebpackPlugin = require('copy-webpack-plugin');
+	const webpack = require("webpack");    	
 	const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-	console.log(path.join(__dirname, '..', 'app', 'shared', 'environment', 'locale'));
-
+	
 	const config = {
 		entry: "./app/app.module",
 		devtool: "source-map",
@@ -36,10 +33,10 @@ module.exports = function(env) {
 					test: /\.html$/,
 					loader: 'raw-loader'
 				},
-                {
+				{
                 	test: /\.json$/,
 					loader: 'json-loader'
-                }
+                }				
 			]
 		},
 		plugins: [
@@ -47,12 +44,8 @@ module.exports = function(env) {
 			new webpack.ProvidePlugin({
 				$: "jquery",
 				jQuery: "jquery"
-			}),
-            new CopyWebpackPlugin([
-                { from: path.join(__dirname, '..', 'app', 'shared', 'environment', 'locale'), to: 'locale' }
-             ])
+			})			
 		]
 	};
-	
 	return config;
-}
+};

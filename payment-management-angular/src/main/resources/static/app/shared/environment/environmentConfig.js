@@ -9,8 +9,7 @@ import './app.environment.module';
 
     var environmentConfig = {
         apiBaseUrl: window.location.origin + '/api',
-        languages:  ['pt_BR']
+        availableLanguages: ['pt_BR']
     };
-
 	angular.module('paymentManagement.environment').constant("environmentConfig", environmentConfig);
 }());

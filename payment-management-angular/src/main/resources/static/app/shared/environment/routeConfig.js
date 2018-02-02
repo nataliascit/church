@@ -28,40 +28,58 @@ import '../../components/contribution/contributionController';
 			.state('application', {
 				abstract: true
 			})
-            .state('application.home', {
-                url: '/',
-                templateUrl: 'app/shared/home/homeView.html',
-                controller: 'homeController as vm'
-            })
+			.state('application.home', {
+				url: '/',
+				templateUrl: 'app/shared/home/homeView.html',
+				controller: 'homeController as vm'
+			})
 			.state('application.bead', {
 				url: '/beads/:id',
 				templateUrl: 'app/components/bead/beadView.html',
-				controller: 'beadController as vm'
+				controller: 'beadController as vm',
+				params: {
+					id: null
+				}
 			})
 			.state('application.campaign', {
 				url: '/campaigns/:id',
 				templateUrl: 'app/components/campaign/campaignView.html',
-				controller: 'campaignController as vm'
+				controller: 'campaignController as vm',
+				params: {
+					id: null
+				}
 			})
 			.state('application.church', {
 				url: '/churches/:id',
 				templateUrl: 'app/components/church/churchView.html',
-				controller: 'churchController as vm'
+				controller: 'churchController as vm',
+				params: {
+					id: null
+				}
 			})
 			.state('application.contribution', {
 				url: '/contributions/:id',
 				templateUrl: 'app/components/contribution/contributionView.html',
-				controller: 'contributionController as vm'
+				controller: 'contributionController as vm',
+				params: {
+					id: null
+				}
 			})
 			.state('application.contributor', {
 				url: '/contributors/:id',
 				templateUrl: 'app/components/contributor/contributorView.html',
-				controller: 'contributorController as vm'
+				controller: 'contributorController as vm',
+				params: {
+					id: null
+				}
 			})
 			.state('application.provingType', {
 				url: '/provingTypes/:id',
 				templateUrl: 'app/components/provingType/provingTypeView.html',
-				controller: 'provingTypeController as vm'		
+				controller: 'provingTypeController as vm',
+				params: {
+					id: null
+				}
 			});
     }]);
 })();

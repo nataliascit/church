@@ -12,5 +12,5 @@ import 'angular-translate-loader-static-files';
 (function() {
 	'use strict';
 	
-	angular.module('paymentManagement.environment', ['ngCookies', 'ngSanitize', 'ui.router', 'pascalprecht.translate']);
+	angular.module('paymentManagement.environment', ['ui.router', 'ngCookies', 'ngSanitize', 'pascalprecht.translate']);
 }());
