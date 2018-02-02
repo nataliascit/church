@@ -2,16 +2,16 @@ import './app.bead.module';
 import './beadRestService';
 
 /**
-  * @desc This Controller is responsible for handling the view 'beadView.html'
-  * @author wcustodio
-  */
-(function() {
-	'use strict';
+ * @desc This Controller is responsible for handling the view 'beadView.html'
+ * @author wcustodio
+ */
+(function () {
+    'use strict';
 
-	var beadModule = angular.module('paymentManagement.bead');
+    var beadModule = angular.module('paymentManagement.bead');
 
-	beadModule.$inject = [];
+    beadModule.$inject = [];
 
-	beadModule.controller('beadController', function () {
-	});
+    beadModule.controller('beadController', function () {
+    });
 }());

@@ -2,16 +2,16 @@ import './app.contribution.module';
 import './contributionRestService';
 
 /**
-  * @desc This Controller is responsible for handling the view 'contributionView.html'
-  * @author wcustodio
-  */
-(function() {
-	'use strict';	
-	
-	var contributionModule = angular.module('paymentManagement.contribution');
+ * @desc This Controller is responsible for handling the view 'contributionView.html'
+ * @author wcustodio
+ */
+(function () {
+    'use strict';
 
-	contributionModule.$inject = [];
+    var contributionModule = angular.module('paymentManagement.contribution');
 
-	contributionModule.controller('contributionController', function () {
-	});
+    contributionModule.$inject = [];
+
+    contributionModule.controller('contributionController', function () {
+    });
 }());

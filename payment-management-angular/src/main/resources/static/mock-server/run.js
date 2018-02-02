@@ -1,17 +1,17 @@
 /* set up */
 const path = require('path');
-const express  = require('express');
-const morgan = require('morgan');             
-const bodyParser = require('body-parser');    
-const methodOverride = require('method-override'); 
+const express = require('express');
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 
 /* configuration */
-const app = express();                               
-app.use(express.static(path.join(__dirname, '..')));                 
-app.use(morgan('dev'));                                         
-app.use(bodyParser.urlencoded({'extended':'true'}));            
-app.use(bodyParser.json());                                     
-app.use(bodyParser.json({ type: 'application/vnd.api+json' })); 
+const app = express();
+app.use(express.static(path.join(__dirname, '..')));
+app.use(morgan('dev'));
+app.use(bodyParser.urlencoded({'extended': 'true'}));
+app.use(bodyParser.json());
+app.use(bodyParser.json({type: 'application/vnd.api+json'}));
 app.use(methodOverride());
 
 const languagePath = path.join(__dirname, '..', 'app', 'shared', 'environment', 'locale');
