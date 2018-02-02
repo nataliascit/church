@@ -22,8 +22,7 @@
     "angular-translate-loader-static-files": "^2.17.0",
     "angular-translate-storage-cookie": "^2.17.0",
     "bootstrap": "3.3.7",
-    "jquery": "^3.3.1",
-    "json-loader": "^0.5.7"
+    "jquery": "^3.3.1"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
@@ -36,12 +35,13 @@
     "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "file-loader": "^1.1.6",
     "image-webpack-loader": "^3.1.0",
+    "json-loader": "^0.5.7",
     "method-override": "^2.3.10",
     "morgan": "^1.9.0",
     "popper.js": "^1.12.9",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.13.1",
     "uglifyjs-webpack-plugin": "^1.1.8",
-    "webpack": "^2.2.0-rc.0"
+    "webpack": "^2.7.0"
   }
 }

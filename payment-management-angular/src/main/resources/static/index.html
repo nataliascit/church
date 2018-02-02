@@ -7,36 +7,37 @@
 		<!-- END APPLICATION STYLESHEET -->
     </head>
     <body>
-      <section>
-        <header>
-          <nav class="navbar navbar-default">
-            <div class="container">
-              <div class="navbar-header">
-                <a class="navbar-brand" href="#"><img src="./assets/images/logo.png" /></a>
-              </div>
+		<section>
+		<header>
+		  <nav class="navbar navbar-default">
+			<div class="container">
+			  <div class="navbar-header">
+				<a class="navbar-brand" href="#"><img src="./assets/images/logo.png" /></a>
+			  </div>
 
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Início</a></li>
-                <li><a href="./components/campaign/campaignView.html">Campanha</a></li>
-                <li><a href="./components/contributor/contributorView.html">{{ 'test' | translate }}</a></li>
-                <li><a href="./components/contribution/contributionView.html">Novo lançamento</a></li>
-                <li><a href="./components/provingType/provingTypeView.html">Relatório</a></li>
-              </ul>
-            </div>
-          </nav>
-        </header>
-      </section>
+			  <ul class="nav navbar-nav">				
+				<li ui-sref-active-eq="active"><a data-ui-sref="application.home">{{ 'application.menu.home' | translate }}</a></li>
+				<li ui-sref-active-eq="active"><a data-ui-sref="application.campaign">{{ 'application.menu.campaign' | translate }}</a></li>
+				<li ui-sref-active-eq="active"><a data-ui-sref="application.contributor">{{ 'application.menu.contributor' | translate }}</a></li>
+				<li ui-sref-active-eq="active"><a data-ui-sref="application.contribution">{{ 'application.menu.contribution' | translate }}</a></li>
+				<li ui-sref-active-eq="active"><a data-ui-sref="application.provingType">{{ 'application.menu.reports' | translate }}</a></li>
+			  </ul>
+			</div>
+		  </nav>
+		</header>
+		</section>
 
-      <section data-ui-view></section>
+		<section data-ui-view></section>
 
-      <section>
-        <footer class="footer">
-          <div class="container">
-            <p class="text-footer">&copy; 2018 Copyright - Todos os direitos reservados</p>
-          </div>
-        </footer>
-      </section>
-        <!-- BEGIN APPLICATION SCRIPTS -->
+		<section>
+		<footer class="footer">
+		  <div class="container">
+			<p class="text-footer">&copy; 2018 Copyright - Todos os direitos reservados</p>
+		  </div>
+		</footer>
+		</section>
+	  
+		<!-- BEGIN APPLICATION SCRIPTS -->
 		<script type="text/javascript" src="./build/bundle.js"></script>
 		<!-- END APPLICATION SCRIPTS -->
     </body>
