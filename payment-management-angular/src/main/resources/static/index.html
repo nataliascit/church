@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html data-ng-app="paymentManagement" lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<!-- BEGIN APPLICATION STYLESHEET -->
-		<link rel="stylesheet" href="./build/style.css"/>
-		<link rel="stylesheet" href="./assets/sass/sass.scss"/>
-		<!-- END APPLICATION STYLESHEET -->
-    </head>
-    <body>
-		<section>
-		<header>
-		  <nav class="navbar navbar-default">
-			<div class="container">
-			  <div class="navbar-header">
-				<a class="navbar-brand" href="#"><img src="./assets/images/logo.png" /></a>
-			  </div>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!-- BEGIN APPLICATION STYLESHEET -->
+    <link rel="stylesheet" href="./build/style.css"/>
+    <!-- END APPLICATION STYLESHEET -->
+</head>
+<body>
+<section>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"><img src="./assets/images/logo.png"/></a>
+                </div>
 
-			  <ul class="nav navbar-nav">				
-				<li ui-sref-active-eq="active"><a data-ui-sref="application.home">{{ 'application.menu.home' | translate }}</a></li>
-				<li ui-sref-active-eq="active"><a data-ui-sref="application.campaign">{{ 'application.menu.campaign' | translate }}</a></li>
-				<li ui-sref-active-eq="active"><a data-ui-sref="application.contributor">{{ 'application.menu.contributor' | translate }}</a></li>
-				<li ui-sref-active-eq="active"><a data-ui-sref="application.contribution">{{ 'application.menu.contribution' | translate }}</a></li>
-				<li ui-sref-active-eq="active"><a data-ui-sref="application.provingType">{{ 'application.menu.reports' | translate }}</a></li>
-			  </ul>
-			</div>
-		  </nav>
-		</header>
-		</section>
+                <ul class="nav navbar-nav">
+                    <li ui-sref-active-eq="active"><a data-ui-sref="application.home">{{ 'application.menu.home' | translate }}</a></li>
+                    <li ui-sref-active-eq="active"><a data-ui-sref="application.campaign">{{ 'application.menu.campaign' | translate }}</a></li>
+                    <li ui-sref-active-eq="active"><a data-ui-sref="application.contributor">{{ 'application.menu.contributor' | translate }}</a></li>
+                    <li ui-sref-active-eq="active"><a data-ui-sref="application.contribution">{{ 'application.menu.contribution' | translate }}</a></li>
+                    <li ui-sref-active-eq="active"><a data-ui-sref="application.report">{{ 'application.menu.reports' | translate }}</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+</section>
 
-		<section data-ui-view></section>
+<section data-ui-view></section>
 
-		<section>
-		<footer class="footer">
-		  <div class="container">
-			<p class="text-footer">&copy; 2018 Copyright - Todos os direitos reservados</p>
-		  </div>
-		</footer>
-		</section>
-	  
-		<!-- BEGIN APPLICATION SCRIPTS -->
-		<script type="text/javascript" src="./build/bundle.js"></script>
-		<!-- END APPLICATION SCRIPTS -->
-    </body>
+<section>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-footer">&copy; 2018 Copyright - Todos os direitos reservados</p>
+        </div>
+    </footer>
+</section>
+
+<!-- BEGIN APPLICATION SCRIPTS -->
+<script type="text/javascript" src="./build/bundle.js"></script>
+<!-- END APPLICATION SCRIPTS -->
+</body>
 </html>

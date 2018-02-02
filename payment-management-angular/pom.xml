@@ -17,14 +17,13 @@
         <resources>
             <resource>
                 <directory>src/main/resources/</directory>
+                <includes>
+                    <include>**/build/**</include>
+                    <include>**/*.html</include>
+                    <include>**/locale-*.json</include>
+                </includes>
                 <excludes>
-                    <exclude>static/.npmrc</exclude>
-                    <exclude>static/package.json</exclude>
-                    <exclude>static/webpack.config.js</exclude>
-                    <exclude>static/app/**/**/*.js</exclude>
-                    <exclude>static/config/**</exclude>
-                    <exclude>static/mock-server/**</exclude>
-                    <exclude>static/node_modules/**</exclude>
+                    <exclude>**/node_modules/**</exclude>
                 </excludes>
             </resource>
         </resources>
