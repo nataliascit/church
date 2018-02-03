@@ -14,9 +14,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.json({type: 'application/vnd.api+json'}));
 app.use(methodOverride());
 
-const languagePath = path.join(__dirname, '..', 'app', 'shared', 'environment', 'locale');
-app.use(express.static(languagePath));
-
 /* listen (start app with node server.js) */
 app.listen(8080);
 console.log("App listening on port 8080");
