@@ -1,7 +1,8 @@
-module.exports = function (env) {
+module.exports = function () {
 
     const Path = require('path');
     const WebPack = require("webpack");
+    const CopyWebpackPlugin = require('copy-webpack-plugin');
     const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
     const config = {
@@ -44,7 +45,11 @@ module.exports = function (env) {
             new WebPack.ProvidePlugin({
                 $: "jquery",
                 jQuery: "jquery"
-            })
+            }),
+            new CopyWebpackPlugin([{
+                from: Path.join(__dirname, '..', 'app', 'shared', 'environment', 'locale'),
+                to: 'locale'
+            }])
         ]
     };
     return config;

@@ -20,7 +20,7 @@ import './locale/locale-pt_BR.json'
         $qProvider.errorOnUnhandledRejections(false);
 
         $translateProvider.useStaticFilesLoader({
-            prefix: 'locale-',
+            prefix: 'build/locale/locale-',
             suffix: '.json'
         });
         $translateProvider.registerAvailableLanguageKeys(environmentConfig.availableLanguages, {
