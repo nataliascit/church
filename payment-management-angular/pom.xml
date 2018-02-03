@@ -71,13 +71,13 @@
 
 	<profiles>
 		<profile>
-			<id>dev</id>
+			<id>angular-dev</id>
 			<properties>
 				<npm.run.build.arguments>run build-dev</npm.run.build.arguments>
 			</properties>
 		</profile>
 		<profile>
-			<id>prod</id>
+			<id>angular-prod</id>
 			<activation>
                 <activeByDefault>true</activeByDefault>
             </activation>

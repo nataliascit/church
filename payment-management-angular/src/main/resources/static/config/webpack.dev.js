@@ -46,10 +46,16 @@ module.exports = function () {
                 $: "jquery",
                 jQuery: "jquery"
             }),
-            new CopyWebpackPlugin([{
-                from: Path.join(__dirname, '..', 'app', 'shared', 'environment', 'locale'),
-                to: 'locale'
-            }])
+            new CopyWebpackPlugin([
+                {
+                    from: Path.join(__dirname, '..', 'app', 'shared', 'environment', 'locale'),
+                    to: 'locale'
+                },
+                {
+                    from: Path.join(__dirname, '..', 'assets', 'images'),
+                    to: 'assets/images'
+                }
+            ])
         ]
     };
     return config;
