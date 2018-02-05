@@ -20,6 +20,8 @@ spring:
         show_sql: @jpa.properties.hibernate.show_sql@
         use_sql_comments: @jpa.properties.hibernate.use_sql_comments@
         format_sql: @jpa.properties.hibernate.format_sql@
+  thymeleaf:
+    mode: LEGACYHTML5
 
 ###
 #   Server Settings

@@ -21,9 +21,11 @@ import '../../components/contribution/contributionController';
 
     var environmentModule = angular.module('paymentManagement.environment');
 
-    environmentModule.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+    environmentModule.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
         $urlRouterProvider.otherwise('/');
+
+        $locationProvider.html5Mode(true);
 
         $stateProvider
             .state('application', {
