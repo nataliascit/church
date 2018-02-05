@@ -5,7 +5,8 @@ import './shared/home/app.home.module';
 import './components/bead/app.bead.module';
 import './components/church/app.church.module';
 import './components/report/app.report.module';
-import './components/campaign/app.campaign.module'
+import './components/campaign/app.campaign.module';
+import './components/registerCampaign/app.registerCampaign.module';
 import './components/contributor/app.contributor.module';
 import './components/provingType/app.provingType.module';
 import './components/contribution/app.contribution.module';
