@@ -10,5 +10,11 @@ import './app.home.module';
     var homeModule = angular.module('paymentManagement.home');
 
     homeModule.controller('homeController', function () {
+
+        var vm = this;
+
+        vm.logoutOnClick = function() {
+            console.log("TEST");
+        }
     });
 }());
