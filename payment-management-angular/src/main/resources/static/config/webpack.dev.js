@@ -9,7 +9,7 @@ module.exports = function () {
         entry: "./app/app.module",
         devtool: "source-map",
         output: {
-            path: Path.join(__dirname, '..', 'build'),
+            path: Path.join(__dirname, '..', '..', 'public', 'build'),
             filename: 'bundle.js',
             publicPath: 'build/'
         },
