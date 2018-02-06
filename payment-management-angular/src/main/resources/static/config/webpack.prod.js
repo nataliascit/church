@@ -8,7 +8,7 @@ module.exports = function () {
     const config = {
         entry: "./app/app.module",
         output: {
-            path: Path.join(__dirname, '..', 'build'),
+            path: Path.join(__dirname, '..', '..', 'public', 'build'),
             filename: 'bundle.js',
             publicPath: 'build/'
         },
