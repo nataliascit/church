@@ -29,15 +29,15 @@ import '../../components/contribution/contributionController';
 
         $stateProvider
             .state('application', {
-                abstract: true
+              url: '/pages',
             })
             .state('application.home', {
-                url: '/pages/home',
+                url: '/home',
                 templateUrl: 'app/shared/home/homeView.html',
                 controller: 'homeController as vm'
             })
             .state('application.bead', {
-                url: '/pages/beads/:id',
+                url: '/beads/:id',
                 templateUrl: 'app/components/bead/beadView.html',
                 controller: 'beadController as vm',
                 params: {
@@ -45,7 +45,7 @@ import '../../components/contribution/contributionController';
                 }
             })
             .state('application.campaign', {
-                url: '/pages/campaigns/:id',
+                url: '/campaigns/:id',
                 templateUrl: 'app/components/campaign/campaignView.html',
                 controller: 'campaignController as vm',
                 params: {
@@ -53,7 +53,7 @@ import '../../components/contribution/contributionController';
                 }
             })
             .state('application.church', {
-                url: '/pages/churches/:id',
+                url: '/churches/:id',
                 templateUrl: 'app/components/church/churchView.html',
                 controller: 'churchController as vm',
                 params: {
@@ -61,7 +61,7 @@ import '../../components/contribution/contributionController';
                 }
             })
             .state('application.contribution', {
-                url: '/pages/contributions/:id',
+                url: '/contributions/:id',
                 templateUrl: 'app/components/contribution/contributionView.html',
                 controller: 'contributionController as vm',
                 params: {
@@ -69,7 +69,7 @@ import '../../components/contribution/contributionController';
                 }
             })
             .state('application.contributor', {
-                url: '/pages/contributors/:id',
+                url: '/contributors/:id',
                 templateUrl: 'app/components/contributor/contributorView.html',
                 controller: 'contributorController as vm',
                 params: {
@@ -77,7 +77,7 @@ import '../../components/contribution/contributionController';
                 }
             })
             .state('application.provingType', {
-                url: '/pages/provingTypes/:id',
+                url: '/provingTypes/:id',
                 templateUrl: 'app/components/provingType/provingTypeView.html',
                 controller: 'provingTypeController as vm',
                 params: {
@@ -85,7 +85,7 @@ import '../../components/contribution/contributionController';
                 }
             })
             .state('application.report', {
-                url: '/pages/reports',
+                url: '/reports',
                 templateUrl: 'app/components/report/reportView.html',
                 controller: 'reportController as vm'
             });
