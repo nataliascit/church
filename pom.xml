@@ -18,10 +18,13 @@
     <modules>
         <module>payment-management-batch</module>
         <module>payment-management-core</module>
+        <module>payment-management-security</module>
         <module>payment-management-webapp</module>
     </modules>
     
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
     

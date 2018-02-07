@@ -20,6 +20,11 @@
             <artifactId>payment-management-core</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+        <dependency>
+            <groupId>br.com.church.payment.management</groupId>
+            <artifactId>payment-management-security</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
 
         <!-- SPRING DEPENDENCIES -->
         <dependency>
@@ -29,10 +34,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.data</groupId>
