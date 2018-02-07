@@ -1,16 +1,24 @@
-###
-#   Database Settings
-###
+# ==============
+# = Data Source
+# ==============
 spring:
-  data:
-    rest:
-      basePath: api
   datasource:
     url: @datasource.url@
     platform: @datasource.platform@
     username: @datasource.username@
     password: @datasource.password@
     driverClassName: @datasource.driver@
+
+# ===================
+# = Spring Data Rest
+# ===================
+  data:
+      rest:
+        basePath: api
+
+# ==================
+# = Jpa / Hibernate
+# ==================
   jpa:
     database-platform: @jpa.database.platform@
     hibernate:
@@ -20,19 +28,31 @@ spring:
         show_sql: @jpa.properties.hibernate.show_sql@
         use_sql_comments: @jpa.properties.hibernate.use_sql_comments@
         format_sql: @jpa.properties.hibernate.format_sql@
+
+# ===============================
+# = Thymeleaf configurations
+# ===============================
   thymeleaf:
     mode: LEGACYHTML5
+    cache: false
 
-###
-#   Server Settings
-###
+# ==============================================================
+# = Spring Security / Queries for AuthenticationManagerBuilder
+# ==============================================================
+  queries:
+    users-query: SELECT USERNAME, PASSWORD, ACTIVE FROM USER WHERE USERNAME=?
+    roles-query: SELECT U.USERNAME, R.ROLE FROM USER U INNER JOIN USER_ROLE UR ON(U.ID=UR.ID_USER) INNER JOIN ROLE R ON(UR.ID_ROLE=R.ID) WHERE U.USERNAME=?
+
+# ==================
+# = Server settings
+# ==================
 server:
   port: 8081
   contextPath: /payment-management
 
-###
-#   H2 Settings
-###
+# ==============
+# = H2 settings
+# ==============
   h2:
     console:
       enabled: @h2.console.enable@
@@ -41,9 +61,9 @@ server:
         trace: false
         web-allow-others: false
 
-###
-#   Logging Settings
-###
+# ===================
+# = Logging Settings
+# ===================
 logging:
     level:
       root: @logging.level.root@

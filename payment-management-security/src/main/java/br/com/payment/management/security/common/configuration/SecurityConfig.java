@@ -1,16 +1,48 @@
-package br.com.payment.management.webapp.common.configuration;
+package br.com.payment.management.security.common.configuration;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    private DataSource dataSource;
+
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    @Value("${spring.queries.users-query}")
+    private String usersQuery;
+
+    @Value("${spring.queries.roles-query}")
+    private String rolesQuery;
+
+    @Value("${spring.login.page.url}")
+    private String loginPageUrl;
+
+    @Value("${spring.login.error.page.url}")
+    private String loginErrorPageUrl;
+
+    @Value("${spring.default.success.url}")
+    private String defaultSuccessUrl;
+
+    @Value("${spring.admin.pages.url}")
+    private String adminPagesUrl;
+
+    @Value("${spring.admin.role}")
+    private String adminRole;
 
     /**
      * This section defines the user accounts which can be used for
@@ -18,7 +50,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("cpm").password("cpm").roles("ADMIN");
+        auth.jdbcAuthentication()
+            .usersByUsernameQuery(usersQuery)
+            .authoritiesByUsernameQuery(rolesQuery)
+            .dataSource(dataSource)
+            .passwordEncoder(bCryptPasswordEncoder);
     }
 
     /**
@@ -38,7 +74,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .antMatchers("/pages/**").hasAuthority("ADMIN").anyRequest()
             .authenticated().and().csrf().disable().formLogin()
             .loginPage("/login").failureUrl("/login?error")
-            .defaultSuccessUrl("/home")
+            .defaultSuccessUrl("/pages/home")
             .and().logout()
             .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
             .logoutSuccessUrl("/").and().exceptionHandling()
