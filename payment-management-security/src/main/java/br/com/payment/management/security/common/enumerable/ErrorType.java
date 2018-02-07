@@ -6,5 +6,5 @@ package br.com.payment.management.security.common.enumerable;
  * @author wcustodio
  */
 public enum ErrorType {
-    INFO, WARNING, ERROR;
+    INFO, WARNING, ERROR
 }
