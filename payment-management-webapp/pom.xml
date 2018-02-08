@@ -84,8 +84,8 @@
                 <!-- JPA -->
                 <jpa.database.platform>org.hibernate.dialect.H2Dialect</jpa.database.platform>
                 <jpa.hibernate.dll.auto>update</jpa.hibernate.dll.auto>
-                <jpa.properties.hibernate.show_sql>false</jpa.properties.hibernate.show_sql>
-                <jpa.properties.hibernate.use_sql_comments>false</jpa.properties.hibernate.use_sql_comments>
+                <jpa.properties.hibernate.show_sql>true</jpa.properties.hibernate.show_sql>
+                <jpa.properties.hibernate.use_sql_comments>true</jpa.properties.hibernate.use_sql_comments>
                 <jpa.properties.hibernate.format_sql>true</jpa.properties.hibernate.format_sql>
                 <!-- H2 -->
                 <h2.console.enable>true</h2.console.enable>
