@@ -1,11 +1,19 @@
 package br.com.payment.management.security.user.model;
 
-import br.com.payment.management.security.role.model.Role;
-import org.hibernate.validator.constraints.Length;
-
-import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
 import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+import br.com.payment.management.security.role.model.Role;
 
 /**
  * The representation of a user responsible for executing actions over an application.
@@ -17,26 +25,20 @@ import java.util.List;
 public class User {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private int id;
 
 	@Column(name = "USERNAME")
-	@NotEmpty(message = "user.username.empty.error")
 	private String username;
 
 	@Column(name = "PASSWORD")
-	@Length(min = 5, message = "user.password.size.error")
-	@NotEmpty(message = "user.password.empty.error")
-	@Transient
 	private String password;
 
 	@Column(name = "NAME")
-	@NotEmpty(message = "user.name.empty.error")
 	private String name;
 
 	@Column(name = "LAST_NAME")
-	@NotEmpty(message = "user.lastName.empty.error")
 	private String lastName;
 
 	@Column(name = "ACTIVE")

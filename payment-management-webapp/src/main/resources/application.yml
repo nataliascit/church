@@ -56,7 +56,6 @@ spring:
       users: SELECT USERNAME, PASSWORD, ACTIVE FROM USER WHERE USERNAME=?
       roles: SELECT U.USERNAME, R.ROLE FROM USER U INNER JOIN USER_ROLE UR ON(U.ID=UR.ID_USER) INNER JOIN ROLE R ON(UR.ID_ROLE=R.ID) WHERE U.USERNAME=?
 
-
 # ==================
 # = Server settings
 # ==================
