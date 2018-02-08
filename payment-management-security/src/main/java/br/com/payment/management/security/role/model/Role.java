@@ -1,8 +1,13 @@
 package br.com.payment.management.security.role.model;
 
-import br.com.payment.management.security.user.model.User;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-import javax.persistence.*;
+import br.com.payment.management.security.user.model.User;
 
 /**
  * The representation of role associated to an {@link User}.
@@ -14,7 +19,7 @@ import javax.persistence.*;
 public class Role {
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID")
 	private int id;
 

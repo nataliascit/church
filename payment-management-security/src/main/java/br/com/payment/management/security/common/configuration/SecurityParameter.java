@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class Parameters {
+public class SecurityParameter {
 
   @Value("${spring.security.queries.users}")
   private String usersQuery;
