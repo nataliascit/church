@@ -39,9 +39,23 @@ spring:
 # ==============================================================
 # = Spring Security / Queries for AuthenticationManagerBuilder
 # ==============================================================
-  queries:
-    users-query: SELECT USERNAME, PASSWORD, ACTIVE FROM USER WHERE USERNAME=?
-    roles-query: SELECT U.USERNAME, R.ROLE FROM USER U INNER JOIN USER_ROLE UR ON(U.ID=UR.ID_USER) INNER JOIN ROLE R ON(UR.ID_ROLE=R.ID) WHERE U.USERNAME=?
+  security:
+    ignoredUrl: /build/**
+    role:
+      admin:
+        mnemonic: ADMIN
+        securedUrl: /pages/**
+    login:
+      url: /login
+      errorUrl: /login?error
+      successUrl: /pages/home
+      accessDeniedUrl: /errors/403
+    logout:
+      url: /logout
+    queries:
+      users: SELECT USERNAME, PASSWORD, ACTIVE FROM USER WHERE USERNAME=?
+      roles: SELECT U.USERNAME, R.ROLE FROM USER U INNER JOIN USER_ROLE UR ON(U.ID=UR.ID_USER) INNER JOIN ROLE R ON(UR.ID_ROLE=R.ID) WHERE U.USERNAME=?
+
 
 # ==================
 # = Server settings

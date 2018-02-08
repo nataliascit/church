@@ -21,40 +21,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private DataSource dataSource;
 
     @Autowired
+    private Parameters parameters;
+
+    @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
-
-    @Value("${spring.queries.users-query}")
-    private String usersQuery;
-
-    @Value("${spring.queries.roles-query}")
-    private String rolesQuery;
-
-    @Value("${spring.login.page.url}")
-    private String loginPageUrl;
-
-    @Value("${spring.login.error.page.url}")
-    private String loginErrorPageUrl;
-
-    @Value("${spring.default.success.url}")
-    private String defaultSuccessUrl;
-
-    @Value("${spring.admin.pages.url}")
-    private String adminPagesUrl;
-
-    @Value("${spring.admin.role}")
-    private String adminRole;
 
     /**
      * This section defines the user accounts which can be used for
      * authentication as well as the roles each user has.
      */
     @Override
-    public void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication()
-            .usersByUsernameQuery(usersQuery)
-            .authoritiesByUsernameQuery(rolesQuery)
-            .dataSource(dataSource)
-            .passwordEncoder(bCryptPasswordEncoder);
+    public void configure(final AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
+        authenticationManagerBuilder.jdbcAuthentication()
+            .usersByUsernameQuery(this.parameters.getUsersQuery())
+            .authoritiesByUsernameQuery(this.parameters.getRolesQuery())
+            .dataSource(this.dataSource)
+            .passwordEncoder(this.bCryptPasswordEncoder);
     }
 
     /**
@@ -67,22 +49,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      * NOTE: GET is not shown which defaults to permitted.
      */
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.httpBasic().and()
+    protected void configure(final HttpSecurity httpSecurity) throws Exception {
+        httpSecurity.httpBasic().and()
             .authorizeRequests()
-            .antMatchers("/login").permitAll()
-            .antMatchers("/pages/**").hasAuthority("ADMIN").anyRequest()
+            .antMatchers(this.parameters.getLoginUrl()).permitAll()
+            .antMatchers(this.parameters.getAdminRoleSecuredUrl()).hasAuthority(this.parameters.getAdminRole()).anyRequest()
             .authenticated().and().csrf().disable().formLogin()
-            .loginPage("/login").failureUrl("/login?error")
-            .defaultSuccessUrl("/pages/home")
+            .loginPage(this.parameters.getLoginUrl()).failureUrl(this.parameters.getLoginErrorUrl())
+            .defaultSuccessUrl(this.parameters.getLoginSuccessUrl())
             .and().logout()
-            .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-            .logoutSuccessUrl("/").and().exceptionHandling()
-            .accessDeniedPage("/errors/403");
+            .logoutRequestMatcher(new AntPathRequestMatcher(this.parameters.getLogoutUrl()))
+            .logoutSuccessUrl(this.parameters.getLoginUrl()).and().exceptionHandling()
+            .accessDeniedPage(this.parameters.getLoginAccessDeniedUrl());
     }
 
     @Override
-    public void configure(WebSecurity web) {
-        web.ignoring().antMatchers("/build/**");
+    public void configure(final WebSecurity webSecurity) {
+        webSecurity.ignoring().antMatchers(this.parameters.getIgnoredUrl());
     }
 }

@@ -54,7 +54,6 @@
             <artifactId>nekohtml</artifactId>
         </dependency>
 
-
         <!-- UNIT TEST DEPENDENCIES -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
