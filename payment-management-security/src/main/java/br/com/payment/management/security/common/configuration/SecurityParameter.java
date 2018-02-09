@@ -3,6 +3,11 @@ package br.com.payment.management.security.common.configuration;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Class responsible for reading the security options from 'application.yml' file.
+ *
+ * @author wcustodio
+ */
 @Configuration
 public class SecurityParameter {
 
