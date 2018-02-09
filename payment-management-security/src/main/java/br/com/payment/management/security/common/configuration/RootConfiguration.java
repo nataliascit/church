@@ -4,6 +4,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+/**
+ * Class responsible for the main application's configuration.
+ *
+ * @author wcustodio
+ */
 @Configuration
 public class RootConfiguration {
 
