@@ -52,6 +52,7 @@ public class ContributorRepositoryTest extends BaseTestRunner {
     public void testSaveWithValidInformation() throws IOException {
         // Get the mocked information to be used as base.
         final Contributor contributor = (Contributor) JSONUtil.fileToBean(ConfigurationCatalog.CONTRIBUTOR_FILE_PATH.getValue(), TypeFactory.defaultInstance().constructType(Contributor.class));
+        contributor.setFiscalNumber(90909090L);
         // Performs the persistence of the new contributor.
         this.contributorRepository.save(contributor);
         // Verifies if the number of contributors were increased by 1.
