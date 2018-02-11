@@ -10,9 +10,7 @@ import './app.campaign.module';
 
     var campaignModule = angular.module('paymentManagement.campaign');
 
-    campaignModule.$inject = ['environmentConfig', '$resource'];
-
-    campaignModule.service('campaignRestService', function (environmentConfig, $resource) {
+    function CampaignRestService(environmentConfig, $resource) {
 
         var resources = $resource(environmentConfig.apiBaseUrl + '/campaigns/:id', null, {
             'create': {
@@ -125,5 +123,7 @@ import './app.campaign.module';
             find: _find,
             findAll: _findAll
         }
-    });
+    }
+
+    campaignModule.service('campaignRestService', ['environmentConfig', '$resource', CampaignRestService]);
 }());

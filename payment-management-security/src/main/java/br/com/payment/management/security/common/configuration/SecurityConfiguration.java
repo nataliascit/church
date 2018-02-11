@@ -1,7 +1,5 @@
 package br.com.payment.management.security.common.configuration;
 
-import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -11,6 +9,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+import javax.sql.DataSource;
 
 /**
  * Class responsible for setting up the security options.
@@ -57,7 +57,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         httpSecurity.httpBasic().and()
             .authorizeRequests()
             .antMatchers(this.parameters.getLoginUrl()).permitAll()
-            .antMatchers(this.parameters.getAdminRoleSecuredUrl()).hasAuthority(this.parameters.getAdminRole()).anyRequest()
+            .antMatchers(this.parameters.getAdminRoleSecuredPageUrl()).hasAuthority(this.parameters.getAdminRole())
+            .antMatchers(this.parameters.getAdminRoleSecuredApiUrl()).hasAuthority(this.parameters.getAdminRole()).anyRequest()
             .authenticated().and().csrf().disable().formLogin()
             .loginPage(this.parameters.getLoginUrl()).failureUrl(this.parameters.getLoginErrorUrl())
             .defaultSuccessUrl(this.parameters.getLoginSuccessUrl())

@@ -10,8 +10,7 @@ import './campaignRestService';
 
     var campaignModule = angular.module('paymentManagement.campaign');
 
-    campaignModule.$inject = [];
+    function CampaignController(){}
 
-    campaignModule.controller('campaignController', function () {
-    });
+    campaignModule.controller('campaignController', [CampaignController]);
 }());

@@ -51,7 +51,7 @@ module.exports = function () {
             }),
             new CopyWebpackPlugin([
                 {
-                    from: Path.join(__dirname, '..', 'app', 'shared', 'environment', 'locale'),
+                    from: Path.join(__dirname, '..', 'app', 'shared', 'environment', 'translate', 'locale'),
                     to: 'locale'
                 },
                 {

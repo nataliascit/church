@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-ng-app="paymentManagement" lang="en">
+<html data-ng-app="paymentManagement" data-ng-controller="homeController" lang="en">
 <head>
     <meta charset="utf-8">
     <base href="/payment-management/">
@@ -10,21 +10,7 @@
 <body>
 <section>
     <header>
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#"><img src="./build/assets/images/logo.png"/></a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li ui-sref-active-eq="active"><a data-ui-sref="application.home">{{ 'application.menu.home' | translate }}</a></li>
-                    <li ui-sref-active-eq="active"><a data-ui-sref="application.campaign">{{ 'application.menu.campaign' | translate }}</a></li>
-                    <li ui-sref-active-eq="active"><a data-ui-sref="application.contributor">{{ 'application.menu.contributor' | translate }}</a></li>
-                    <li ui-sref-active-eq="active"><a data-ui-sref="application.contribution">{{ 'application.menu.contribution' | translate }}</a></li>
-                    <li ui-sref-active-eq="active"><a data-ui-sref="application.report">{{ 'application.menu.reports' | translate }}</a></li>
-                    <li ui-sref-active-eq="active"><a ng-click="vm.logoutOnClick()">{{ 'application.menu.logout' | translate }}</a></li>
-                </ul>
-            </div>
-        </nav>
+        <main-menu></main-menu>
     </header>
 </section>
 

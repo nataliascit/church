@@ -19,7 +19,9 @@ import java.util.List;
  * @author wcustodio
  */
 @Entity
-@Table(name = "CONTRIBUTOR")
+@Table(name = "CONTRIBUTOR",
+        uniqueConstraints = @UniqueConstraint(name = "UK_CONTRIBUTOR_F_NUMBER", columnNames = {"FISCAL_NUMBER"})
+)
 public class Contributor {
 
     @Id

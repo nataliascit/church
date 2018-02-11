@@ -10,8 +10,7 @@ import './churchRestService';
 
     var churchModule = angular.module('paymentManagement.church');
 
-    churchModule.$inject = [];
+    function ChurchController(){}
 
-    churchModule.controller('churchController', function () {
-    });
+    churchModule.controller('churchController', [ChurchController]);
 }());

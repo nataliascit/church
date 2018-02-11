@@ -44,14 +44,15 @@ spring:
     role:
       admin:
         mnemonic: ADMIN
-        securedUrl: /pages/**
+        securedPageUrl: /pages/**
+        securedApiUrl: /api/**
     login:
       url: /login
       errorUrl: /login?error
-      successUrl: /pages/home
+      successUrl: /
       accessDeniedUrl: /errors/403
     logout:
-      url: /logout
+      url: /api/logout
     queries:
       users: SELECT USERNAME, PASSWORD, ACTIVE FROM USER WHERE USERNAME=?
       roles: SELECT U.USERNAME, R.ROLE FROM USER U INNER JOIN USER_ROLE UR ON(U.ID=UR.ID_USER) INNER JOIN ROLE R ON(UR.ID_ROLE=R.ID) WHERE U.USERNAME=?

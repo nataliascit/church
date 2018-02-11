@@ -1,14 +1,12 @@
-import 'angular-resource';
-
 import '../../shared/environment/config/app.environment.variables';
 import '../../shared/environment/app.environment.module';
 
 /**
- * @desc Configures the proving type module.
+ * @desc Configures the menus module.
  * @author wcustodio
  */
 (function () {
     'use strict';
 
-    angular.module('paymentManagement.provingType', ['ngResource', 'paymentManagement.environment']);
+    angular.module('paymentManagement.menus', ['paymentManagement.environment']);
 }());

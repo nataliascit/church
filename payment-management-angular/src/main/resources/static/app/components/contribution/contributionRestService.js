@@ -10,9 +10,7 @@ import './app.contribution.module';
 
     var contributionModule = angular.module('paymentManagement.contribution');
 
-    contributionModule.$inject = ['environmentConfig', '$resource'];
-
-    contributionModule.service('contributionRestService', function (environmentConfig, $resource) {
+    function ContributionRestService(environmentConfig, $resource) {
 
         var resources = $resource(environmentConfig.apiBaseUrl + '/contributions/:id', null, {
             'create': {
@@ -125,5 +123,7 @@ import './app.contribution.module';
             find: _find,
             findAll: _findAll
         }
-    });
+    }
+
+    contributionModule.service('contributionRestService', ['environmentConfig', '$resource', ContributionRestService]);
 }());
