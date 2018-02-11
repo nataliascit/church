@@ -10,9 +10,7 @@ import './app.provingType.module';
 
     var provingTypeModule = angular.module('paymentManagement.provingType');
 
-    provingTypeModule.$inject = ['environmentConfig', '$resource'];
-
-    provingTypeModule.service('provingTypeRestService', function (environmentConfig, $resource) {
+    function ProvingTypeRestService(environmentConfig, $resource){
 
         var resources = $resource(environmentConfig.apiBaseUrl + '/provingTypes/:id', null, {
             'create': {
@@ -125,5 +123,7 @@ import './app.provingType.module';
             find: _find,
             findAll: _findAll
         }
-    });
+    }
+
+    provingTypeModule.service('provingTypeRestService', ['environmentConfig', '$resource', ProvingTypeRestService]);
 }());

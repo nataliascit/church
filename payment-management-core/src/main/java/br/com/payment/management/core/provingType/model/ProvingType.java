@@ -14,7 +14,9 @@ import java.util.List;
  * @author wcustodio
  */
 @Entity
-@Table(name = "PROVING_TYPE")
+@Table(name = "PROVING_TYPE",
+        uniqueConstraints = @UniqueConstraint(name = "UK_PROVING_TYPE_MNEMONIC", columnNames = {"MNEMONIC"})
+)
 public class ProvingType {
 
     @Id

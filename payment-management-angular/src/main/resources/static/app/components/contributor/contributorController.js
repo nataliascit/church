@@ -10,8 +10,7 @@ import './contributorRestService';
 
     var contributorModule = angular.module('paymentManagement.contributor');
 
-    contributorModule.$inject = [];
+    function ContributorController(){}
 
-    contributorModule.controller('contributorController', function () {
-    });
+    contributorModule.controller('contributorController', [ContributorController]);
 }());

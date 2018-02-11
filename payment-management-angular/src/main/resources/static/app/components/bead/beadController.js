@@ -10,8 +10,7 @@ import './beadRestService';
 
     var beadModule = angular.module('paymentManagement.bead');
 
-    beadModule.$inject = [];
+    function BeadController() {}
 
-    beadModule.controller('beadController', function () {
-    });
+    beadModule.controller('beadController', [BeadController]);
 }());

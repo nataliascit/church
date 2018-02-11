@@ -14,7 +14,9 @@ import java.util.List;
  * @author wcustodio
  */
 @Entity
-@Table(name = "BEAD")
+@Table(name = "BEAD",
+        uniqueConstraints = @UniqueConstraint(name = "UK_CONTRIBUTOR_CAMP_BEAD", columnNames = {"ID_CAMPAIGN", "ID_CONTRIBUTOR"})
+)
 public class Bead {
 
     @Id
@@ -40,7 +42,8 @@ public class Bead {
     @JoinTable(
             name = "BEAD_CONTRIBUTION",
             joinColumns = @JoinColumn(name = "ID_BEAD"),
-            inverseJoinColumns = @JoinColumn(name = "ID_CONTRIBUTION")
+            inverseJoinColumns = @JoinColumn(name = "ID_CONTRIBUTION"),
+            uniqueConstraints = @UniqueConstraint(name = "UK_BEAD_CONTRIBUTION", columnNames = {"ID_BEAD", "ID_CONTRIBUTION"})
     )
     private List<Contribution> contributions;
 

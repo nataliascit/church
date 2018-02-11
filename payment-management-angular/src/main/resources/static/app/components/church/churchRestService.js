@@ -10,9 +10,7 @@ import './app.church.module';
 
     var churchModule = angular.module('paymentManagement.church');
 
-    churchModule.$inject = ['environmentConfig', '$resource'];
-
-    churchModule.service('churchRestService', function (environmentConfig, $resource) {
+    function ChurchRestService(environmentConfig, $resource) {
 
         var resources = $resource(environmentConfig.apiBaseUrl + '/churches/:id', null, {
             'create': {
@@ -125,5 +123,7 @@ import './app.church.module';
             find: _find,
             findAll: _findAll
         }
-    });
+    }
+
+    churchModule.service('churchRestService', ['environmentConfig', '$resource', ChurchRestService]);
 }());
