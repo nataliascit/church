@@ -1,4 +1,4 @@
-import './app.environment.module';
+import '../app.environment.module';
 
 /**
  * @desc Configures the module responsible for holding the environment configuration.
@@ -8,7 +8,8 @@ import './app.environment.module';
     'use strict';
 
     var environmentConfig = {
-        apiBaseUrl: window.location.origin + '/api',
+        apiBaseUrl: document.getElementsByTagName("base")[0].href + 'api',
+        loginPageUrl: document.getElementsByTagName("base")[0].href + 'login',
         availableLanguages: ['pt_BR']
     };
     angular.module('paymentManagement.environment').constant("environmentConfig", environmentConfig);

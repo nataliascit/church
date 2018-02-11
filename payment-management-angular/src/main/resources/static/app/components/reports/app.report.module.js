@@ -5,5 +5,5 @@
 (function () {
     'use strict';
 
-    angular.module('paymentManagement.report', []);
+    angular.module('paymentManagement.reports', []);
 }());

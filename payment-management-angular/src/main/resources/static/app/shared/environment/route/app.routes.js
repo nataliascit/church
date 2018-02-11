@@ -1,14 +1,14 @@
-import './app.environment.module';
+import '../app.environment.module';
 
-import '../home/homeController';
+import '../../../components/home/homeController';
 
-import '../../components/bead/beadController';
-import '../../components/church/churchController';
-import '../../components/report/reportController';
-import '../../components/campaign/campaignController';
-import '../../components/contributor/contributorController';
-import '../../components/provingType/provingTypeController';
-import '../../components/contribution/contributionController';
+import '../../../components/bead/beadController';
+import '../../../components/church/churchController';
+import '../../../components/reports/contributionReport/reportController';
+import '../../../components/campaign/campaignController';
+import '../../../components/contributor/contributorController';
+import '../../../components/provingType/provingTypeController';
+import '../../../components/contribution/contributionController';
 
 /**
  * @desc Configures the routes used to navigate over the application.
@@ -29,11 +29,11 @@ import '../../components/contribution/contributionController';
 
         $stateProvider
             .state('application', {
-              url: '/pages',
+                url: '/pages'
             })
             .state('application.home', {
                 url: '/home',
-                templateUrl: 'app/shared/home/homeView.html',
+                templateUrl: 'app/components/home/homeView.html',
                 controller: 'homeController as vm'
             })
             .state('application.bead', {
@@ -84,9 +84,12 @@ import '../../components/contribution/contributionController';
                     id: null
                 }
             })
-            .state('application.report', {
-                url: '/reports',
-                templateUrl: 'app/components/report/reportView.html',
+            .state('application.reports', {
+                url: '/reports'
+            })
+            .state('application.reports.contributions', {
+                url: '/contributions',
+                templateUrl: 'app/components/reports/contributionReport/reportView.html',
                 controller: 'reportController as vm'
             });
     }]);

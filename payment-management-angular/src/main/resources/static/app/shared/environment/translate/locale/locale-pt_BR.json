@@ -5,7 +5,9 @@
       "campaign": "Campanha",
       "contributor": "Contribuinte",
       "contribution": "Novo lançamento",
-      "reports": "Relatórios",
+      "reports": {
+        "contributions": "Relatório de Contribuições"
+      },
       "logout": "Logout"
     }
   }

@@ -10,8 +10,7 @@ import './contributionRestService';
 
     var contributionModule = angular.module('paymentManagement.contribution');
 
-    contributionModule.$inject = [];
+    function ContributionController(){}
 
-    contributionModule.controller('contributionController', function () {
-    });
+    contributionModule.controller('contributionController', [ContributionController]);
 }());

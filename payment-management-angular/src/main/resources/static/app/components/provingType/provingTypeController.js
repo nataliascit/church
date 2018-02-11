@@ -10,8 +10,7 @@ import './provingTypeRestService';
 
     var provingTypeModule = angular.module('paymentManagement.provingType');
 
-    provingTypeModule.$inject = [];
+    function ProvingTypeController(){}
 
-    provingTypeModule.controller('provingTypeController', function () {
-    });
+    provingTypeModule.controller('provingTypeController', [ProvingTypeController]);
 }());

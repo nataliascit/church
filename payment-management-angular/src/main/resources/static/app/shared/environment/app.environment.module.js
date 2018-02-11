@@ -1,4 +1,5 @@
 import 'angular-cookies';
+import 'angular-resource';
 import 'angular-sanitize';
 import 'angular-translate';
 import '@uirouter/angularjs';
@@ -12,5 +13,5 @@ import 'angular-translate-loader-static-files';
 (function () {
     'use strict';
 
-    angular.module('paymentManagement.environment', ['ui.router', 'ngCookies', 'ngSanitize', 'pascalprecht.translate']);
+    angular.module('paymentManagement.environment', ['ui.router', 'ngCookies', 'ngSanitize', 'ngResource', 'pascalprecht.translate']);
 }());

@@ -10,9 +10,7 @@ import './app.bead.module.js';
 
     var beadModule = angular.module('paymentManagement.bead');
 
-    beadModule.$inject = ['environmentConfig', '$resource'];
-
-    beadModule.service('beadService', function (environmentConfig, $resource) {
+    function BeadRestService(environmentConfig, $resource) {
 
         var resources = $resource(environmentConfig.apiBaseUrl + '/beads/:id', null, {
             'create': {
@@ -125,5 +123,7 @@ import './app.bead.module.js';
             find: _find,
             findAll: _findAll
         }
-    });
+    }
+
+    beadModule.service('beadRestService', ['environmentConfig', '$resource', BeadRestService]);
 }());
