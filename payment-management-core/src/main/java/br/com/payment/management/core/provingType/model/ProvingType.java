@@ -24,11 +24,11 @@ public class ProvingType {
     @Column(name = "ID")
     private Long id;
 
-    @NotEmpty(message = "proving.type.name.empty.error")
+    @NotEmpty(message = "application.provingType.messages.name.empty")
     @Column(name = "NAME")
     private String name;
 
-    @NotEmpty(message = "proving.type.mnemonic.empty.error")
+    @NotEmpty(message = "application.provingType.messages.mnemonic.empty")
     @Column(name = "MNEMONIC")
     private String mnemonic;
 

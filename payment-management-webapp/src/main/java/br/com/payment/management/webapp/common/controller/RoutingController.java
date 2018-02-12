@@ -1,4 +1,4 @@
-package br.com.payment.management.webapp.controller;
+package br.com.payment.management.webapp.common.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

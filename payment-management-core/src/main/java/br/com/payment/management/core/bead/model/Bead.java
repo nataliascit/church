@@ -24,16 +24,16 @@ public class Bead {
     @Column(name = "ID")
     private Long id;
 
-    @NotNull(message = "bead.identification.number.empty.error")
+    @NotNull(message = "application.bead.messages.identificationNumber.empty")
     @Column(name = "IDENTIFICATION_NUMBER")
     private Long identificationNumber;
 
-    @NotNull(message = "bead.contributor.empty.error")
+    @NotNull(message = "application.bead.messages.contributor.empty")
     @ManyToOne
     @JoinColumn(name = "ID_CONTRIBUTOR")
     private Contributor contributor;
 
-    @NotNull(message = "bead.campaign.empty.error")
+    @NotNull(message = "application.bead.messages.campaign.empty")
     @ManyToOne
     @JoinColumn(name = "ID_CAMPAIGN")
     private Campaign campaign;

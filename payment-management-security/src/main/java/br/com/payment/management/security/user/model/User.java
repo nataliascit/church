@@ -2,18 +2,11 @@ package br.com.payment.management.security.user.model;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 import br.com.payment.management.security.role.model.Role;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * The representation of a user responsible for executing actions over an application.
@@ -21,29 +14,38 @@ import br.com.payment.management.security.role.model.Role;
  * @author wcustodio
  */
 @Entity
-@Table(name = "USER")
+@Table(name = "USER",
+		uniqueConstraints = @UniqueConstraint(name = "UK_USER_USERNAME", columnNames = "USERNAME")
+)
 public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
-	private int id;
+	private Long id;
 
+	@Size(min = 6, max = 10, message = "application.user.messages.username.size")
+	@NotEmpty(message="application.user.messages.username.empty")
 	@Column(name = "USERNAME")
 	private String username;
 
+	@Size(min = 6, max = 10, message = "application.user.messages.password.size")
+	@NotEmpty(message="application.user.messages.password.empty")
 	@Column(name = "PASSWORD")
 	private String password;
 
+	@NotEmpty(message="application.user.messages.name.empty")
 	@Column(name = "NAME")
 	private String name;
 
+	@NotEmpty(message="application.user.messages.lastName.empty")
 	@Column(name = "LAST_NAME")
 	private String lastName;
 
 	@Column(name = "ACTIVE")
 	private int active;
 
+	@NotEmpty(message="application.user.messages.role.empty")
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "USER_ROLE",
 			joinColumns = @JoinColumn(name = "ID_USER"),
@@ -51,11 +53,11 @@ public class User {
 	)
 	private List<Role> roles;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(final int id) {
+	public void setId(final Long id) {
 		this.id = id;
 	}
 

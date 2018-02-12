@@ -9,4 +9,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author wcustodio
  */
 public interface CampaignRepository extends JpaRepository<Campaign, Long> {
+
+    /**
+     * Find a specific campaign by its name.
+     * @param name The name of the campaign to be searched.
+     * @return The found {@link Campaign}.
+     */
+    Campaign findByName(String name);
 }

@@ -1,13 +1,10 @@
 package br.com.payment.management.security.role.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 import br.com.payment.management.security.user.model.User;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * The representation of role associated to an {@link User}.
@@ -15,7 +12,9 @@ import br.com.payment.management.security.user.model.User;
  * @author wcustodio
  */
 @Entity
-@Table(name = "ROLE")
+@Table(name = "ROLE",
+		uniqueConstraints = @UniqueConstraint(name = "UK_ROLE_MNEMONIC", columnNames = "ROLE")
+)
 public class Role {
 
 	@Id
@@ -23,6 +22,8 @@ public class Role {
 	@Column(name="ID")
 	private int id;
 
+	@Size(min = 3, max = 5, message = "application.role.messages.role.size")
+	@NotEmpty(message="application.role.messages.role.empty")
 	@Column(name="ROLE")
 	private String role;
 	

@@ -33,6 +33,7 @@ public class CampaignRepositoryTest extends BaseTestRunner {
      * Constants used as parameters by the unit tests.
      */
     private static final Long TITHE_ID = 1L;
+    private static final String TITHE_NAME = "Dízimo";
 
     @Autowired
     private CampaignRepository campaignRepository;
@@ -65,6 +66,16 @@ public class CampaignRepositoryTest extends BaseTestRunner {
             Assert.assertNotNull(entity.getContributions());
             Assert.assertFalse(entity.getContributions().isEmpty());
         });
+    }
+
+    /**
+     * Test he search for a specific campaign by its name.
+     */
+    @Test
+    public void findByName() {
+        final Campaign entity = this.campaignRepository.findByName(TITHE_NAME);
+        Assert.assertNotNull(entity);
+        Assert.assertEquals(TITHE_NAME, entity.getName());
     }
 
     /**
