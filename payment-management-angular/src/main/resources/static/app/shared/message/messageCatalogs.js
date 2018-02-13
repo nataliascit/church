@@ -14,7 +14,7 @@ import '../app.environment.module';
     const CSS_CLASS_CATALOG = {
         'DEFAULT': 'alert alert-success',
         'INFO': 'alert alert-info',
-        'WARN': 'alert alert-warning',
+        'WARNING': 'alert alert-warning',
         'ERROR': 'alert alert-danger'
     };
     angular.module('paymentManagement').constant("CSS_CLASS_CATALOG", CSS_CLASS_CATALOG);
