@@ -1,12 +1,11 @@
 package br.com.payment.management.security.user.model;
 
-import java.util.List;
+import br.com.payment.management.security.role.model.Role;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
-
-import br.com.payment.management.security.role.model.Role;
-import org.hibernate.validator.constraints.NotEmpty;
+import java.util.List;
 
 /**
  * The representation of a user responsible for executing actions over an application.
@@ -29,7 +28,6 @@ public class User {
 	@Column(name = "USERNAME")
 	private String username;
 
-	@Size(min = 6, max = 10, message = "application.user.messages.password.size")
 	@NotEmpty(message="application.user.messages.password.empty")
 	@Column(name = "PASSWORD")
 	private String password;
