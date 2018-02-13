@@ -19,6 +19,5 @@ public class BeforeCreateChurchValidator implements Validator {
     }
 
     @Override
-    public void validate(final Object target, final Errors errors) {
-    }
+    public void validate(final Object target, final Errors errors) {}
 }

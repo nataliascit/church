@@ -1,0 +1,5 @@
+<div data-ng-show="vm.showMessages()" data-ng-repeat="key in vm.messages">
+    <div data-ng-class="vm.getClassByMessageType(key.type)">
+        {{ key.key | translate }}
+    </div>
+</div>
