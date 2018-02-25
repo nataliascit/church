@@ -1,8 +1,7 @@
 package br.com.payment.management.core.campaign.repository;
 
-import br.com.payment.management.core.campaign.repository.CampaignRepository;
-import br.com.payment.management.core.common.configuration.BaseTestRunner;
 import br.com.payment.management.core.campaign.model.Campaign;
+import br.com.payment.management.core.common.configuration.BaseTestRunner;
 import br.com.payment.management.core.common.enumerable.ConfigurationCatalog;
 import br.com.payment.management.core.common.util.JSONUtil;
 import com.fasterxml.jackson.databind.type.TypeFactory;
@@ -33,6 +32,7 @@ public class CampaignRepositoryTest extends BaseTestRunner {
      * Constants used as parameters by the unit tests.
      */
     private static final Long TITHE_ID = 1L;
+    private static final String TITHE_NAME = "Dízimo";
 
     @Autowired
     private CampaignRepository campaignRepository;
@@ -68,6 +68,16 @@ public class CampaignRepositoryTest extends BaseTestRunner {
     }
 
     /**
+     * Test he search for a specific campaign by its name.
+     */
+    @Test
+    public void findByName() {
+        final Campaign entity = this.campaignRepository.findByName(TITHE_NAME);
+        Assert.assertNotNull(entity);
+        Assert.assertEquals(TITHE_NAME, entity.getName());
+    }
+
+    /**
      * Test the persistence of a new {@link Campaign} with valid information.
      */
     @Test
@@ -75,6 +85,7 @@ public class CampaignRepositoryTest extends BaseTestRunner {
     public void testSaveWithValidInformation() throws IOException {
         // Get the mocked information to be used as base.
         final Campaign campaign = (Campaign) JSONUtil.fileToBean(ConfigurationCatalog.CAMPAIGN_FILE_PATH.getValue(), TypeFactory.defaultInstance().constructType(Campaign.class));
+        campaign.setName("JUnitCampaign");
         // Performs the persistence of the new campaign.
         this.campaignRepository.save(campaign);
         // Verifies if the number of campaigns were increased by 1.

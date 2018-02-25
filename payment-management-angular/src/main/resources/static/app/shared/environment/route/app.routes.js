@@ -1,14 +1,13 @@
 import '../app.environment.module';
-
-import '../../../components/home/homeController';
-
-import '../../../components/bead/beadController';
-import '../../../components/church/churchController';
-import '../../../components/reports/contributionReport/reportController';
-import '../../../components/campaign/campaignController';
-import '../../../components/contributor/contributorController';
-import '../../../components/provingType/provingTypeController';
-import '../../../components/contribution/contributionController';
+import '../../../component/home/homeController';
+import '../../../component/bead/catalog/beadCatalogController';
+import '../../../component/campaign/catalog/campaignCatalogController';
+import '../../../component/campaign/register/campaignRegisterController';
+import '../../../component/church/catalog/churchCatalogController';
+import '../../../component/contribution/catalog/contributionCatalogController';
+import '../../../component/contributor/catalog/contributorCatalogController';
+import '../../../component/contributor/register/contributorRegisterController';
+import '../../../component/provingType/catalog/provingTypeCatalogController';
 
 /**
  * @desc Configures the routes used to navigate over the application.
@@ -33,64 +32,60 @@ import '../../../components/contribution/contributionController';
             })
             .state('application.home', {
                 url: '/home',
-                templateUrl: 'app/components/home/homeView.html',
+                templateUrl: 'app/component/home/homeView.html',
                 controller: 'homeController as vm'
             })
+            /* BEADS */
             .state('application.bead', {
-                url: '/beads/:id',
-                templateUrl: 'app/components/bead/beadView.html',
-                controller: 'beadController as vm',
-                params: {
-                    id: null
-                }
+                url: '/beads',
+                templateUrl: 'app/component/bead/catalog/beadCatalogView.html',
+                controller: 'beadController as vm'
             })
+            /* CAMPAIGN */
             .state('application.campaign', {
-                url: '/campaigns/:id',
-                templateUrl: 'app/components/campaign/campaignView.html',
-                controller: 'campaignController as vm',
+                url: '/campaigns',
+                templateUrl: 'app/component/campaign/catalog/campaignCatalogView.html',
+                controller: 'campaignCatalogController as vm'
+            })
+            .state('application.campaign.register', {
+                url: '/:id',
+                templateUrl: 'app/component/campaign/register/campaignRegisterView.html',
+                controller: 'campaignRegisterController as vm',
                 params: {
                     id: null
                 }
             })
+            /* CHURCH */
             .state('application.church', {
-                url: '/churches/:id',
-                templateUrl: 'app/components/church/churchView.html',
-                controller: 'churchController as vm',
-                params: {
-                    id: null
-                }
+                url: '/churches',
+                templateUrl: 'app/component/church/catalog/churchCatalogView.html',
+                controller: 'churchCatalogController as vm'
             })
+            /* CONTRIBUTION */
             .state('application.contribution', {
-                url: '/contributions/:id',
-                templateUrl: 'app/components/contribution/contributionView.html',
-                controller: 'contributionController as vm',
-                params: {
-                    id: null
-                }
-            })
-            .state('application.contributor', {
-                url: '/contributors/:id',
-                templateUrl: 'app/components/contributor/contributorView.html',
-                controller: 'contributorController as vm',
-                params: {
-                    id: null
-                }
-            })
-            .state('application.provingType', {
-                url: '/provingTypes/:id',
-                templateUrl: 'app/components/provingType/provingTypeView.html',
-                controller: 'provingTypeController as vm',
-                params: {
-                    id: null
-                }
-            })
-            .state('application.reports', {
-                url: '/reports'
-            })
-            .state('application.reports.contributions', {
                 url: '/contributions',
-                templateUrl: 'app/components/reports/contributionReport/reportView.html',
-                controller: 'reportController as vm'
-            });
+                templateUrl: 'app/component/contribution/catalog/contributionCatalogView.html',
+                controller: 'contributionCatalogController as vm'
+            })
+            /* CONTRIBUTOR */
+            .state('application.contributor', {
+                url: '/contributors',
+                templateUrl: 'app/component/contributor/catalog/contributorCatalogView.html',
+                controller: 'contributorCatalogController as vm'
+            })
+            .state('application.contributor.register', {
+                url: '/:id',
+                templateUrl: 'app/component/contributor/register/contributorRegisterView.html',
+                controller: 'contributorRegisterController as vm',
+                params: {
+                    id: null
+                }
+            })
+            /* PROVING TYPE */
+            .state('application.provingType', {
+                url: '/provingTypes',
+                templateUrl: 'app/component/provingType/catalog/provingTypeCatalogView.html',
+                controller: 'provingTypeCatalogController as vm'
+            })
     }]);
 })();

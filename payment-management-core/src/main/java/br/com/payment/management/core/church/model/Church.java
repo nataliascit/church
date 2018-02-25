@@ -23,7 +23,7 @@ public class Church {
     @Column(name = "ID")
     private Long id;
 
-    @NotEmpty(message = "church.name.empty.error")
+    @NotEmpty(message = "application.church.messages.name.empty")
     @Column(name = "NAME")
     private String name;
 

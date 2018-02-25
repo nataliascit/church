@@ -21,20 +21,20 @@ public class Contribution {
     @Column(name = "ID")
     private Long id;
 
-    @NotNull(message = "contribution.creation.date.empty.error")
+    @NotNull(message = "application.contribution.messages.creationDate.empty")
     @Column(name = "CREATION_DATE")
     private Date creationDate;
 
-    @NotNull(message = "contribution.amount.empty.error")
+    @NotNull(message = "application.contribution.messages.amount.empty")
     @Column(name = "AMOUNT")
     private Long amount;
 
-    @NotNull(message = "contribution.campaign.empty.error")
+    @NotNull(message = "application.contribution.messages.campaign.empty")
     @ManyToOne
     @JoinColumn(name = "ID_CAMPAIGN")
     private Campaign campaign;
 
-    @NotNull(message = "contribution.contributor.empty.error")
+    @NotNull(message = "application.contribution.messages.contributor.empty")
     @ManyToOne
     @JoinColumn(name = "ID_CONTRIBUTOR")
     private Contributor contributor;

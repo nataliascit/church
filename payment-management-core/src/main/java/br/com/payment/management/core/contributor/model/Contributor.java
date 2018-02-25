@@ -29,7 +29,7 @@ public class Contributor {
     @Column(name = "ID")
     private Long id;
 
-    @NotEmpty(message = "contributor.name.empty.error")
+    @NotEmpty(message = "application.contributor.messages.name.empty")
     @Column(name = "NAME")
     private String name;
 
@@ -37,22 +37,22 @@ public class Contributor {
     private Long fiscalNumber;
 
     @Enumerated(EnumType.STRING)
-    @Size(max = 1, message = "contributor.gender.size.error")
-    @NotEmpty(message = "contributor.gender.empty.error")
+    @Size(max = 1, message = "application.contributor.messages.gender.size")
+    @NotEmpty(message = "application.contributor.messages.gender.empty")
     @Column(name = "GENDER")
     private GenderType gender;
 
     @Enumerated(EnumType.STRING)
-    @Size(max = 1, message = "contributor.civil.state.size.error")
-    @NotEmpty(message = "contributor.gender.empty.error")
+    @Size(max = 1, message = "application.contributor.messages.civilState.size")
+    @NotEmpty(message = "application.contributor.messages.civilState.empty")
     @Column(name = "CIVIL_STATE")
     private CivilStateType civilState;
 
-    @NotEmpty(message = "contributor.address.empty.error")
+    @NotEmpty(message = "application.contributor.messages.address.empty")
     @Column(name = "ADDRESS")
     private String address;
 
-    @NotNull(message = "contributor.birth.date.empty.error")
+    @NotNull(message = "application.contributor.messages.birthDate.empty")
     @Column(name = "BIRTH_DATE")
     private Date birthDate;
 

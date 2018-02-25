@@ -9,6 +9,118 @@
         "contributions": "Relatório de Contribuições"
       },
       "logout": "Logout"
+    },
+    "bead" : {
+      "messages": {
+        "identificationNumber": {
+          "empty": "O Número de Indentificação Fiscal é obrigatório."
+        },
+        "contributor" : {
+          "empty": "O Contribuinte é obrigatório."
+        },
+        "campaign": {
+          "empty": "A Campanha é obrigatória."
+        }
+      }
+    },
+    "campaign": {
+      "messages": {
+        "name": {
+          "empty": "O Nome é obrigatório."
+        },
+        "creationDate": {
+          "empty": "A Data de Criação é obrigatória."
+        },
+        "church": {
+          "empty": "A Igreja é obrigatória."
+        },
+        "provingType": {
+          "empty": "O Tipo de Comprovante de Pagamento é obrigatório."
+        }
+      }
+    },
+    "church": {
+      "messages": {
+        "name": {
+          "empty": "O Nome é obrigatório."
+        }
+      }
+    },
+    "contribution": {
+      "messages": {
+        "creationDate": {
+          "empty": "A Data de Criação é obrigatória."
+        },
+        "amount": {
+          "empty": "O valor da contribuição é obrigatório."
+        },
+        "campaign": {
+          "empty": "A Campanha é obrigatória."
+        },
+        "contributor": {
+          "empty": "O Contribuinte é obrigatório."
+        }
+      }
+    },
+    "contributor": {
+      "messages": {
+        "name": {
+          "empty": "O Nome é obrigatório."
+        },
+        "gender": {
+          "size": "O tamanho do campo Gênero está errado.",
+          "empty": "O Gênero é obrigatório."
+        },
+        "civilState": {
+          "size": "O tamanho do campo Estado Civil está errado.",
+          "empty": "O Estado Civil é obrigatório."
+        },
+        "address": {
+          "empty": "O Endereço é obrigatório."
+        },
+        "birthDate": {
+          "empty": "A Data de Nascimento é obrigatória."
+        }
+      },
+      "provingType": {
+        "messages": {
+          "name": {
+            "empty": "O Nome é obrigatório."
+          },
+          "mnemonic": {
+            "empty": "A Sigla é obrigatória."
+          }
+        }
+      },
+      "user": {
+        "messages": {
+          "username": {
+            "empty": "O Username é obrigatório.",
+            "size": "O Tamanho do Username deve estar entre 6 à 10 caracteres."
+          },
+          "password": {
+            "empty": "A Senha é obrigatória.",
+            "size": "O Tamanho da Senha deve estar entre 6 à 10 caracteres."
+          },
+          "name": {
+            "empty": "O nome é obrigatório."
+          },
+          "lastName": {
+            "empty": "O Sobrenome é obrigatório."
+          },
+          "role": {
+            "empty": "Ao menos uma Permissão é obrigatória."
+          }
+        }
+      },
+      "role": {
+        "messages": {
+          "role": {
+            "empty": "A Sigla é obrigatória.",
+            "size": "O Tamanho da Sigla deve estar entre 3 à 5 caracteres."
+          }
+        }
+      }
     }
   }
 }

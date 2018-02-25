@@ -17,7 +17,9 @@ import java.util.List;
  * @author wcustodio
  */
 @Entity
-@Table(name = "CAMPAIGN")
+@Table(name = "CAMPAIGN",
+        uniqueConstraints = @UniqueConstraint(name = "UK_CAMPAIGN_NAME", columnNames = "NAME")
+)
 public class Campaign {
 
     @Id
@@ -25,11 +27,11 @@ public class Campaign {
     @Column(name = "ID")
     private Long id;
 
-    @NotEmpty(message = "campaign.name.empty.error")
+    @NotEmpty(message = "application.campaign.messages.name.empty")
     @Column(name = "NAME")
     private String name;
 
-    @NotNull(message = "campaign.creation.date.empty.error")
+    @NotNull(message = "application.campaign.messages.creationDate.empty")
     @Column(name = "CREATION_DATE")
     private Date creationDate;
 
@@ -39,12 +41,12 @@ public class Campaign {
     @Column(name = "FINAL_DATE")
     private Date finalDate;
 
-    @NotNull(message = "campaign.church.empty.error")
+    @NotNull(message = "application.campaign.messages.church.empty")
     @ManyToOne
     @JoinColumn(name = "ID_CHURCH")
     private Church church;
 
-    @NotNull(message = "campaign.proving.type.empty.error")
+    @NotNull(message = "application.campaign.messages.provingType.empty")
     @ManyToOne
     @JoinColumn(name = "ID_PROVING_TYPE")
     private ProvingType provingType;

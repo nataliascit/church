@@ -1,44 +1,69 @@
-/*COLORS
-darkBrown: #2E1E06;
-mediumBrown: #482C01;
-lightBrown: #AD5400;
-lighterBrown: #D18200;
-yellow: #FDD400;
-orange: #F26500;
-white: #fff;
-black: #000;
-*/
+$colorDarkBrown: #2E1E06;
+$colorMediumBrown: #482C01;
+$colorLightBrown: #AD5400;
+$colorLighterBrown: #D18200;
+$colorYellow: #FDD400;
+$colorOrange: #F26500;
+$colorWhite: #fff;
+$colorBlack: #000;
 
-.navbar-default {
-  background-color: #482C01;
-  border-color: transparent;
-  height: 120px;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  padding: 0px;
+  margin: 0px;
 }
-
-.navbar-brand {
-  height: auto;
-  padding: 0 20px;
-}
-
-.navbar-nav, .navbar-nav > li {
+html {
   height: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+body {
+  font-family: Arial;
+  color: $colorBlack;
+  background-color: $colorWhite;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+  padding-bottom: 60px;
+  min-height: 100%;
+  position: relative;
 }
 
-.navbar-default .navbar-nav > li > a,
-.navbar-default .navbar-nav > li > a:hover {
-  color: #fff;
-  height: 100%;
-  align-items: center;
-  display: flex;
-  padding: 10px 22px;
+header {
+  .navbar-default {
+    background-color: $colorMediumBrown;
+    border-color: transparent;
+    height: 120px;
+  }
+
+  .navbar-brand {
+    height: auto;
+    padding: 0 20px;
+  }
+
+  .navbar-nav, .navbar-nav > li {
+    height: 100%;
+  }
+
+  .navbar-default .navbar-nav > li > a,
+  .navbar-default .navbar-nav > li > a:hover {
+    color: $colorWhite;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    padding: 10px 22px;
+  }
+
+  .navbar-default .navbar-nav > .active > a,
+  .navbar-default .navbar-nav > .active > a:focus,
+  .navbar-default .navbar-nav > .active > a:hover {
+    background-color: $colorLighterBrown;
+    color: $colorWhite;
+  }
 }
 
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:focus,
-.navbar-default .navbar-nav > .active > a:hover {
-  background-color: #D18200;
-  color: #fff;
-}
 
 .container {
   height: 100%;
@@ -49,10 +74,13 @@ black: #000;
   bottom: 0;
   width: 100%;
   height: 60px;
-  background-color: #482C01;
-  color: #fff;
+  background-color: $colorMediumBrown;
+  color: $colorWhite;
+  clear: both;
+
   .text-footer {
     text-align: center;
     padding: 20px 0;
+    margin: 0;
   }
 }
