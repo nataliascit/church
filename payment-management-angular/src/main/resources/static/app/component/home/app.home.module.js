@@ -1,3 +1,4 @@
+import '@uirouter/angularjs';
 import '../../shared/environment/app.environment.module';
 import '../../shared/environment/config/app.environment.variables';
 
@@ -8,5 +9,5 @@ import '../../shared/environment/config/app.environment.variables';
 (function () {
     'use strict';
 
-    angular.module('paymentManagement.home', []);
+    angular.module('paymentManagement.home', ['ui.router']);
 }());
