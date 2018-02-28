@@ -10,9 +10,9 @@ import './register/campaignRegisterController';
 (function () {
     'use strict';
 
-    var beadModule = angular.module('paymentManagement.campaign');
+    var module = angular.module('paymentManagement.campaign');
 
-    beadModule.config(['$stateProvider', function ($stateProvider) {
+    module.config(['$stateProvider', function ($stateProvider) {
 
         $stateProvider.state('application.campaign', {
             url: '/campaigns',

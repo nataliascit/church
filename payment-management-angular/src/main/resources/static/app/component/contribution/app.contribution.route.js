@@ -9,9 +9,9 @@ import './catalog/contributionCatalogController';
 (function () {
     'use strict';
 
-    var beadModule = angular.module('paymentManagement.contribution');
+    var module = angular.module('paymentManagement.contribution');
 
-    beadModule.config(['$stateProvider', function ($stateProvider) {
+    module.config(['$stateProvider', function ($stateProvider) {
 
         $stateProvider.state('application.contribution', {
             url: '/contributions',

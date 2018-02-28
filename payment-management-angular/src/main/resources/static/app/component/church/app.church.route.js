@@ -9,9 +9,9 @@ import './catalog/churchCatalogController';
 (function () {
     'use strict';
 
-    var beadModule = angular.module('paymentManagement.church');
+    var module = angular.module('paymentManagement.church');
 
-    beadModule.config(['$stateProvider', function ($stateProvider) {
+    module.config(['$stateProvider', function ($stateProvider) {
 
         $stateProvider.state('application.church', {
             url: '/churches',
