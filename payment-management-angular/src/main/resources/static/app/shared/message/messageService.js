@@ -1,3 +1,5 @@
+import './app.message.module'
+
 /**
  * @desc This service is responsible for performing actions over the messages to be shown to a user.
  * @author wcustodio
@@ -5,9 +7,9 @@
 (function () {
     'use strict';
 
-    var paymentManagementModule = angular.module('paymentManagement');
+    var module = angular.module('paymentManagement.message');
 
-    function MessageService(CSS_CLASS_CATALOG, TIMEOUT_CATALOG) {
+    function MessageService(CSS_CLASS_CATALOG, TYPE_CATALOG) {
 
         /**
          * The template of a possible message.
@@ -16,8 +18,7 @@
         var _message = {
             key: null,
             message: null,
-            type: 'DEFAULT',
-            timeout: TIMEOUT_CATALOG['DEFAULT']
+            type: TYPE_CATALOG['SUCCESS']
         };
 
         var _messages = [];
@@ -36,7 +37,7 @@
          * @private
          */
         function _cleanMessages() {
-            _messages = [];
+            _messages.splice(0, _messages.length);
         }
 
         /**
@@ -53,7 +54,7 @@
          * @private
          */
         function _getMessages() {
-            return angular.copy(_messages);
+            return _messages;
         }
 
         /**
@@ -71,9 +72,29 @@
          * @private
          */
         function _mapMessagesFromResponse(response) {
-            if(response.data.message) {
-
+            if(response.data) {
+                var messages = response.data.messages;
+                for(var index=0; index < messages.length; index++) {
+                    _messages.push(messages[index]);
+                }
             }
+        }
+
+        /**
+         * Show a success message according to a certain key of translation.
+         * @param key The key used by the angular translator.
+         * @private
+         */
+        function _showSuccessMessage(key) {
+
+            // Clean all the existing messages.
+            _cleanMessages();
+
+            // Build a success message.
+            var message = angular.copy(_message);
+            message.key = key;
+            message.type = TYPE_CATALOG['SUCCESS'];
+            _messages.push(message);
         }
 
         return {
@@ -82,9 +103,10 @@
             getClassByType: _getClassByType,
             getMessages: _getMessages,
             getMessageTemplate: _getMessageTemplate,
-            mapMessagesFromResponse: _mapMessagesFromResponse
+            mapMessagesFromResponse: _mapMessagesFromResponse,
+            showSuccessMessage: _showSuccessMessage
         };
     }
 
-    paymentManagementModule.service('messageService', ['CSS_CLASS_CATALOG', 'TIMEOUT_CATALOG', MessageService]);
+    module.service('messageService', ['CSS_CLASS_CATALOG', 'TYPE_CATALOG', MessageService]);
 }());

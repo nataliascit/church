@@ -1,10 +1,14 @@
 {
   "application": {
+    "error": {
+      "unknown": "An unexpected error occurred."
+    },
     "menu": {
       "home": "Início",
       "campaign": "Campanha",
       "contributor": "Contribuinte",
       "contribution": "Novo lançamento",
+      "church": "Igreja",
       "reports": {
         "contributions": "Relatório de Contribuições"
       },

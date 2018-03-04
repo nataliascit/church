@@ -5,9 +5,9 @@
 (function () {
     'use strict';
 
-    var paymentManagementModule = angular.module('paymentManagement');
+    var module = angular.module('paymentManagement.message');
 
-    paymentManagementModule.component('message', {
+    module.component('message', {
         restrict: 'E',
         controller: 'messageController as vm',
         templateUrl: 'app/shared/message/messageView.html'

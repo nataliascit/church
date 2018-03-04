@@ -1,3 +1,6 @@
+import './app.message.module';
+import './messageService';
+
 /**
  * @desc This Controller is responsible for handling the view 'messageView.html'
  * @author wcustodio
@@ -5,13 +8,14 @@
 (function () {
     'use strict';
 
-    var paymentManagementModule = angular.module('paymentManagement');
+    var module = angular.module('paymentManagement.message');
 
-    function MainMenuController(messageService) {
+    function MessageController(messageService) {
 
         var vm = this;
 
-        vm.messages = [];
+        // Initialize all the messages.
+        vm.messages = messageService.getMessages();
 
         /**
          * Map the message's type into a specific css class.
@@ -19,7 +23,7 @@
          * @return Returns the message class according to the message type.
          */
         vm.getClassByMessageType = function(type) {
-           return messageService.getClassByMessageType(type);
+           return messageService.getClassByType(type);
         };
 
         /**
@@ -34,5 +38,5 @@
         };
     }
 
-    paymentManagementModule.controller('mainMenuController', ['messageService', MainMenuController]);
+    module.controller('messageController', ['messageService', MessageController]);
 }());

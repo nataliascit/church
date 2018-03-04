@@ -10,7 +10,8 @@ import '../service/churchRestService';
 
     var churchModule = angular.module('paymentManagement.church');
 
-    function ChurchCatalogController(){}
+    function ChurchCatalogController(){
+    }
 
     churchModule.controller('churchCatalogController', [ChurchCatalogController]);
 }());
