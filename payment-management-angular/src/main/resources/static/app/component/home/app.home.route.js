@@ -9,9 +9,9 @@ import './homeController';
 (function () {
     'use strict';
 
-    var beadModule = angular.module('paymentManagement.contributor');
+    var module = angular.module('paymentManagement.contributor');
 
-    beadModule.config(['$stateProvider', function ($stateProvider) {
+    module.config(['$stateProvider', function ($stateProvider) {
 
         $stateProvider.state('application.home', {
             url: '/home',

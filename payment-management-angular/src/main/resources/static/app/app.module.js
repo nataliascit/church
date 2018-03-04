@@ -28,6 +28,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
         'paymentManagement.home',
         'paymentManagement.provingType',
         'paymentManagement.environment',
-        'paymentManagement.menu'
+        'paymentManagement.menu',
+        'paymentManagement.message'
     ]);
 })();

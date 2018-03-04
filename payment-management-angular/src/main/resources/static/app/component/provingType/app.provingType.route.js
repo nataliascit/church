@@ -9,9 +9,9 @@ import './catalog/provingTypeCatalogController';
 (function () {
     'use strict';
 
-    var beadModule = angular.module('paymentManagement.provingType');
+    var module = angular.module('paymentManagement.provingType');
 
-    beadModule.config(['$stateProvider', function ($stateProvider) {
+    module.config(['$stateProvider', function ($stateProvider) {
 
         $stateProvider.state('application.provingType', {
             url: '/provingTypes',

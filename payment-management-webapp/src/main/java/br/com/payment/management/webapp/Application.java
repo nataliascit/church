@@ -19,9 +19,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
     "br.com.payment.management.core",
     "br.com.payment.management.security"
 })
-@EnableJpaRepositories(basePackages = {
-    "br.com.payment.management.core"
-})
+@EnableJpaRepositories(basePackages = "br.com.payment.management.core")
 public class Application {
 
     public static void main(String[] args) {
