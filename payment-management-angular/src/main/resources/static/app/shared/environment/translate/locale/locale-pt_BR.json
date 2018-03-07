@@ -67,6 +67,34 @@
       }
     },
     "contributor": {
+      "catalog": {
+        "label": {
+          "title": "Contribuintes"
+        },
+        "formField": {
+          "contributorName": "Digite o nome"
+        },
+        "button": {
+          "addContributor": "+ Contribuinte"
+        },
+        "table": {
+          "column": {
+            "id": "ID",
+            "name": "Nome",
+            "fiscalNumber": "CPF"
+          }
+        },
+        "register": {
+          "label": {
+            "title": "Cadastro de contribuinte",
+          },
+          "formField": {
+            "id": "ID",
+            "name": "Nome",
+            "birthDate": "Data de Nascimento"
+          }
+        }
+      },
       "messages": {
         "name": {
           "empty": "O Nome é obrigatório."

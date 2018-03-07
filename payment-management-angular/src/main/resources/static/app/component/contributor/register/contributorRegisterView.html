@@ -1,49 +1,45 @@
 <div class="container">
   <div class="title-page text-center">
-    <h3>Cadastro de contribuinte</h3>
+    <h3>{{ 'application.contributor.register.label.title' | translate }}</h3>
   </div>
-
   <div class="col-lg-12">
     <div class="filters">
       <form class="col-lg-12">
         <div class="form-group col-xs-3 col-md-4 col-lg-4 pull-left">
-          <label for="exampleInputEmail1">ID</label>
-          <input type="email" class="form-control" id="exampleInputEmail1">
+          <label for="contributorRegisterFieldId">{{ 'application.contributor.register.formField.id' | translate }}</label>
+          <input id="contributorRegisterFieldId" type="email" class="form-control">
         </div>
         <div class="form-group col-xs-3 col-md-4 col-lg-4 pull-left">
-          <label for="exampleInputEmail1">Nome</label>
-          <input type="email" class="form-control" id="exampleInputEmail1">
+          <label for="contributorRegisterFieldName">{{ 'application.contributor.register.formField.name' | translate }}</label>
+          <input id="contributorRegisterFieldName" type="email" class="form-control">
         </div>
 
         <div class="form-group col-xs-3 col-md-4 col-lg-4">
           <div class="input-group">
-            <label for="exampleInputEmail1">Nascimento</label>
-            <input type="datetime" class="form-control">
+            <label for="contributorRegisterFieldBirthDate">{{ 'application.contributor.register.formField.birthDate' | translate }}</label>
+            <input id="contributorRegisterFieldBirthDate" type="datetime" class="form-control">
             <span class="input-group-addon glyphicon glyphicon-calendar"></span>
           </div>
         </div>
 
         <div class="form-group col-xs-3 col-md-4 col-lg-4 pull-left">
-          <label for="exampleInputEmail1">Sexo</label>
-          <div>
-            <label class="radio-inline">
-              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">Feminino
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">Masculino
+          <label for="contributorRegisterFieldGender">{{ 'application.contributor.register.formField.gender' | translate }}</label>
+          <div id="contributorRegisterFieldGender">
+            <label data-ng-repeat="gender in vm.genders" class="radio-inline">
+              <input type="radio">{{gender.name}}
             </label>
           </div>
         </div>
 
         <div class="form-group col-xs-4 col-lg-4">
-          <label for="exampleInputEmail1">Estado civil</label>
-          <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
+          <label for="contributorRegisterFieldCivilState">Estado civil</label>
+          <select id="contributorRegisterFieldCivilState" class="form-control">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+          </select>
         </div>
         <div class="form-group col-xs-4 col-md-4 col-lg-4 pull-left">
           <label for="exampleInputEmail1">Nome do cônjuge</label>

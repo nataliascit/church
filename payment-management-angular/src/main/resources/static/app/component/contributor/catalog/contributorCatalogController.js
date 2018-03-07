@@ -10,7 +10,24 @@ import '../service/contributorRestService';
 
     var contributorModule = angular.module('paymentManagement.contributor');
 
-    function ContributorCatalogController(){}
+    function ContributorCatalogController(contributionRestService){
 
-    contributorModule.controller('contributorCatalogController', [ContributorCatalogController]);
+        var vm = this;
+
+        /**
+         * List of all the existing contributors.
+         * @type {Array}
+         */
+        vm.contributors = [];
+
+        /**
+         * Function responsible for handling the hook for the initialization of the controller.
+         */
+        vm.onInit = function() {
+            contributionRestService.findAll(function(response) {
+                vm.contributors = response.data;
+            });
+        }
+    }
+    contributorModule.controller('contributorCatalogController', ['contributionRestService', ContributorCatalogController]);
 }());
