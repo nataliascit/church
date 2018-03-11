@@ -1,5 +1,6 @@
 import '../app.contributor.module';
 import '../service/contributorRestService';
+import '../../contribution/service/contributionRestService';
 
 /**
  * @desc This Controller is responsible for handling the view 'contributorCatalogView.html'
@@ -8,11 +9,11 @@ import '../service/contributorRestService';
 (function () {
     'use strict';
 
-    var contributorModule = angular.module('paymentManagement.contributor');
+    const contributorModule = angular.module('paymentManagement.contributor');
 
-    function ContributorCatalogController(contributionRestService){
+    function ContributorCatalogController(contributorRestService){
 
-        var vm = this;
+        const vm = this;
 
         /**
          * List of all the existing contributors.
@@ -24,10 +25,28 @@ import '../service/contributorRestService';
          * Function responsible for handling the hook for the initialization of the controller.
          */
         vm.onInit = function() {
-            contributionRestService.findAll(function(response) {
-                vm.contributors = response.data;
+            _findAllContributor();
+        };
+
+        /**
+         * Handle the on click action for the delete button of a contributor.
+         * @param contributorId {Number} The contributor's identifier.
+         */
+        vm.deleteContributorOnClick = function(contributorId) {
+            contributorRestService.remove(contributorId, function() {
+                messageService.showSuccessMessage('application.contributor.register.message.successDeletion');
+            });
+        };
+
+        /**
+         * Search for all existing contributors in the database.
+         * @private
+         */
+        function _findAllContributor() {
+            contributorRestService.findAll(function(response) {
+                vm.contributors = response._embedded.contributors;
             });
         }
     }
-    contributorModule.controller('contributorCatalogController', ['contributionRestService', ContributorCatalogController]);
+    contributorModule.controller('contributorCatalogController', ['contributorRestService', ContributorCatalogController]);
 }());

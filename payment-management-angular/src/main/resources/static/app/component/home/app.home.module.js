@@ -1,6 +1,6 @@
 import '@uirouter/angularjs';
 import '../../shared/environment/app.environment.module';
-import '../../shared/environment/config/app.environment.variables';
+import '../../shared/environment/config/app.environment.constant';
 
 /**
  * @desc Configures the home module.

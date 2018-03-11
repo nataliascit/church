@@ -1,6 +1,6 @@
 import '@uirouter/angularjs';
 import 'angular-resource';
-import '../../shared/environment/config/app.environment.variables';
+import '../../shared/environment/config/app.environment.constant';
 import '../../shared/environment/app.environment.module';
 
 /**

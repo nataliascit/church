@@ -1,5 +1,5 @@
 import '../app.environment.module';
-import '../config/app.environment.variables';
+import '../config/app.environment.constant';
 /* Import for all files containing the translation languages. */
 import './locale/locale-pt_BR.json'
 
