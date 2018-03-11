@@ -19,7 +19,7 @@ import '../app.contributor.module';
             'update': {
                 method: 'PUT'
             },
-            'delete': {
+            'remove': {
                 method: 'DELETE'
             },
             'find': {

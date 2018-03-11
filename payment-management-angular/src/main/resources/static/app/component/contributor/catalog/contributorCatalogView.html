@@ -37,7 +37,7 @@
                 <span class="glyphicon glyphicon-pencil" aria-hidden="true" data-ui-sref="application.contributor.register({id: contributor.id})">
                   {{ 'application.contributor.catalog.table.contributor.button.editContributor' | translate }}
                 </span>
-                <span class="glyphicon glyphicon-trash" aria-hidden="true" data-ng-click="vm.deleteContributorOnClick(id)">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true" data-ng-click="vm.deleteContributorOnClick(contributor.id,$index)">
                   {{ 'application.contributor.catalog.table.contributor.button.deleteContributor' | translate }}
                 </span>
               </td>

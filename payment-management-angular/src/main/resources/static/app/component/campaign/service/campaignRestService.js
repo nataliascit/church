@@ -19,7 +19,7 @@ import '../app.campaign.module';
             'update': {
                 method: 'PUT'
             },
-            'delete': {
+            'remove': {
                 method: 'DELETE'
             },
             'find': {
@@ -80,7 +80,7 @@ import '../app.campaign.module';
             var params = {
                 applicationId: applicationId
             };
-            return applications.remove(params, null, successCallback, errorCallback);
+            return resources.remove(params, null, successCallback, errorCallback);
         }
 
         /**

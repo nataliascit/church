@@ -11,7 +11,7 @@ import '../../contribution/service/contributionRestService';
 
     const contributorModule = angular.module('paymentManagement.contributor');
 
-    function ContributorCatalogController(contributorRestService){
+    function ContributorCatalogController(messageService, contributorRestService) {
 
         const vm = this;
 
@@ -31,9 +31,11 @@ import '../../contribution/service/contributionRestService';
         /**
          * Handle the on click action for the delete button of a contributor.
          * @param contributorId {Number} The contributor's identifier.
+         * @param index {Number} The row number where the contributor is located.
          */
-        vm.deleteContributorOnClick = function(contributorId) {
+        vm.deleteContributorOnClick = function(contributorId, index) {
             contributorRestService.remove(contributorId, function() {
+                vm.contributors.splice(index,1); // Remove the element from the array.
                 messageService.showSuccessMessage('application.contributor.register.message.successDeletion');
             });
         };
@@ -48,5 +50,5 @@ import '../../contribution/service/contributionRestService';
             });
         }
     }
-    contributorModule.controller('contributorCatalogController', ['contributorRestService', ContributorCatalogController]);
+    contributorModule.controller('contributorCatalogController', ['messageService', 'contributorRestService', ContributorCatalogController]);
 }());

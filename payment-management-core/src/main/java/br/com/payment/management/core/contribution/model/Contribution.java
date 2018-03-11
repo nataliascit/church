@@ -5,7 +5,7 @@ import br.com.payment.management.core.contributor.model.Contributor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 /**
  * Entity which represents the table with the definition of a certain contribution associated to a specific {@link Campaign}.
@@ -23,7 +23,7 @@ public class Contribution {
 
     @NotNull(message = "application.contribution.messages.creationDate.empty")
     @Column(name = "CREATION_DATE")
-    private Date creationDate;
+    private LocalDateTime creationDate;
 
     @NotNull(message = "application.contribution.messages.amount.empty")
     @Column(name = "AMOUNT")
@@ -47,11 +47,11 @@ public class Contribution {
         this.id = id;
     }
 
-    public Date getCreationDate() {
+    public LocalDateTime getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
     }
 
