@@ -8,7 +8,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDateTime;
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -33,13 +33,13 @@ public class Campaign {
 
     @NotNull(message = "application.campaign.messages.creationDate.empty")
     @Column(name = "CREATION_DATE")
-    private LocalDateTime creationDate;
+    private Date creationDate;
 
     @Column(name = "INITIAL_DATE")
-    private LocalDateTime initialDate;
+    private Date initialDate;
 
     @Column(name = "FINAL_DATE")
-    private LocalDateTime finalDate;
+    private Date finalDate;
 
     @NotNull(message = "application.campaign.messages.church.empty")
     @ManyToOne
@@ -75,27 +75,27 @@ public class Campaign {
         this.name = name;
     }
 
-    public LocalDateTime getCreationDate() {
+    public Date getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(LocalDateTime creationDate) {
+    public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
 
-    public LocalDateTime getInitialDate() {
+    public Date getInitialDate() {
         return initialDate;
     }
 
-    public void setInitialDate(LocalDateTime initialDate) {
+    public void setInitialDate(Date initialDate) {
         this.initialDate = initialDate;
     }
 
-    public LocalDateTime getFinalDate() {
+    public Date getFinalDate() {
         return finalDate;
     }
 
-    public void setFinalDate(LocalDateTime finalDate) {
+    public void setFinalDate(Date finalDate) {
         this.finalDate = finalDate;
     }
 

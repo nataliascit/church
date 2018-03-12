@@ -9,7 +9,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDateTime;
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -51,10 +51,10 @@ public class Contributor {
 
     @NotNull(message = "application.contributor.messages.birthDate.empty")
     @Column(name = "BIRTH_DATE")
-    private LocalDateTime birthDate;
+    private Date birthDate;
 
     @Column(name = "MARRIAGE_DATE")
-    private LocalDateTime marriageDate;
+    private Date marriageDate;
 
     @Column(name = "PARTNER_NAME")
     private String partnerName;
@@ -121,19 +121,19 @@ public class Contributor {
         this.address = address;
     }
 
-    public LocalDateTime getBirthDate() {
+    public Date getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDateTime birthDate) {
+    public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
 
-    public LocalDateTime getMarriageDate() {
+    public Date getMarriageDate() {
         return marriageDate;
     }
 
-    public void setMarriageDate(LocalDateTime marriageDate) {
+    public void setMarriageDate(Date marriageDate) {
         this.marriageDate = marriageDate;
     }
 

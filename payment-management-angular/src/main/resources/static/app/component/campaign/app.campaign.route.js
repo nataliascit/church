@@ -17,7 +17,10 @@ import './register/campaignRegisterController';
         $stateProvider.state('application.campaign', {
             url: '/campaigns',
             templateUrl: 'app/component/campaign/catalog/campaignCatalogView.html',
-            controller: 'campaignCatalogController as vm'
+            controller: 'campaignCatalogController as vm',
+            data: {
+                label: 'Listagem de Campanha',
+            }
         })
         .state('application.campaign.register', {
             url: '/:id',
@@ -25,6 +28,9 @@ import './register/campaignRegisterController';
             controller: 'campaignRegisterController as vm',
             params: {
                 id: null
+            },
+            data: {
+                label: 'Cadastro de Campanha',
             }
         })
     }]);

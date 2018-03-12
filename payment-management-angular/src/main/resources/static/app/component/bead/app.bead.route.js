@@ -16,7 +16,10 @@ import './catalog/beadCatalogController';
         $stateProvider.state('application.bead', {
             url: '/beads',
             templateUrl: 'app/component/bead/catalog/beadCatalogView.html',
-            controller: 'beadController as vm'
+            controller: 'beadController as vm',
+            data: {
+                label: 'Listagem de Talões',
+            }
         })
     }]);
 }());

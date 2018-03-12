@@ -16,7 +16,10 @@ import './homeController';
         $stateProvider.state('application.home', {
             url: '/home',
             templateUrl: 'app/component/home/homeView.html',
-            controller: 'homeController as vm'
+            controller: 'homeController as vm',
+            data: {
+                label: 'Inicio',
+            }
         })
     }]);
 }());

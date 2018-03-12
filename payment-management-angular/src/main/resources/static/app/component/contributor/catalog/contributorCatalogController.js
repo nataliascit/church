@@ -22,6 +22,15 @@ import '../../contribution/service/contributionRestService';
         vm.contributors = [];
 
         /**
+         * Represents the object containing the contributor to be deleted.
+         * @type {{id: null, index: null}}
+         */
+        var _contributorToDelete = {
+          id: null,
+          index: null
+        };
+
+        /**
          * Function responsible for handling the hook for the initialization of the controller.
          */
         vm.onInit = function() {
@@ -30,14 +39,22 @@ import '../../contribution/service/contributionRestService';
 
         /**
          * Handle the on click action for the delete button of a contributor.
-         * @param contributorId {Number} The contributor's identifier.
-         * @param index {Number} The row number where the contributor is located.
          */
-        vm.deleteContributorOnClick = function(contributorId, index) {
-            contributorRestService.remove(contributorId, function() {
-                vm.contributors.splice(index,1); // Remove the element from the array.
+        vm.deleteContributorOnClick = function() {
+            contributorRestService.remove(_contributorToDelete.id, function() {
+                vm.contributors.splice(_contributorToDelete.index,1); // Remove the element from the array.
                 messageService.showSuccessMessage('application.contributor.register.message.successDeletion');
             });
+        };
+
+        /**
+         * Defines the information used to delete a certain contributor.
+         * @param contributorId The contributor identifier.
+         * @param index The index where the contributor is located at the contributors array.
+         */
+        vm.setContributorToDelete = function(contributorId, index) {
+            _contributorToDelete.id = contributorId;
+            _contributorToDelete.index = index;
         };
 
         /**

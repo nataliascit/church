@@ -17,7 +17,10 @@ import './register/contributorRegisterController';
         $stateProvider.state('application.contributor', {
             url: '/contributors',
             templateUrl: 'app/component/contributor/catalog/contributorCatalogView.html',
-            controller: 'contributorCatalogController as vm'
+            controller: 'contributorCatalogController as vm',
+            data: {
+                label: 'Listagem de Contribuintes',
+            }
         })
         .state('application.contributor.register', {
             url: '/:id',
@@ -25,6 +28,9 @@ import './register/contributorRegisterController';
             controller: 'contributorRegisterController as vm',
             params: {
                 id: null
+            },
+            data: {
+                label: 'Cadastro de Contribuintes',
             }
         })
     }]);

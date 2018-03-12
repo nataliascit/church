@@ -7,7 +7,7 @@
       "home": "Início",
       "campaign": "Campanha",
       "contributor": "Contribuinte",
-      "contribution": "Novo lançamento",
+      "contribution": "Contribuição",
       "church": "Igreja",
       "reports": {
         "contributions": "Relatório de Contribuições"
@@ -95,20 +95,30 @@
         "table": {
           "contributor": {
             "column": {
-              "id": "ID",
               "name": "Nome",
-              "fiscalNumber": "CPF"
+              "address": "Endereço",
+              "cellphone": "Celular"
             },
             "button": {
               "editContributor": "Editar",
               "deleteContributor": "Remover"
             }
           }
+        },
+        "modal": {
+          "contributorDeletion": {
+            "title": "Confirmação de Remoção de Contribuinte",
+            "content": "Tem certeza que deseja remover o contribuinte?",
+            "button": {
+              "cancel": "Cancelar",
+              "ok": "Sim"
+            }
+          }
         }
       },
       "register": {
         "label": {
-          "title": "Cadastro de contribuinte"
+          "title": "Cadastro de Contribuinte"
         },
         "message": {
           "successCreation": "Contribuinte criado com sucesso.",
