@@ -2,6 +2,7 @@ import '../app.contributor.module';
 import '../service/contributorRestService';
 import '../config/app.contributor.constant';
 import '../../message/messageService';
+import 'lodash';
 
 /**
  * @desc This Controller is responsible for handling the view 'contributorRegisterView.html'
@@ -95,7 +96,7 @@ import '../../message/messageService';
          * @returns {boolean}
          */
         vm.genderFieldHasError = function() {
-            return _.isEmpty(vm.contributor.gender) || !_.contains(vm.genders, vm.contributor.gender);
+            return ($scope.contributorRegisterForm.$submitted && _.isEmpty(vm.contributor.gender));
         };
 
         /**
