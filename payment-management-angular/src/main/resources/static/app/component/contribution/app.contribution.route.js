@@ -17,8 +17,12 @@ import './catalog/contributionCatalogController';
             url: '/contributions',
             templateUrl: 'app/component/contribution/catalog/contributionCatalogView.html',
             controller: 'contributionCatalogController as vm',
-            data: {
-                label: 'Listagem de Contribuições',
+            breadcrumb: {
+                label: 'application.contribution.catalog.label.title',
+                force: true,
+                stateOptions: {
+                    reload: true
+                }
             }
         })
     }]);

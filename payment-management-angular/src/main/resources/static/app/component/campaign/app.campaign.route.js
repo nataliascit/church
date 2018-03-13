@@ -18,8 +18,12 @@ import './register/campaignRegisterController';
             url: '/campaigns',
             templateUrl: 'app/component/campaign/catalog/campaignCatalogView.html',
             controller: 'campaignCatalogController as vm',
-            data: {
-                label: 'Listagem de Campanha',
+            breadcrumb: {
+                label: 'application.campaign.catalog.label.title',
+                force: true,
+                stateOptions: {
+                    reload: true
+                }
             }
         })
         .state('application.campaign.register', {
@@ -29,8 +33,9 @@ import './register/campaignRegisterController';
             params: {
                 id: null
             },
-            data: {
-                label: 'Cadastro de Campanha',
+            breadcrumb: {
+                label: 'application.campaign.register.label.title',
+                force: true
             }
         })
     }]);

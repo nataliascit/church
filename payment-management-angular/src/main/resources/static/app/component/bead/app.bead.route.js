@@ -17,8 +17,12 @@ import './catalog/beadCatalogController';
             url: '/beads',
             templateUrl: 'app/component/bead/catalog/beadCatalogView.html',
             controller: 'beadController as vm',
-            data: {
-                label: 'Listagem de Talões',
+            breadcrumb: {
+                label: 'application.bead.catalog.label.title',
+                force: true,
+                stateOptions: {
+                    reload: true
+                }
             }
         })
     }]);

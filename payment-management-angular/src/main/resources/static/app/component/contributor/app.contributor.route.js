@@ -18,8 +18,12 @@ import './register/contributorRegisterController';
             url: '/contributors',
             templateUrl: 'app/component/contributor/catalog/contributorCatalogView.html',
             controller: 'contributorCatalogController as vm',
-            data: {
-                label: 'Listagem de Contribuintes',
+            breadcrumb: {
+                label: 'application.contributor.catalog.label.title',
+                force: true,
+                stateOptions: {
+                    reload: true
+                }
             }
         })
         .state('application.contributor.register', {
@@ -29,8 +33,9 @@ import './register/contributorRegisterController';
             params: {
                 id: null
             },
-            data: {
-                label: 'Cadastro de Contribuintes',
+            breadcrumb: {
+                label: 'application.contributor.register.label.title',
+                force: true
             }
         })
     }]);

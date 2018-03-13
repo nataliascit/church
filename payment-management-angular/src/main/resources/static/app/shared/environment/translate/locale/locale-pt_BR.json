@@ -25,6 +25,11 @@
         "campaign": {
           "empty": "A Campanha é obrigatória."
         }
+      },
+      "catalog": {
+        "label": {
+          "title": "Lista de Talões"
+        }
       }
     },
     "campaign": {
@@ -41,12 +46,27 @@
         "provingType": {
           "empty": "O Tipo de Comprovante de Pagamento é obrigatório."
         }
+      },
+      "catalog": {
+        "label": {
+          "title": "Listagem de Campanhas"
+        }
+      },
+      "register": {
+        "label": {
+          "title": "Registro de Campanha"
+        }
       }
     },
     "church": {
       "messages": {
         "name": {
           "empty": "O Nome é obrigatório."
+        }
+      },
+      "catalog": {
+        "label": {
+          "title": "Listagem de Igrejas"
         }
       }
     },
@@ -63,6 +83,16 @@
         },
         "contributor": {
           "empty": "O Contribuinte é obrigatório."
+        }
+      },
+      "catalog": {
+        "label": {
+          "title": "Listagem de Contribuições"
+        }
+      },
+      "register": {
+        "label": {
+          "title": "Registro de Contribuição"
         }
       }
     },
@@ -82,7 +112,7 @@
       },
       "catalog": {
         "label": {
-          "title": "Contribuintes"
+          "title": "Listagem de Contribuintes"
         },
         "form": {
           "field": {
@@ -118,7 +148,7 @@
       },
       "register": {
         "label": {
-          "title": "Cadastro de Contribuinte"
+          "title": "Registro de Contribuinte"
         },
         "message": {
           "successCreation": "Contribuinte criado com sucesso.",
@@ -173,44 +203,64 @@
         "birthDate": {
           "empty": "A Data de Nascimento é obrigatória."
         }
-      },
-      "provingType": {
-        "messages": {
-          "name": {
-            "empty": "O Nome é obrigatório."
-          },
-          "mnemonic": {
-            "empty": "A Sigla é obrigatória."
-          }
+      }
+    },
+    "home": {
+      "label": {
+        "title": "Inicio"
+      }
+    },
+    "provingType": {
+      "messages": {
+        "name": {
+          "empty": "O Nome é obrigatório."
+        },
+        "mnemonic": {
+          "empty": "A Sigla é obrigatória."
         }
       },
-      "user": {
-        "messages": {
-          "username": {
-            "empty": "O Username é obrigatório.",
-            "size": "O Tamanho do Username deve estar entre 6 à 10 caracteres."
-          },
-          "password": {
-            "empty": "A Senha é obrigatória.",
-            "size": "O Tamanho da Senha deve estar entre 6 à 10 caracteres."
-          },
-          "name": {
-            "empty": "O nome é obrigatório."
-          },
-          "lastName": {
-            "empty": "O Sobrenome é obrigatório."
-          },
-          "role": {
-            "empty": "Ao menos uma Permissão é obrigatória."
-          }
+      "catalog": {
+        "label": {
+          "title": "Listagem de Tipos de Registro de Pagamento"
+        }
+      }
+    },
+    "role": {
+      "messages": {
+        "role": {
+          "empty": "A Sigla é obrigatória.",
+          "size": "O Tamanho da Sigla deve estar entre 3 à 5 caracteres."
+        }
+      }
+    },
+    "user": {
+      "messages": {
+        "username": {
+          "empty": "O Username é obrigatório.",
+          "size": "O Tamanho do Username deve estar entre 6 à 10 caracteres."
+        },
+        "password": {
+          "empty": "A Senha é obrigatória.",
+          "size": "O Tamanho da Senha deve estar entre 6 à 10 caracteres."
+        },
+        "name": {
+          "empty": "O nome é obrigatório."
+        },
+        "lastName": {
+          "empty": "O Sobrenome é obrigatório."
+        },
+        "role": {
+          "empty": "Ao menos uma Permissão é obrigatória."
         }
       },
-      "role": {
-        "messages": {
-          "role": {
-            "empty": "A Sigla é obrigatória.",
-            "size": "O Tamanho da Sigla deve estar entre 3 à 5 caracteres."
-          }
+      "catalog": {
+        "label": {
+          "title": "Listagem de Usuários"
+        }
+      },
+      "register": {
+        "label": {
+          "title": "Registro de Usuário"
         }
       }
     }

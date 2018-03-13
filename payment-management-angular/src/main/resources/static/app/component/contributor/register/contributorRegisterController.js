@@ -12,7 +12,7 @@ import '../../message/messageService';
 
     const registerContributorModule = angular.module('paymentManagement.contributor');
 
-    function ContributorRegisterController($stateParams, messageService, contributorRestService, contributionRestService, GENDER_CATALOG, CIVIL_STATE) {
+    function ContributorRegisterController($scope, $stateParams, messageService, contributorRestService, contributionRestService, GENDER_CATALOG, CIVIL_STATE) {
 
         const vm = this;
 
@@ -80,6 +80,25 @@ import '../../message/messageService';
         };
 
         /**
+         * Verifies if a certain field of the form contains error or not.
+         * @param field The field name to be validated.
+         * @param validation The type of the validation to be performed.
+         * @returns {boolean}
+         */
+        vm.hasError = function(field, validation){
+            return ($scope.contributorRegisterForm.$submitted && $scope.contributorRegisterForm[field].$error[validation]);
+        };
+
+        /**
+         * Vefifies if the gender has errors of validation.
+         * @param validation The validation to be used.
+         * @returns {boolean}
+         */
+        vm.genderFieldHasError = function() {
+            return _.isEmpty(vm.contributor.gender) || !_.contains(vm.genders, vm.contributor.gender);
+        };
+
+        /**
          * Load a certain contributor by their identifier.
          * @param {Number} contributorId
          * @private
@@ -90,6 +109,6 @@ import '../../message/messageService';
             }).$promise;
         }
     }
-    registerContributorModule.controller('contributorRegisterController', ['$stateParams', 'messageService', 'contributorRestService',
+    registerContributorModule.controller('contributorRegisterController', ['$scope', '$stateParams', 'messageService', 'contributorRestService',
         'contributionRestService', 'GENDER_CATALOG', 'CIVIL_STATE', ContributorRegisterController]);
 }());

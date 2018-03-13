@@ -1,5 +1,4 @@
-import '../../../node_modules/ui-router-breadcrumbs/ui-router-breadcrumbs';
-import '../../../node_modules/ui-router-breadcrumbs/ui-router-breadcrumbs.min.css';
+import '../../../node_modules/ui-breadcrumb/dist/ui-breadcrumb';
 
 /**
  * @desc Configures the module responsible for holding the environment configuration.
@@ -8,5 +7,5 @@ import '../../../node_modules/ui-router-breadcrumbs/ui-router-breadcrumbs.min.cs
 (function () {
     'use strict';
 
-    angular.module('paymentManagement.breadcrumb', ['ui.router', 'uiBreadcrumbs']);
+    angular.module('paymentManagement.breadcrumb', ['ui.breadcrumb']);
 }());

@@ -2,7 +2,7 @@ import './app.breadcrumb.module';
 
 /**
  * @desc Configures the breadcrumb used to navigate over the application.
- * @param breadcrumbconfigProvider The responsible for defining the breadcrumb component configuration.
+ * @param $breadcrumbProvider The responsible for defining the breadcrumb component configuration.
  * @author wcustodio
  */
 (function () {
@@ -10,9 +10,16 @@ import './app.breadcrumb.module';
 
     var module = angular.module('paymentManagement.breadcrumb');
 
-    module.config(['breadcrumbconfigProvider', function (breadcrumbconfigProvider) {
+    module.config(['$breadcrumbProvider', function ($breadcrumbProvider) {
 
         // Do not show the abstracts states on the breadcrumb.
-        breadcrumbconfigProvider.setAbstract(false);
+        $breadcrumbProvider.setOptions({
+
+            // Should it include abstract states as well?
+            includeAbstract: false,
+
+            // A custom template url.
+            templateUrl: 'app/component/breadcrumb/breadcrumbView.html'
+        });
     }]);
 })();

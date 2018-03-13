@@ -17,8 +17,9 @@ import './homeController';
             url: '/home',
             templateUrl: 'app/component/home/homeView.html',
             controller: 'homeController as vm',
-            data: {
-                label: 'Inicio',
+            breadcrumb: {
+                label: 'application.home.label.title',
+                force: true
             }
         })
     }]);

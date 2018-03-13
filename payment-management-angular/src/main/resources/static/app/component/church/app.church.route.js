@@ -17,8 +17,9 @@ import './catalog/churchCatalogController';
             url: '/churches',
             templateUrl: 'app/component/church/catalog/churchCatalogView.html',
             controller: 'churchCatalogController as vm',
-            data: {
-                label: 'Listagem de Igrejas',
+            breadcrumb: {
+                label: 'application.church.catalog.label.title',
+                force: true
             }
         })
     }]);
