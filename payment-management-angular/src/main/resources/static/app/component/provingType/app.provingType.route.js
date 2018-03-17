@@ -16,7 +16,11 @@ import './catalog/provingTypeCatalogController';
         $stateProvider.state('application.provingType', {
             url: '/provingTypes',
             templateUrl: 'app/component/provingType/catalog/provingTypeCatalogView.html',
-            controller: 'provingTypeCatalogController as vm'
+            controller: 'provingTypeCatalogController as vm',
+            breadcrumb: {
+                label: 'application.provingType.catalog.label.title',
+                force: true
+            }
         })
     }]);
 }());

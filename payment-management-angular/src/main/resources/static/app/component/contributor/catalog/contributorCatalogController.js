@@ -1,5 +1,7 @@
 import '../app.contributor.module';
 import '../service/contributorRestService';
+import '../../contribution/service/contributionRestService';
+import '../../../shared/modal/confirmationModal/confirmationModalService';
 
 /**
  * @desc This Controller is responsible for handling the view 'contributorCatalogView.html'
@@ -8,9 +10,79 @@ import '../service/contributorRestService';
 (function () {
     'use strict';
 
-    var contributorModule = angular.module('paymentManagement.contributor');
+    const contributorModule = angular.module('paymentManagement.contributor');
 
-    function ContributorCatalogController(){}
+    function ContributorCatalogController(confirmationModalService, messageService, contributorRestService) {
 
-    contributorModule.controller('contributorCatalogController', [ContributorCatalogController]);
+        const vm = this;
+
+        /**
+         * List of all the existing contributors.
+         * @type {Array}
+         */
+        vm.contributors = [];
+
+        /**
+         * Represents the object containing the contributor to be deleted.
+         * @type {{id: null, index: null}}
+         */
+        const _contributorToDelete = {
+          id: null,
+          index: null
+        };
+
+        /**
+         * Function responsible for handling the hook for the initialization of the controller.
+         */
+        vm.onInit = function() {
+            _findAllContributor();
+        };
+
+        /**
+         * Defines the information used to delete a certain contributor.
+         * @param contributorId The contributor identifier.
+         * @param index The index where the contributor is located at the contributors array.
+         */
+        vm.setContributorToDelete = function(contributorId, index) {
+            _contributorToDelete.id = contributorId;
+            _contributorToDelete.index = index;
+        };
+
+        /**
+         * Open the confirmation modal used to delete a contributor.
+         */
+        vm.openDeleteConfirmationModal = function() {
+            confirmationModalService.open({
+                title: 'application.contributor.catalog.modal.contributorDeletion.title',
+                body: 'application.contributor.catalog.modal.contributorDeletion.body',
+                confirmationOnClick: _deleteContributor
+            });
+        };
+
+        /**
+         * Search for all existing contributors in the database.
+         * @private
+         */
+        function _findAllContributor() {
+            contributorRestService.findAll(function(response) {
+                vm.contributors = response._embedded.contributors;
+            });
+        }
+
+        /**
+         * Delete a certain contributor by their identifier.
+         */
+        function _deleteContributor() {
+            contributorRestService.remove(_contributorToDelete.id, function() {
+                vm.contributors.splice(_contributorToDelete.index,1); // Remove the element from the array.
+                messageService.showSuccessMessage('application.contributor.register.message.successDeletion');
+            });
+        }
+    }
+    contributorModule.controller('contributorCatalogController', [
+        'confirmationModalService',
+        'messageService',
+        'contributorRestService',
+        ContributorCatalogController
+    ]);
 }());

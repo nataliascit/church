@@ -19,7 +19,9 @@ import '../../../component/home/app.home.route';
         $locationProvider.html5Mode(true);
 
         $stateProvider.state('application', {
-            url: '/pages'
+            url: '/pages',
+            abstract: true,
+            template: '<ui-view/>'
         })
     }]);
 })();

@@ -16,7 +16,14 @@ import './catalog/contributionCatalogController';
         $stateProvider.state('application.contribution', {
             url: '/contributions',
             templateUrl: 'app/component/contribution/catalog/contributionCatalogView.html',
-            controller: 'contributionCatalogController as vm'
+            controller: 'contributionCatalogController as vm',
+            breadcrumb: {
+                label: 'application.contribution.catalog.label.title',
+                force: true,
+                stateOptions: {
+                    reload: true
+                }
+            }
         })
     }]);
 }());

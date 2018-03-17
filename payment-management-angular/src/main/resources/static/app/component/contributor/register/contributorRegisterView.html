@@ -1,137 +1,106 @@
-<div class="container">
-  <div class="title-page text-center">
-    <h3>Cadastro de contribuinte</h3>
-  </div>
-
-  <div class="col-lg-12">
-    <div class="filters">
-      <form class="col-lg-12">
-        <div class="form-group col-xs-3 col-md-4 col-lg-4 pull-left">
-          <label for="exampleInputEmail1">ID</label>
-          <input type="email" class="form-control" id="exampleInputEmail1">
+<section data-ng-init="vm.onInit()">
+  <form id="contributorRegisterForm" name="contributorRegisterForm" class="col-lg-12"
+        data-ng-submit="contributorRegisterForm.$valid && vm.saveContributorOnClick()" novalidate>
+    <div class="row">
+      <div class="form-group col-xs-4">
+        <label for="contributorRegisterFieldName" class="required">
+          {{ 'application.contributor.register.form.field.name' | translate }}
+        </label>
+        <input id="contributorRegisterFieldName" name="contributorRegisterFieldName" type="text" class="form-control"
+               data-ng-model="vm.contributor.name" data-ng-required="true">
+        <div data-ng-show="vm.hasError('contributorRegisterFieldName', 'required')" class="invalid">
+          {{ 'application.contributor.messages.name.empty' | translate }}
         </div>
-        <div class="form-group col-xs-3 col-md-4 col-lg-4 pull-left">
-          <label for="exampleInputEmail1">Nome</label>
-          <input type="email" class="form-control" id="exampleInputEmail1">
+      </div>
+      <div class="form-group col-xs-4">
+        <label for="contributorRegisterFieldBirthDate" class="required">
+          {{ 'application.contributor.register.form.field.birthDate' | translate }}
+        </label>
+        <input id="contributorRegisterFieldBirthDate" name="contributorRegisterFieldBirthDate"
+               type="date" class="form-control" data-ng-model="vm.contributor.birthDate" data-ng-required="true">
+        <div data-ng-show="vm.hasError('contributorRegisterFieldBirthDate', 'required')" class="invalid">
+          {{ 'application.contributor.messages.birthDate.empty' | translate }}
         </div>
-
-        <div class="form-group col-xs-3 col-md-4 col-lg-4">
-          <div class="input-group">
-            <label for="exampleInputEmail1">Nascimento</label>
-            <input type="datetime" class="form-control">
-            <span class="input-group-addon glyphicon glyphicon-calendar"></span>
-          </div>
+      </div>
+      <div class="form-group col-xs-4">
+        <label for="contributorRegisterFieldGender" class="required">
+          {{ 'application.contributor.register.form.field.gender' | translate }}
+        </label>
+        <div id="contributorRegisterFieldGender">
+          <label data-ng-repeat="gender in vm.genders" class="radio-inline">
+            <input type="radio" data-ng-model="vm.contributor.gender" value="{{gender.value}}"> {{gender.label | translate}}
+          </label>
         </div>
-
-        <div class="form-group col-xs-3 col-md-4 col-lg-4 pull-left">
-          <label for="exampleInputEmail1">Sexo</label>
-          <div>
-            <label class="radio-inline">
-              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">Feminino
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">Masculino
-            </label>
-          </div>
+        <div data-ng-show="vm.genderFieldHasError()" class="invalid">
+          {{ 'application.contributor.messages.civilState.empty' | translate }}
         </div>
-
-        <div class="form-group col-xs-4 col-lg-4">
-          <label for="exampleInputEmail1">Estado civil</label>
-          <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-        </div>
-        <div class="form-group col-xs-4 col-md-4 col-lg-4 pull-left">
-          <label for="exampleInputEmail1">Nome do cônjuge</label>
-          <input type="email" class="form-control" id="exampleInputEmail1">
-        </div>
-
-        <div class="form-group col-xs-4 col-md-4 col-lg-4">
-          <div class="input-group">
-            <label for="exampleInputEmail1">Casamento</label>
-            <input type="datetime" class="form-control">
-            <span class="input-group-addon glyphicon glyphicon-calendar"></span>
-          </div>
-        </div>
-
-        <div class="form-group col-xs-12 col-md-4 col-lg-4 pull-left">
-          <label for="exampleInputEmail1">Endereço</label>
-          <input type="email" class="form-control" id="exampleInputEmail1">
-        </div>
-
-        <div class="form-group col-xs-4 col-md-4 col-lg-4 pull-left">
-          <label for="exampleInputEmail1">Telefone</label>
-          <input type="email" class="form-control" id="exampleInputEmail1">
-        </div>
-        <div class="form-group col-xs-4 col-md-4 col-lg-4 pull-left">
-          <label for="exampleInputEmail1">Celular</label>
-          <input type="email" class="form-control" id="exampleInputEmail1">
-        </div>
-
-        <div class="col-xs-12 col-md-12 col-lg-12">
-
-          <div class="form-group pull-left">
-            <a class="btn btn-primary" href="#" role="button">+ Campanha</a>
-          </div>
-
-          <div class="table-responsive col-lg-12">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Talão</th>
-                  <th>campanha</th>
-                  <th>Lançamentos</th>
-                  <th>Valor da contribuição</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>453</td>
-                  <td>Dizimo</td>
-                  <td>03</td>
-                  <td>R$ 50,00</td>
-                  <td><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></td>
-                </tr>
-                <tr>
-                  <td>402</td>
-                  <td>Rifa moto</td>
-                  <td>03</td>
-                  <td>R$ 50,00</td>
-                  <td><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></td>
-                </tr>
-                <tr>
-                  <td>405</td>
-                  <td>Dizimo</td>
-                  <td>03</td>
-                  <td>R$ 50,00</td>
-                  <td><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></td>
-                </tr>
-                <tr>
-                  <td>407</td>
-                  <td>Rifa moto</td>
-                  <td>03</td>
-                  <td>R$ 50,00</td>
-                  <td><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-        </div>
-        <div class="col-xs-12">
-          <div class="form-group pull-right">
-            <a class="btn btn-primary" href="#" role="button">Excluir</a>
-          </div>
-          <div class="form-group pull-right">
-            <a class="btn btn-primary" href="#" role="button">Salvar</a>
-          </div>
-        </div>
-      </form>
+      </div>
     </div>
-  </div>
-</div>
+
+    <div class="row">
+      <div class="form-group col-xs-4">
+        <label for="contributorRegisterFieldCivilState" class="required">
+          {{ 'application.contributor.register.form.field.civilState' | translate }}
+        </label>
+        <select id="contributorRegisterFieldCivilState" name="contributorRegisterFieldCivilState"
+                class="form-control" data-ng-model="vm.contributor.civilState" data-ng-required="true">
+          <option data-ng-repeat="civilState in vm.civilStates" value="{{civilState.value}}">
+            {{civilState.label | translate}}
+          </option>
+        </select>
+        <div data-ng-show="vm.hasError('contributorRegisterFieldCivilState', 'required')" class="invalid">
+          {{ 'application.contributor.messages.gender.empty' | translate }}
+        </div>
+      </div>
+      <div class="form-group col-xs-4">
+        <label for="contributorRegisterFieldPartnerName">
+          {{ 'application.contributor.register.form.field.partnerName' | translate }}
+        </label>
+        <input id="contributorRegisterFieldPartnerName" type="text" class="form-control" data-ng-model="vm.contributor.partnerName">
+      </div>
+      <div class="form-group col-xs-4">
+          <label for="contributorRegisterFieldMarriageDate">
+            {{ 'application.contributor.register.form.field.marriageDate' | translate }}
+          </label>
+          <input id="contributorRegisterFieldMarriageDate" type="date" class="form-control" data-ng-model="vm.contributor.marriageDate">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-xs-4">
+        <label for="contributorRegisterFieldAddress" class="required">
+          {{ 'application.contributor.register.form.field.address' | translate }}
+        </label>
+        <input id="contributorRegisterFieldAddress" name="contributorRegisterFieldAddress" type="text" class="form-control"
+               data-ng-model="vm.contributor.address" data-ng-required="true">
+        <div data-ng-show="vm.hasError('contributorRegisterFieldAddress', 'required')" class="invalid">
+          {{ 'application.contributor.messages.address.empty' | translate }}
+        </div>
+      </div>
+
+      <div class="form-group col-xs-4">
+        <label for="contributorRegisterFieldTelephone">
+          {{ 'application.contributor.register.form.field.telephone' | translate }}
+        </label>
+        <input id="contributorRegisterFieldTelephone" type="number" class="form-control" data-ng-model="vm.contributor.telephone">
+      </div>
+
+      <div class="form-group col-xs-4">
+        <label for="contributorRegisterFieldCellphone">
+          {{ 'application.contributor.register.form.field.cellphone' | translate }}
+        </label>
+        <input id="contributorRegisterFieldCellphone" type="number" class="form-control" data-ng-model="vm.contributor.cellphone">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="form-group pull-right">
+          <button class="btn btn-primary" type="submit">
+            {{ 'application.contributor.register.form.button.saveContributor' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>

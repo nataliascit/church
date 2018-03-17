@@ -1,5 +1,7 @@
 /* Import for application main dependencies. */
 import 'angular';
+import 'angular-animate';
+import 'angular-sanitize';
 /* Import for styling. */
 import 'bootstrap';
 import '../assets/sass/index.scss';
@@ -21,6 +23,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
     angular.module('paymentManagement', [
         'paymentManagement.bead',
+        'paymentManagement.breadcrumb',
         'paymentManagement.campaign',
         'paymentManagement.church',
         'paymentManagement.contribution',
@@ -29,6 +32,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
         'paymentManagement.provingType',
         'paymentManagement.environment',
         'paymentManagement.menu',
+        'paymentManagement.modal',
         'paymentManagement.message'
     ]);
 })();

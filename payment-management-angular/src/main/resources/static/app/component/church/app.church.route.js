@@ -16,7 +16,11 @@ import './catalog/churchCatalogController';
         $stateProvider.state('application.church', {
             url: '/churches',
             templateUrl: 'app/component/church/catalog/churchCatalogView.html',
-            controller: 'churchCatalogController as vm'
+            controller: 'churchCatalogController as vm',
+            breadcrumb: {
+                label: 'application.church.catalog.label.title',
+                force: true
+            }
         })
     }]);
 }());

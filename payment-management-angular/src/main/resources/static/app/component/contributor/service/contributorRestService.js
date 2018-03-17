@@ -10,7 +10,7 @@ import '../app.contributor.module';
 
     var contributorModule = angular.module('paymentManagement.contributor');
 
-    function ContributionRestService(environmentConfig, $resource) {
+    function ContributorRestService(environmentConfig, $resource) {
 
         var resources = $resource(environmentConfig.apiBaseUrl + '/contributors/:id', null, {
             'create': {
@@ -19,7 +19,7 @@ import '../app.contributor.module';
             'update': {
                 method: 'PUT'
             },
-            'delete': {
+            'remove': {
                 method: 'DELETE'
             },
             'find': {
@@ -76,11 +76,11 @@ import '../app.contributor.module';
          *         The function which will handle error callback.
          * @private
          */
-        function _remove(applicationId, successCallback, errorCallback) {
+        function _remove(id, successCallback, errorCallback) {
             var params = {
-                applicationId: applicationId
+                id: id
             };
-            return applications.remove(params, null, successCallback, errorCallback);
+            return resources.remove(params, null, successCallback, errorCallback);
         }
 
         /**
@@ -124,6 +124,5 @@ import '../app.contributor.module';
             findAll: _findAll
         }
     }
-
-    contributorModule.service('contributionRestService', ['environmentConfig', '$resource', ContributionRestService]);
+    contributorModule.service('contributorRestService', ['environmentConfig', '$resource', ContributorRestService]);
 }());

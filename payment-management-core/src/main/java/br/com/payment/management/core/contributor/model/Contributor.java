@@ -9,7 +9,6 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.sql.Date;
 import java.util.List;
 
@@ -37,14 +36,12 @@ public class Contributor {
     private Long fiscalNumber;
 
     @Enumerated(EnumType.STRING)
-    @Size(max = 1, message = "application.contributor.messages.gender.size")
-    @NotEmpty(message = "application.contributor.messages.gender.empty")
+    @NotNull(message = "application.contributor.messages.gender.empty")
     @Column(name = "GENDER")
     private GenderType gender;
 
     @Enumerated(EnumType.STRING)
-    @Size(max = 1, message = "application.contributor.messages.civilState.size")
-    @NotEmpty(message = "application.contributor.messages.civilState.empty")
+    @NotNull(message = "application.contributor.messages.civilState.empty")
     @Column(name = "CIVIL_STATE")
     private CivilStateType civilState;
 

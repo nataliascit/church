@@ -1,5 +1,5 @@
 import '../app.environment.module';
-import '../config/app.environment.variables';
+import '../config/app.environment.constant';
 
 /**
  * @desc Defines the functions used to execute HTTP requests for the authentication module.

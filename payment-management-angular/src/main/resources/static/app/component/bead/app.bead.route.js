@@ -16,7 +16,14 @@ import './catalog/beadCatalogController';
         $stateProvider.state('application.bead', {
             url: '/beads',
             templateUrl: 'app/component/bead/catalog/beadCatalogView.html',
-            controller: 'beadController as vm'
+            controller: 'beadController as vm',
+            breadcrumb: {
+                label: 'application.bead.catalog.label.title',
+                force: true,
+                stateOptions: {
+                    reload: true
+                }
+            }
         })
     }]);
 }());

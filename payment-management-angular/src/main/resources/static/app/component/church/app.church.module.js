@@ -1,7 +1,8 @@
 import '@uirouter/angularjs';
 import 'angular-resource';
-import '../../shared/environment/config/app.environment.variables';
+import '../../shared/environment/config/app.environment.constant';
 import '../../shared/environment/app.environment.module';
+import '../breadcrumb/app.breadcrumb.module';
 
 /**
  * @desc Configures the existing application's modules.
@@ -10,5 +11,10 @@ import '../../shared/environment/app.environment.module';
 (function () {
     'use strict';
 
-    angular.module('paymentManagement.church', ['ui.router', 'ngResource', 'paymentManagement.environment']);
+    angular.module('paymentManagement.church', [
+        'ui.router',
+        'ngResource',
+        'paymentManagement.breadcrumb',
+        'paymentManagement.environment'
+    ]);
 }());

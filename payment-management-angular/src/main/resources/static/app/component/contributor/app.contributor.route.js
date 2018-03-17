@@ -17,7 +17,14 @@ import './register/contributorRegisterController';
         $stateProvider.state('application.contributor', {
             url: '/contributors',
             templateUrl: 'app/component/contributor/catalog/contributorCatalogView.html',
-            controller: 'contributorCatalogController as vm'
+            controller: 'contributorCatalogController as vm',
+            breadcrumb: {
+                label: 'application.contributor.catalog.label.title',
+                force: true,
+                stateOptions: {
+                    reload: true
+                }
+            }
         })
         .state('application.contributor.register', {
             url: '/:id',
@@ -25,6 +32,10 @@ import './register/contributorRegisterController';
             controller: 'contributorRegisterController as vm',
             params: {
                 id: null
+            },
+            breadcrumb: {
+                label: 'application.contributor.register.label.title',
+                force: true
             }
         })
     }]);

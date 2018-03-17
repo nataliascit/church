@@ -1,49 +1,55 @@
 {
   "application": {
-    "error": {
-      "unknown": "An unexpected error occurred."
-    },
-    "menu": {
-      "home": "Início",
-      "campaign": "Campanha",
-      "contributor": "Contribuinte",
-      "contribution": "Novo lançamento",
-      "church": "Igreja",
-      "reports": {
-        "contributions": "Relatório de Contribuições"
-      },
-      "logout": "Logout"
-    },
     "bead" : {
+      "catalog": {
+        "label": {
+          "title": "Lista de Talões"
+        }
+      },
       "messages": {
-        "identificationNumber": {
-          "empty": "O Número de Indentificação Fiscal é obrigatório."
+        "campaign": {
+          "empty": "A Campanha é obrigatória."
         },
         "contributor" : {
           "empty": "O Contribuinte é obrigatório."
         },
-        "campaign": {
-          "empty": "A Campanha é obrigatória."
+        "identificationNumber": {
+          "empty": "O Número de Indentificação Fiscal é obrigatório."
         }
       }
     },
     "campaign": {
+      "catalog": {
+        "label": {
+          "title": "Listagem de Campanhas"
+        }
+      },
       "messages": {
-        "name": {
-          "empty": "O Nome é obrigatório."
-        },
         "creationDate": {
           "empty": "A Data de Criação é obrigatória."
         },
         "church": {
           "empty": "A Igreja é obrigatória."
         },
+        "name": {
+          "empty": "O Nome é obrigatório."
+        },
         "provingType": {
           "empty": "O Tipo de Comprovante de Pagamento é obrigatório."
+        }
+      },
+      "register": {
+        "label": {
+          "title": "Registro de Campanha"
         }
       }
     },
     "church": {
+      "catalog": {
+        "label": {
+          "title": "Listagem de Igrejas"
+        }
+      },
       "messages": {
         "name": {
           "empty": "O Nome é obrigatório."
@@ -51,6 +57,11 @@
       }
     },
     "contribution": {
+      "catalog": {
+        "label": {
+          "title": "Listagem de Contribuições"
+        }
+      },
       "messages": {
         "creationDate": {
           "empty": "A Data de Criação é obrigatória."
@@ -64,9 +75,59 @@
         "contributor": {
           "empty": "O Contribuinte é obrigatório."
         }
+      },
+      "register": {
+        "label": {
+          "title": "Registro de Contribuição"
+        }
       }
     },
     "contributor": {
+      "catalog": {
+        "button": {
+          "addContributor": "+ Contribuinte"
+        },
+        "form": {
+          "field": {
+            "contributorName": "Digite o nome"
+          }
+        },
+        "label": {
+          "title": "Listagem de Contribuintes"
+        },
+        "modal": {
+          "contributorDeletion": {
+            "title" : "Confirmação de exclusão de contribuinte",
+            "body": "Tem certeza que deseja remover o contribuinte selectionado?"
+          }
+        },
+        "table": {
+          "contributor": {
+            "column": {
+              "name": "Nome",
+              "address": "Endereço",
+              "cellphone": "Celular"
+            },
+            "button": {
+              "editContributor": "Editar",
+              "deleteContributor": "Remover"
+            }
+          }
+        }
+      },
+      "label": {
+        "civilState": {
+          "divorced": "Divorciado(a)",
+          "married": "Casado(a)",
+          "single": "Solteiro(a)",
+          "stableUnion": "União Estável",
+          "widower": "Viúvo(a)"
+        },
+        "gender": {
+          "female": "Feminino",
+          "male": "Masculino"
+        }
+      },
       "messages": {
         "name": {
           "empty": "O Nome é obrigatório."
@@ -86,43 +147,120 @@
           "empty": "A Data de Nascimento é obrigatória."
         }
       },
-      "provingType": {
-        "messages": {
-          "name": {
-            "empty": "O Nome é obrigatório."
+      "register": {
+        "label": {
+          "title": "Registro de Contribuinte"
+        },
+        "message": {
+          "successCreation": "Contribuinte criado com sucesso.",
+          "successDeletion": "Contribuinte removido com sucesso.",
+          "successContributionDeletion": "Contribuição removida com sucesso."
+        },
+        "form": {
+          "field": {
+            "id": "ID",
+            "name": "Nome",
+            "gender": "Genêro",
+            "birthDate": "Data de Nascimento",
+            "civilState": "Estado Civil",
+            "partnerName": "Nome do cônjuge",
+            "marriageDate": "Data de Casamento",
+            "address": "Endereço",
+            "telephone": "Telefone",
+            "cellphone": "Celular"
           },
-          "mnemonic": {
-            "empty": "A Sigla é obrigatória."
+          "button": {
+            "addCampaign": "+ Campanha",
+            "deleteContributor": "Excluir",
+            "saveContributor": "Salvar"
+          }
+        },
+        "table": {
+          "contribution": {
+            "column": {
+              "id": "ID",
+              "creationDate": "Data de Criação",
+              "amount": "Valor",
+              "campaign": "Campanha"
+            }
           }
         }
-      },
-      "user": {
-        "messages": {
-          "username": {
-            "empty": "O Username é obrigatório.",
-            "size": "O Tamanho do Username deve estar entre 6 à 10 caracteres."
-          },
-          "password": {
-            "empty": "A Senha é obrigatória.",
-            "size": "O Tamanho da Senha deve estar entre 6 à 10 caracteres."
-          },
-          "name": {
-            "empty": "O nome é obrigatório."
-          },
-          "lastName": {
-            "empty": "O Sobrenome é obrigatório."
-          },
-          "role": {
-            "empty": "Ao menos uma Permissão é obrigatória."
-          }
+      }
+    },
+    "error": {
+      "unknown": "Ocorreu um erro inesperado, por favor contacte o Administrador."
+    },
+    "home": {
+      "label": {
+        "title": "Inicio"
+      }
+    },
+    "menu": {
+      "campaign": "Campanha",
+      "contributor": "Contribuinte",
+      "contribution": "Contribuição",
+      "church": "Igreja",
+      "home": "Início",
+      "logout": "Logout",
+      "reports": {
+        "contributions": "Relatório de Contribuições"
+      }
+    },
+    "modal": {
+        "button": {
+          "cancel": "Cancelar",
+          "ok": "Sim"
+        }
+    },
+    "provingType": {
+      "catalog": {
+        "label": {
+          "title": "Listagem de Tipos de Registro de Pagamento"
         }
       },
-      "role": {
-        "messages": {
-          "role": {
-            "empty": "A Sigla é obrigatória.",
-            "size": "O Tamanho da Sigla deve estar entre 3 à 5 caracteres."
-          }
+      "messages": {
+        "mnemonic": {
+          "empty": "A Sigla é obrigatória."
+        },
+        "name": {
+          "empty": "O Nome é obrigatório."
+        }
+      }
+    },
+    "role": {
+      "messages": {
+        "empty": "A Sigla é obrigatória.",
+        "size": "O Tamanho da Sigla deve estar entre 3 à 5 caracteres."
+      }
+    },
+    "user": {
+      "messages": {
+        "lastName": {
+          "empty": "O Sobrenome é obrigatório."
+        },
+        "name": {
+          "empty": "O nome é obrigatório."
+        },
+        "password": {
+          "empty": "A Senha é obrigatória.",
+          "size": "O Tamanho da Senha deve estar entre 6 à 10 caracteres."
+        },
+        "role": {
+          "empty": "Ao menos uma Permissão é obrigatória."
+        },
+        "username": {
+          "empty": "O Username é obrigatório.",
+          "size": "O Tamanho do Username deve estar entre 6 à 10 caracteres."
+        }
+      },
+      "catalog": {
+        "label": {
+          "title": "Listagem de Usuários"
+        }
+      },
+      "register": {
+        "label": {
+          "title": "Registro de Usuário"
         }
       }
     }
