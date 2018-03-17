@@ -19,3 +19,4 @@ target/
 .metadata/*
 *.iml
 *.log
+package-lock.json

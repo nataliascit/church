@@ -1,7 +1,7 @@
 import '../app.contributor.module';
 import '../service/contributorRestService';
 import '../config/app.contributor.constant';
-import '../../message/messageService';
+import '../../../shared/message/messageService';
 import 'lodash';
 
 /**
@@ -13,8 +13,8 @@ import 'lodash';
 
     const registerContributorModule = angular.module('paymentManagement.contributor');
 
-    function ContributorRegisterController($scope, $stateParams, messageService, contributorRestService, contributionRestService, GENDER_CATALOG, CIVIL_STATE) {
-
+    function ContributorRegisterController($scope, $stateParams, messageService, contributorRestService,
+                                           contributionRestService, GENDER_CATALOG, CIVIL_STATE_CATALOG) {
         const vm = this;
 
         /**
@@ -51,7 +51,7 @@ import 'lodash';
         /**
          * Catalog with all existing civil states.
          */
-        vm.civilStates = CIVIL_STATE;
+        vm.civilStates = CIVIL_STATE_CATALOG;
 
         /**
          * Function responsible for handling the hook for the initialization of the controller.
@@ -110,6 +110,14 @@ import 'lodash';
             }).$promise;
         }
     }
-    registerContributorModule.controller('contributorRegisterController', ['$scope', '$stateParams', 'messageService', 'contributorRestService',
-        'contributionRestService', 'GENDER_CATALOG', 'CIVIL_STATE', ContributorRegisterController]);
+    registerContributorModule.controller('contributorRegisterController', [
+        '$scope',
+        '$stateParams',
+        'messageService',
+        'contributorRestService',
+        'contributionRestService',
+        'GENDER_CATALOG',
+        'CIVIL_STATE_CATALOG',
+        ContributorRegisterController
+    ]);
 }());

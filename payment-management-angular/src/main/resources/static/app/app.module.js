@@ -32,6 +32,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
         'paymentManagement.provingType',
         'paymentManagement.environment',
         'paymentManagement.menu',
+        'paymentManagement.modal',
         'paymentManagement.message'
     ]);
 })();

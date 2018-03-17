@@ -11,5 +11,10 @@ import '../breadcrumb/app.breadcrumb.module';
 (function () {
     'use strict';
 
-    angular.module('paymentManagement.contribution', ['ui.router', 'ngResource', 'paymentManagement.breadcrumb', 'paymentManagement.environment']);
+    angular.module('paymentManagement.contribution', [
+        'ui.router',
+        'ngResource',
+        'paymentManagement.breadcrumb',
+        'paymentManagement.environment'
+    ]);
 }());

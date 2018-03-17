@@ -10,5 +10,8 @@ import '../breadcrumb/app.breadcrumb.module';
 (function () {
     'use strict';
 
-    angular.module('paymentManagement.home', ['ui.router', 'paymentManagement.breadcrumb']);
+    angular.module('paymentManagement.home', [
+        'ui.router',
+        'paymentManagement.breadcrumb'
+    ]);
 }());

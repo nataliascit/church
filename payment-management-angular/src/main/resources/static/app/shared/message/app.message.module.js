@@ -1,5 +1,5 @@
 /**
- * @desc Configures the proving type module.
+ * @desc Configures the message type module.
  * @author wcustodio
  */
 (function () {
