@@ -4,7 +4,7 @@ import '../config/app.environment.constant';
 /**
  * @desc Defines the functions used to execute HTTP requests for the authentication module.
  * @param $resource The responsible for configuring the api entry points.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

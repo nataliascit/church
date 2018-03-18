@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * {@link Church} Data Access Object.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 public interface ChurchRepository extends JpaRepository<Church, Long> {
 }

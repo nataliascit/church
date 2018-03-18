@@ -10,7 +10,7 @@ import javax.transaction.Transactional;
 /**
  * Service responsible for executing validations over the data of a {@link Campaign}.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Service
 @Transactional

@@ -6,7 +6,7 @@ import '../breadcrumb/app.breadcrumb.module';
 
 /**
  * @desc Configures the proving type module.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

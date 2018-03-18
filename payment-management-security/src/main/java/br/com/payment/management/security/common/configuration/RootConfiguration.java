@@ -8,7 +8,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 /**
  * Class responsible for the main application's configuration.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Configuration
 public class RootConfiguration {

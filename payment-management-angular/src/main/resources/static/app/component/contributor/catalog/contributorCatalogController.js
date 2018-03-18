@@ -5,7 +5,7 @@ import '../../../shared/modal/confirmationModal/confirmationModalService';
 
 /**
  * @desc This Controller is responsible for handling the view 'contributorCatalogView.html'
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

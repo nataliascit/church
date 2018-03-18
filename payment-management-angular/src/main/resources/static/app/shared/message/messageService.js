@@ -2,7 +2,7 @@ import './app.message.module'
 
 /**
  * @desc This service is responsible for performing actions over the messages to be shown to a user.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

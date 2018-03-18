@@ -15,7 +15,7 @@ import javax.transaction.Transactional;
 /**
  * Class responsible for executing unit tests for {@link CampaignServiceValidatorTest}.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Transactional
 public class CampaignServiceValidatorTest extends BaseTestRunner {

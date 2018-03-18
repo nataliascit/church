@@ -3,7 +3,7 @@ package br.com.payment.management.core.common.enumerable;
 /**
  * Catalog with all main information used by the unit tests.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 public enum ConfigurationCatalog {
 

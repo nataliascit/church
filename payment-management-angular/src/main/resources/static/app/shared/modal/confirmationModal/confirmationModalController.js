@@ -2,7 +2,7 @@ import '../app.modal.module';
 
 /**
  * @desc This Controller is responsible for handling the view 'confirmationModalView.html'
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

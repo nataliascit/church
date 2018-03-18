@@ -3,7 +3,7 @@ import '../service/contributionRestService';
 
 /**
  * @desc This Controller is responsible for handling the view 'contributionCatalogView.html'
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

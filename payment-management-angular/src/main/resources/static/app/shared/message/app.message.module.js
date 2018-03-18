@@ -1,6 +1,6 @@
 /**
  * @desc Configures the message type module.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

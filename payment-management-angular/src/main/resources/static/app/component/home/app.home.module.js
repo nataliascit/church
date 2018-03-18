@@ -5,7 +5,7 @@ import '../breadcrumb/app.breadcrumb.module';
 
 /**
  * @desc Configures the home module.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

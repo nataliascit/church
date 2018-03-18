@@ -3,7 +3,7 @@ import './navigationMenuController';
 
 /**
  * @desc This Controller is responsible for handling the view 'navigationMenuView.html'
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

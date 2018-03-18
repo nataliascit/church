@@ -8,7 +8,7 @@ import org.springframework.validation.Validator;
 /**
  * Validator responsible for performing custom validations over a {@link Church}.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Component("beforeCreateChurchValidator")
 public class BeforeCreateChurchValidator implements Validator {

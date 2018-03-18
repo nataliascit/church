@@ -1,15 +1,15 @@
 package br.com.payment.management.security.role.model;
 
-import javax.persistence.*;
-import javax.validation.constraints.Size;
-
 import br.com.payment.management.security.user.model.User;
 import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 /**
  * The representation of role associated to an {@link User}.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Entity
 @Table(name = "ROLE",

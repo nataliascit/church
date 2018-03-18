@@ -3,7 +3,7 @@ import '../app.campaign.module';
 /**
  * @desc Defines the functions used to execute HTTP requests to retrieve or manage the content of a Campaign.
  * @param $resource The responsible for configuring the api entry points.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

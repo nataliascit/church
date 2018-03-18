@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 /**
  * Class responsible for setting up the unit tests context.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @SpringBootApplication(scanBasePackages = {"br.com.payment.management.core"})
 @EnableJpaRepositories("br.com.payment.management.core")

@@ -3,7 +3,7 @@ import '../../shared/environment/app.environment.module';
 
 /**
  * @desc Configures the menu module.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

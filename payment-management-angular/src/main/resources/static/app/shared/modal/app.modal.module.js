@@ -2,7 +2,7 @@ import 'angular-ui-bootstrap';
 
 /**
  * @desc Configures the modal module.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

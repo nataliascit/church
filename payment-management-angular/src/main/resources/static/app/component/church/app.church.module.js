@@ -6,7 +6,7 @@ import '../breadcrumb/app.breadcrumb.module';
 
 /**
  * @desc Configures the existing application's modules.
- *    @authour wcustodio
+ *    @authour William Custodio
  */
 (function () {
     'use strict';

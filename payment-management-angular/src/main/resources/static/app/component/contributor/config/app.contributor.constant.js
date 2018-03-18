@@ -2,7 +2,7 @@ import '../app.contributor.module'
 
 /**
  * @desc Configures the contributor module.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

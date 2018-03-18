@@ -3,7 +3,7 @@ import '../service/churchRestService';
 
 /**
  * @desc This Controller is responsible for handling the view 'churchCatalogView.html'
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';
