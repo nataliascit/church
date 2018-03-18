@@ -15,7 +15,7 @@ import javax.sql.DataSource;
 /**
  * Class responsible for setting up the security options.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Configuration
 @EnableWebSecurity

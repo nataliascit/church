@@ -10,7 +10,7 @@ import org.springframework.validation.Validator;
 /**
  * Validator responsible for performing custom validations before deleting a {@link Campaign}.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Component("beforeDeleteCampaignValidator")
 public class BeforeDeleteCampaignValidator implements Validator {

@@ -3,7 +3,7 @@ import './confirmationModalController';
 
 /**
  * @desc This Controller is responsible for handling the services for the 'confirmationModalView.html'
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

@@ -2,7 +2,6 @@ package br.com.payment.management.core.provingType.repository;
 
 import br.com.payment.management.core.common.configuration.BaseTestRunner;
 import br.com.payment.management.core.provingType.model.ProvingType;
-import br.com.payment.management.core.provingType.repository.ProvingTypeRepository;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,7 @@ import java.util.List;
 /**
  * Class responsible for executing unit tests for {@link ProvingTypeRepository}.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Transactional
 public class ProvingTypeRepositoryTest extends BaseTestRunner {

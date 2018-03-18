@@ -3,7 +3,7 @@ import './app.breadcrumb.module';
 /**
  * @desc Configures the breadcrumb used to navigate over the application.
  * @param $breadcrumbProvider The responsible for defining the breadcrumb component configuration.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

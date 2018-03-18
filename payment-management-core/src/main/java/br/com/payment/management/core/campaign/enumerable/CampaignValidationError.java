@@ -3,7 +3,7 @@ package br.com.payment.management.core.campaign.enumerable;
 /**
  * Catalog of all possible error messages used by a {@link br.com.payment.management.core.campaign.service.CampaignServiceValidator}
  *
- * @author wcustodio
+ * @author William Custodio
  */
 public enum CampaignValidationError {
 

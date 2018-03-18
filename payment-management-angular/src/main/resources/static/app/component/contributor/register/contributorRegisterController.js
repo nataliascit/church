@@ -2,18 +2,19 @@ import '../app.contributor.module';
 import '../service/contributorRestService';
 import '../config/app.contributor.constant';
 import '../../../shared/message/messageService';
+import '../../../shared/form/validator/formValidatorService';
 import 'lodash';
 
 /**
  * @desc This Controller is responsible for handling the view 'contributorRegisterView.html'
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';
 
     const registerContributorModule = angular.module('paymentManagement.contributor');
 
-    function ContributorRegisterController($scope, $stateParams, messageService, contributorRestService,
+    function ContributorRegisterController($scope, $state, $stateParams, messageService, formValidatorService, contributorRestService,
                                            contributionRestService, GENDER_CATALOG, CIVIL_STATE_CATALOG) {
         const vm = this;
 
@@ -66,18 +67,17 @@ import 'lodash';
          * Handle the on click action for the save button of a contributor.
          */
         vm.saveContributorOnClick = function() {
-            contributorRestService.create(vm.contributor, function() {
-                messageService.showSuccessMessage('application.contributor.register.message.successCreation');
-            });
-        };
-
-        /**
-         * Handle the on click action for the delete button of a contribution associated to a contributor.
-         */
-        vm.deleteContributionOnClick = function() {
-            contributorRestService.remove(vm.contributor.id, function() {
-                messageService.showSuccessMessage('application.contributor.register.message.successContributionDeletion');
-            });
+            if(_isUpdateAction()) {
+                contributorRestService.update(vm.contributor.id, vm.contributor, function() {
+                    messageService.showSuccessMessage('application.contributor.register.message.successUpdate');
+                    $state.go('^', {}, { reload: true }); // redirect to the catalog page.
+                });
+            } else if(_isCreateAction()) {
+                contributorRestService.create(vm.contributor, function() {
+                    messageService.showSuccessMessage('application.contributor.register.message.successCreation');
+                    $state.go('^', {}, { reload: true }); // redirect to the catalog page.
+                });
+            }
         };
 
         /**
@@ -87,12 +87,11 @@ import 'lodash';
          * @returns {boolean}
          */
         vm.hasError = function(field, validation){
-            return ($scope.contributorRegisterForm.$submitted && $scope.contributorRegisterForm[field].$error[validation]);
+            return formValidatorService.hasError($scope.contributorRegisterForm, field, validation);
         };
 
         /**
-         * Vefifies if the gender has errors of validation.
-         * @param validation The validation to be used.
+         * Verifies if the gender has errors of validation.
          * @returns {boolean}
          */
         vm.genderFieldHasError = function() {
@@ -105,15 +104,35 @@ import 'lodash';
          * @private
          */
         function _loadContributorById(contributorId) {
-            return contributorRestService.find(contributorId, function(response) {
+            contributorRestService.find(contributorId, function(response) {
                 vm.contributor = response;
-            }).$promise;
+            });
+        }
+
+        /**
+         * Verifies if the action is an update.
+         * @returns {Boolean}
+         * @private
+         */
+        function _isUpdateAction() {
+            return $stateParams.id || vm.contributor.id;
+        }
+
+        /**
+         * Verifies if the action is an create.
+         * @returns {boolean}
+         * @private
+         */
+        function _isCreateAction() {
+            return !$stateParams.id && !vm.contributor.id;
         }
     }
     registerContributorModule.controller('contributorRegisterController', [
         '$scope',
+        '$state',
         '$stateParams',
         'messageService',
+        'formValidatorService',
         'contributorRestService',
         'contributionRestService',
         'GENDER_CATALOG',

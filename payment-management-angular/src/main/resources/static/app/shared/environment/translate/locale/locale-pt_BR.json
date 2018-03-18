@@ -154,6 +154,7 @@
         "message": {
           "successCreation": "Contribuinte criado com sucesso.",
           "successDeletion": "Contribuinte removido com sucesso.",
+          "successUpdate": "Contribuinte atualizado com sucesso.",
           "successContributionDeletion": "Contribuição removida com sucesso."
         },
         "form": {

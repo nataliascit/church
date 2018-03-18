@@ -1,10 +1,10 @@
 package br.com.payment.management.core.contribution.repository;
 
 import br.com.payment.management.core.common.configuration.BaseTestRunner;
-import br.com.payment.management.core.contribution.model.Contribution;
-import br.com.payment.management.core.contributor.repository.ContributionRepository;
 import br.com.payment.management.core.common.enumerable.ConfigurationCatalog;
 import br.com.payment.management.core.common.util.JSONUtil;
+import br.com.payment.management.core.contribution.model.Contribution;
+import br.com.payment.management.core.contributor.repository.ContributionRepository;
 import com.fasterxml.jackson.databind.type.TypeFactory;
 import org.junit.Assert;
 import org.junit.Test;
@@ -19,7 +19,7 @@ import java.util.Optional;
 /**
  * Class responsible for executing unit tests for {@link ContributionRepository}.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Transactional
 public class ContributionRepositoryTest extends BaseTestRunner {

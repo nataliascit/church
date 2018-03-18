@@ -4,7 +4,7 @@ import './catalog/churchCatalogController';
 /**
  * @desc Configures the church routes.
  * @param $stateProvider The responsible for defining the routes.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

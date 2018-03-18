@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * {@link Bead} Data Access Object.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 public interface BeadRepository extends JpaRepository<Bead, Long> {
 }

@@ -3,7 +3,7 @@ import '../service/campaignRestService';
 
 /**
  * @desc This Controller is responsible for handling the view 'campaignRegisterView.html'
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

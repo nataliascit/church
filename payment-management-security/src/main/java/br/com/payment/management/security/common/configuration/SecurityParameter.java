@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * Class responsible for reading the security options from 'application.yml' file.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Configuration
 public class SecurityParameter {

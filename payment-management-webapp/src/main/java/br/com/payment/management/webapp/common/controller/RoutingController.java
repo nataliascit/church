@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * Controller responsible for setting up the templates routing.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Controller
 public class RoutingController {

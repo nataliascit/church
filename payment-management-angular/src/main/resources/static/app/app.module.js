@@ -9,16 +9,16 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 /**
  * @description Configures the entire applications.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';
 
     /* Import for all existing component. */
-    var componentRequiredFiles = require.context("./component", true, /^(.*\.(js$))[^.]*$/igm);
+    const componentRequiredFiles = require.context("./component", true, /^(.*\.(js$))[^.]*$/igm);
     componentRequiredFiles.keys().forEach(componentRequiredFiles);
     /* Import for configuration modules. */
-    var sharedRequiredFiles = require.context("./shared", true, /^(.*\.(js$))[^.]*$/igm);
+    const sharedRequiredFiles = require.context("./shared", true, /^(.*\.(js$))[^.]*$/igm);
     sharedRequiredFiles.keys().forEach(sharedRequiredFiles);
 
     angular.module('paymentManagement', [
@@ -32,7 +32,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
         'paymentManagement.provingType',
         'paymentManagement.environment',
         'paymentManagement.menu',
-        'paymentManagement.modal',
-        'paymentManagement.message'
+        'paymentManagement.message',
+        'paymentManagement.date'
     ]);
 })();
