@@ -23,7 +23,7 @@ This project is a definition of an application for the management of payments as
 ### HOW TO RUN AS WEB APPLICATION (IN DEVELOPMENT MODE) ###
 
 1. Execute **mvn install -Pwebapp-dev,angular,angular-dev** inside of **root folder**
-2. Execute **mvn spring-boot:run** inside of **payment-management-webapp**
+2. Execute **mvn -Pwebapp-dev,angular,angular-dev spring-boot:run** inside of **payment-management-webapp**
 3. Use the following address **http://localhost:8081/payment-management** to access the application.
 
 ### HOW TO RUN WITH MOCK SERVER ###
