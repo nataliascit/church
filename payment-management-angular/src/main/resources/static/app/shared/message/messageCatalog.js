@@ -2,7 +2,7 @@ import './app.message.module';
 
 /**
  * @desc Configures the module responsible for holding the message service constants.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

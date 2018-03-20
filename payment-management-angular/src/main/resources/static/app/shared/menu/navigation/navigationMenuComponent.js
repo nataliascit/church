@@ -3,7 +3,7 @@ import './navigationMenuController';
 
 /**
  * @desc This Controller is responsible for handling the view 'navigationMenuView.html'
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';
@@ -13,6 +13,6 @@ import './navigationMenuController';
     paymentManagementModule.component('navigationMenu', {
         restrict: 'E',
         controller: 'navigationMenuController as vm',
-        templateUrl: 'app/component/menu/navigation/navigationMenuView.html'
+        templateUrl: 'app/shared/menu/navigation/navigationMenuView.html'
     });
 }());

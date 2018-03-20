@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Entity which represents the table with the definition of a certain campaign used by a {@link Church}.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Entity
 @Table(name = "CAMPAIGN",

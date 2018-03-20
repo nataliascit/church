@@ -18,7 +18,7 @@ import java.util.Optional;
 /**
  * Class responsible for executing unit tests for {@link CampaignRepository}.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Transactional
 public class CampaignRepositoryTest extends BaseTestRunner {

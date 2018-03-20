@@ -6,10 +6,15 @@ import '../breadcrumb/app.breadcrumb.module';
 
 /**
  * @desc Configures the existing application's modules.
- *    @authour wcustodio
+ *    @authour William Custodio
  */
 (function () {
     'use strict';
 
-    angular.module('paymentManagement.church', ['ui.router', 'ngResource', 'paymentManagement.breadcrumb', 'paymentManagement.environment']);
+    angular.module('paymentManagement.church', [
+        'ui.router',
+        'ngResource',
+        'paymentManagement.breadcrumb',
+        'paymentManagement.environment'
+    ]);
 }());

@@ -6,10 +6,15 @@ import '../breadcrumb/app.breadcrumb.module';
 
 /**
  * @desc Configures the bead module.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';
 
-    angular.module('paymentManagement.bead', ['ui.router', 'ngResource', 'paymentManagement.breadcrumb', 'paymentManagement.environment']);
+    angular.module('paymentManagement.bead', [
+        'ui.router',
+        'ngResource',
+        'paymentManagement.breadcrumb',
+        'paymentManagement.environment'
+    ]);
 }());

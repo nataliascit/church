@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Entity which represents the table with the definition of a certain bead.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Entity
 @Table(name = "BEAD",

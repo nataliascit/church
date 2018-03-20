@@ -1,6 +1,6 @@
 /**
- * @desc Configures the proving type module.
- * @author wcustodio
+ * @desc Configures the message type module.
+ * @author William Custodio
  */
 (function () {
     'use strict';

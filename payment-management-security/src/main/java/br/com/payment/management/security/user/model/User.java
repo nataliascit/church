@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * The representation of a user responsible for executing actions over an application.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Entity
 @Table(name = "USER",

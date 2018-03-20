@@ -3,7 +3,7 @@ package br.com.payment.management.core.common.exception;
 /**
  * Represents a business exception that ocurred while executing the application.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 public class BusinessException extends RuntimeException {
 

@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * The response used to represent an error that happened while processing some request.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 public class ErrorResponseDTO {
 

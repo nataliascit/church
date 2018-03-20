@@ -3,16 +3,16 @@ import './messageService';
 
 /**
  * @desc This Controller is responsible for handling the view 'messageView.html'
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';
 
-    var module = angular.module('paymentManagement.message');
+    const module = angular.module('paymentManagement.message');
 
     function MessageController(messageService) {
 
-        var vm = this;
+        const vm = this;
 
         // Initialize all the messages.
         vm.messages = messageService.getMessages();
@@ -37,6 +37,5 @@ import './messageService';
             return vm.messages.length > 0;
         };
     }
-
     module.controller('messageController', ['messageService', MessageController]);
 }());

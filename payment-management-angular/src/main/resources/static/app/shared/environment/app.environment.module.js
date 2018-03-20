@@ -8,10 +8,16 @@ import 'angular-translate-loader-static-files';
 
 /**
  * @desc Configures the module responsible for holding the environment configuration.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';
 
-    angular.module('paymentManagement.environment', ['ui.router', 'ngCookies', 'ngSanitize', 'ngResource', 'pascalprecht.translate']);
+    angular.module('paymentManagement.environment', [
+        'ui.router',
+        'ngCookies',
+        'ngSanitize',
+        'ngResource',
+        'pascalprecht.translate'
+    ]);
 }());

@@ -8,7 +8,7 @@ import './locale/locale-pt_BR.json'
  * @param $translateProvider The responsible for defining the translations.
  * @param $qProvider The responsible for handling rejections.
  * @param environmentConfig The owner of the application's environment variables.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

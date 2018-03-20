@@ -5,10 +5,13 @@ import '../breadcrumb/app.breadcrumb.module';
 
 /**
  * @desc Configures the home module.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';
 
-    angular.module('paymentManagement.home', ['ui.router', 'paymentManagement.breadcrumb']);
+    angular.module('paymentManagement.home', [
+        'ui.router',
+        'paymentManagement.breadcrumb'
+    ]);
 }());

@@ -5,7 +5,7 @@ import '../../../component/home/app.home.route';
  * @desc Configures the routes used to navigate over the application.
  * @param $stateProvider The responsible for defining the routes.
  * @param $urlRouterProvider The responsible for defining the default path.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

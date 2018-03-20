@@ -3,7 +3,7 @@ import '../service/provingTypeRestService';
 
 /**
  * @desc This Controller is responsible for handling the view 'provingTypeCatalogView.html'
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

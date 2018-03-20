@@ -13,7 +13,7 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapt
 /**
  * Class responsible for configuring the behavior for all RestRepositories.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Configuration
 public class RepositoryRestConfig extends RepositoryRestConfigurerAdapter {

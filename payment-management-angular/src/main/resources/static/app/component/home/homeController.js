@@ -2,12 +2,12 @@ import './app.home.module';
 
 /**
  * @desc This Controller is responsible for handling the view 'homeView.html'
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';
 
-    var homeModule = angular.module('paymentManagement.home');
+    const homeModule = angular.module('paymentManagement.home');
 
     function HomeController(){}
 

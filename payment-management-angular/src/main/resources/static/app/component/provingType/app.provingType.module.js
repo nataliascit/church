@@ -6,10 +6,15 @@ import '../breadcrumb/app.breadcrumb.module';
 
 /**
  * @desc Configures the proving type module.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';
 
-    angular.module('paymentManagement.provingType', ['ui.router', 'ngResource', 'paymentManagement.breadcrumb', 'paymentManagement.environment']);
+    angular.module('paymentManagement.provingType', [
+        'ui.router',
+        'ngResource',
+        'paymentManagement.breadcrumb',
+        'paymentManagement.environment'
+    ]);
 }());

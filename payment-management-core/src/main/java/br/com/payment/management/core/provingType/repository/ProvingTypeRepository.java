@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * {@link ProvingType} Data Access Object.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 public interface ProvingTypeRepository extends JpaRepository<ProvingType, Long> {
 }

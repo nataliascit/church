@@ -1,8 +1,7 @@
 package br.com.payment.management.core.bead.repository;
 
-import br.com.payment.management.core.bead.repository.BeadRepository;
-import br.com.payment.management.core.common.configuration.BaseTestRunner;
 import br.com.payment.management.core.bead.model.Bead;
+import br.com.payment.management.core.common.configuration.BaseTestRunner;
 import br.com.payment.management.core.common.enumerable.ConfigurationCatalog;
 import br.com.payment.management.core.common.util.JSONUtil;
 import com.fasterxml.jackson.databind.type.TypeFactory;
@@ -19,7 +18,7 @@ import java.util.Optional;
 /**
  * Class responsible for executing unit tests for {@link BeadRepository}.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Transactional
 public class BeadRepositoryTest extends BaseTestRunner {

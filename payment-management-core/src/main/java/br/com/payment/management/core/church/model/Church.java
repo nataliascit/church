@@ -3,7 +3,6 @@ package br.com.payment.management.core.church.model;
 import br.com.payment.management.core.campaign.model.Campaign;
 import br.com.payment.management.core.contribution.model.Contribution;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.*;
 import java.util.List;
@@ -11,10 +10,9 @@ import java.util.List;
 /**
  * Entity which represents the table with the definition of the main entity owner of all {@link Contribution}.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Entity
-@Validated
 @Table(name = "CHURCH")
 public class Church {
 

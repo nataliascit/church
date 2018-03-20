@@ -4,7 +4,7 @@ import './catalog/beadCatalogController';
 /**
  * @desc Configures the bead routes.
  * @param $stateProvider The responsible for defining the routes.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';

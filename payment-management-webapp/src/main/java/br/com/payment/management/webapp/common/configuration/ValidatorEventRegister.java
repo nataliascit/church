@@ -15,7 +15,7 @@ import java.util.Map;
  *
  * @see <a href="https://jira.spring.io/browse/DATAREST-524">Validator auto discovery not working for Spring Data Rest</a>
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Configuration
 public class ValidatorEventRegister implements InitializingBean {

@@ -10,7 +10,7 @@ import java.sql.Date;
 /**
  * Entity which represents the table with the definition of a certain contribution associated to a specific {@link Campaign}.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @Entity
 @Table(name = "CONTRIBUTION")

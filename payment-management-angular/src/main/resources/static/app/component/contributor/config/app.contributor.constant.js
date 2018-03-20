@@ -2,7 +2,7 @@ import '../app.contributor.module'
 
 /**
  * @desc Configures the contributor module.
- * @author wcustodio
+ * @author William Custodio
  */
 (function () {
     'use strict';
@@ -16,7 +16,7 @@ import '../app.contributor.module'
     }];
     angular.module('paymentManagement.contributor').constant("GENDER_CATALOG", GENDER_CATALOG);
 
-    const CIVIL_STATE = [{
+    const CIVIL_STATE_CATALOG = [{
         'label': 'application.contributor.label.civilState.divorced',
         'value': 'DIVORCED'
     }, {
@@ -32,5 +32,5 @@ import '../app.contributor.module'
         'label': 'application.contributor.label.civilState.widower',
         'value': 'WIDOWER'
     }];
-    angular.module('paymentManagement.contributor').constant("CIVIL_STATE", CIVIL_STATE);
+    angular.module('paymentManagement.contributor').constant("CIVIL_STATE_CATALOG", CIVIL_STATE_CATALOG);
 }());

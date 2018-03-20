@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 /**
  * Controller responsible for handling all the exceptions for a better way of showing the messages.
  *
- * @author wcustodio
+ * @author William Custodio
  */
 @ControllerAdvice
 public class ExceptionHandlerController {
