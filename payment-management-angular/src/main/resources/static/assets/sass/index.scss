@@ -1,6 +1,8 @@
 $colorDarkBrown: #2E1E06;
 $colorMediumBrown: #482C01;
+$colorMediumBrownBG: rgba(72, 44, 1, 0.2);
 $colorLightBrown: #AD5400;
+$colorLightBrownBG: rgba(209, 130, 0, 0.3);
 $colorLighterBrown: #D18200;
 $colorYellow: #FDD400;
 $colorOrange: #F26500;
@@ -20,7 +22,7 @@ html {
   position: relative;
 }
 body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   color: $colorBlack;
   background-color: $colorWhite;
   box-sizing: border-box;
@@ -29,6 +31,7 @@ body {
   padding-bottom: 60px;
   min-height: 100%;
   position: relative;
+  font-size: 12px !important;
 }
 
 header {
@@ -40,11 +43,13 @@ header {
 
   .navbar-brand {
     height: auto;
-    padding: 0 20px;
+    padding: 0 80px 0 20px;
   }
 
   .navbar-nav, .navbar-nav > li {
     height: 100%;
+    font-size: 16px;
+    text-transform: uppercase;
   }
 
   .navbar-default .navbar-nav > li > a,
@@ -66,6 +71,83 @@ header {
 
 .container {
   height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 !important;
+  color: $colorDarkBrown !important;
+}
+
+.space50-top {
+  margin-top: 50px;
+}
+
+.btn-primary {
+  color: $colorYellow !important;
+  background-color: $colorMediumBrown !important;
+  border-color: $colorMediumBrown !important;
+}
+
+.form-control, .input-group-addon {
+  border-color: $colorMediumBrown !important;
+  background-color: $colorMediumBrownBG !important;
+  color: $colorMediumBrown !important;
+  font-size: 12px !important;
+}
+
+.input-group-addon {
+  background-color: $colorMediumBrown !important;
+}
+
+.form-control, .input-group-addon {
+}
+
+.padding0-left {
+  padding-left: 0 !important;
+}
+
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-clear-button {
+  display: none;
+}
+
+.table {
+  text-align: center;
+  color: $colorMediumBrown !important;
+
+  thead {
+    background-color: $colorLighterBrown;
+    color: $colorWhite;
+    font-size: 14px;
+    tr {
+      th {
+        text-align: center;
+        border-bottom-color: transparent !important;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        border-bottom-color: transparent !important;
+      }
+    }
+  }
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: $colorLightBrownBG !important;
+}
+
+.pagination {
+  li {
+    a {
+      background-color: $colorOrange !important;
+      border-right-color: $colorWhite !important;
+      color: $colorWhite !important;
+      opacity: 0.8;
+    }
+  }
 }
 
 .footer {
