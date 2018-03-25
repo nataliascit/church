@@ -108,6 +108,21 @@ input[type=date]::-webkit-clear-button {
   display: none;
 }
 
+.breadcrumb {
+  margin: 0 100px;
+  text-transform: uppercase;
+  background-color: $colorMediumBrownBG !important;
+
+  > li + li:before {
+    color: $colorDarkBrown !important;
+  }
+
+  a, a:hover, a:focus, a:visited {
+    color: $colorDarkBrown;
+    text-decoration: none;
+  }
+}
+
 .table {
   text-align: center;
   color: $colorMediumBrown !important;

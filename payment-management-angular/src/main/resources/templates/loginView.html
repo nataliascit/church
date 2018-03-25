@@ -9,7 +9,8 @@
 </head>
 <body>
 	<div class="container">
-		<form th:action="@{/login}" method="POST">
+		<form th:action="@{/login}" method="POST" class="col-lg-6">
+			<img src="./static/assets/images/logo.png" alt="Logo" class="text-center">
 			<h3 class="form-signin-heading">Bem-Vindo</h3>
 			<div th:if="${param.error}" class="alert alert-danger">
 				<a th:href="@{/login}" class="close">×</a>
