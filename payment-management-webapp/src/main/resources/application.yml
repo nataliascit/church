@@ -29,6 +29,15 @@ spring:
         use_sql_comments: @jpa.properties.hibernate.use_sql_comments@
         format_sql: @jpa.properties.hibernate.format_sql@
 
+# ==================
+# = JMS / ACTIVEMQ
+# ==================
+  activemq:
+    broker-url: tcp://localhost:61616
+    queue:
+      contribution:
+        report: contribution.report
+
 # ===============================
 # = Thymeleaf configurations
 # ===============================

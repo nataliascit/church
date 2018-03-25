@@ -20,6 +20,7 @@
         <module>payment-management-core</module>
         <module>payment-management-security</module>
         <module>payment-management-webapp</module>
+        <module>payment-management-messaging</module>
     </modules>
     
     <properties>

@@ -25,6 +25,11 @@
             <artifactId>payment-management-security</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+        <dependency>
+            <groupId>br.com.church.payment.management</groupId>
+            <artifactId>payment-management-messaging</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
 
         <!-- SPRING DEPENDENCIES -->
         <dependency>
