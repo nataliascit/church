@@ -82,6 +82,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 50px;
 }
 
+.space15-right {
+  margin-right: 15px;
+}
+
 .btn-primary {
   color: $colorYellow !important;
   background-color: $colorMediumBrown !important;
@@ -101,6 +105,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .padding0-left {
   padding-left: 0 !important;
+}
+
+.padding30-lat {
+  padding: 0 30px;
 }
 
 input[type=date]::-webkit-inner-spin-button,
