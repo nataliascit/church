@@ -1,8 +1,10 @@
 import 'angular-resource';
+import 'angular-ui-bootstrap';
 import '@uirouter/angularjs';
-import '../../shared/modal/app.modal.module';
+import '../modal/app.modal.module';
 import '../breadcrumb/app.breadcrumb.module';
 import '../../shared/form/app.form.module';
+import '../../shared/filter/app.filter.module';
 import '../../shared/environment/app.environment.module';
 import '../../shared/environment/config/app.environment.constant';
 
@@ -14,11 +16,13 @@ import '../../shared/environment/config/app.environment.constant';
     'use strict';
 
     angular.module('paymentManagement.contributor', [
+        'ui.bootstrap',
         'ui.router',
         'ngResource',
         'paymentManagement.breadcrumb',
         'paymentManagement.environment',
         'paymentManagement.modal',
+        'paymentManagement.filter',
         'paymentManagement.form',
         'paymentManagement.date'
     ]);
