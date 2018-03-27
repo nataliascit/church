@@ -20,12 +20,12 @@ import 'lodash';
          * @private           <code>false: </code> The object won't be filtered.
          */
         function _filterByCriteria(object, criteria, ignoreCase) {
-            let matches = true;
-            for(let key in criteria) {
+            var matches = true;
+            for(var key in criteria) {
                 if(object.hasOwnProperty(key) && !_.isEmpty(criteria[key])) {
                     if(typeof object[key] === 'string') {
-                        let objectValue = ignoreCase ? object[key].toLowerCase() : object[key];
-                        let criteriaValue = ignoreCase ? criteria[key].toLowerCase() : criteria[key];
+                        var objectValue = ignoreCase ? object[key].toLowerCase() : object[key];
+                        var criteriaValue = ignoreCase ? criteria[key].toLowerCase() : criteria[key];
                         matches = matches && _.includes(objectValue, criteriaValue);
                     } else {
                         matches = matches && (object[key] === criteria[key]);
@@ -44,7 +44,7 @@ import 'lodash';
          * @private
          */
         function _filter(array, criteria, ignoreCase) {
-            return array.filter(object => {
+            return array.filter(function(object) {
                 return _filterByCriteria(object, criteria, ignoreCase)
             })
         }
