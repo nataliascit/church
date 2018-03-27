@@ -10,6 +10,6 @@
     module.component('message', {
         restrict: 'E',
         controller: 'messageController as vm',
-        templateUrl: 'app/shared/message/messageView.html'
+        templateUrl: 'app/component/message/messageView.html'
     });
 }());

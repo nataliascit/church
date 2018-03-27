@@ -19,7 +19,7 @@ import './confirmationModalController';
          */
         function _open(properties) {
             return $uibModal.open({
-                templateUrl: 'app/shared/modal/confirmationModal/confirmationModalView.html',
+                templateUrl: 'app/component/modal/confirmationModal/confirmationModalView.html',
                 controller: 'confirmationModalController as vm',
                 resolve: {
                     properties: function() {

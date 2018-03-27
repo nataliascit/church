@@ -1,7 +1,7 @@
 import '../app.contributor.module';
 import '../service/contributorRestService';
 import '../config/app.contributor.constant';
-import '../../../shared/message/messageService';
+import '../../message/messageService';
 import '../../../shared/form/validator/formValidatorService';
 import 'lodash';
 

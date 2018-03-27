@@ -1,7 +1,7 @@
 import '../app.contributor.module';
 import '../service/contributorRestService';
 import '../../contribution/service/contributionRestService';
-import '../../../shared/modal/confirmationModal/confirmationModalService';
+import '../../modal/confirmationModal/confirmationModalService';
 
 /**
  * @desc This Controller is responsible for handling the view 'contributorCatalogView.html'
@@ -21,6 +21,26 @@ import '../../../shared/modal/confirmationModal/confirmationModalService';
          * @type {Array}
          */
         vm.contributors = [];
+
+        /**
+         * Criteria used to filter all the existing contributors.
+         * @type {{name: null}}
+         */
+        vm.filter = {
+            name: null
+        };
+
+        /**
+         * The Object responsible for configuring the pagination.
+         * @type {{viewBy: number, totalItems: number, currentPage: number, itemsPerPage: number, maxSize: number}}
+         */
+        vm.pagination = {
+            viewBy: 10,
+            totalItems: vm.contributors.length,
+            currentPage: 1,
+            itemsPerPage: 10,
+            maxSize: 5
+        };
 
         /**
          * Represents the object containing the contributor to be deleted.
