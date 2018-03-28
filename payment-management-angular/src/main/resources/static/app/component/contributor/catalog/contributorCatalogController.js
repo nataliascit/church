@@ -31,18 +31,6 @@ import '../../modal/confirmationModal/confirmationModalService';
         };
 
         /**
-         * The Object responsible for configuring the pagination.
-         * @type {{viewBy: number, totalItems: number, currentPage: number, itemsPerPage: number, maxSize: number}}
-         */
-        vm.pagination = {
-            viewBy: 10,
-            totalItems: vm.contributors.length,
-            currentPage: 1,
-            itemsPerPage: 10,
-            maxSize: 5
-        };
-
-        /**
          * Represents the object containing the contributor to be deleted.
          * @type {{id: null, index: null}}
          */
