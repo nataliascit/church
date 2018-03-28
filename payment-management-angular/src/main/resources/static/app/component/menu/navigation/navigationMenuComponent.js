@@ -13,6 +13,6 @@ import './navigationMenuController';
     paymentManagementModule.component('navigationMenu', {
         restrict: 'E',
         controller: 'navigationMenuController as vm',
-        templateUrl: 'app/shared/menu/navigation/navigationMenuView.html'
+        templateUrl: 'app/component/menu/navigation/navigationMenuView.html'
     });
 }());
