@@ -112,7 +112,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 input[type=date]::-webkit-inner-spin-button,
-input[type=date]::-webkit-clear-button {
+input[type=date]::-webkit-clear-button,
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
   display: none;
 }
 
