@@ -26,7 +26,7 @@
           </tr>
           </thead>
           <tbody>
-            <tr data-ng-repeat="contributor in vm.contributors | filterByCriteria:vm.filter:true">
+            <tr data-dir-paginate="contributor in vm.contributors | filterByCriteria:vm.filter:true | itemsPerPage:10">
               <td>{{contributor.name}}</td>
               <td>{{contributor.address}}</td>
               <td>{{contributor.cellphone}}</td>
@@ -45,7 +45,7 @@
             </tr>
           </tbody>
         </table>
-        <button data-ng-click="vm.openDeleteConfirmationModal()"></button>
+        <dir-pagination-controls data-boundary-links="true" data-direction-links="true" ></dir-pagination-controls>
       </div>
     </div>
   </div>

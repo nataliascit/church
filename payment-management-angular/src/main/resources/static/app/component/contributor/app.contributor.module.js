@@ -1,5 +1,5 @@
 import 'angular-resource';
-import 'angular-ui-bootstrap';
+import 'angular-utils-pagination';
 import '@uirouter/angularjs';
 import '../modal/app.modal.module';
 import '../breadcrumb/app.breadcrumb.module';
@@ -16,7 +16,7 @@ import '../../shared/environment/config/app.environment.constant';
     'use strict';
 
     angular.module('paymentManagement.contributor', [
-        'ui.bootstrap',
+        'angularUtils.directives.dirPagination',
         'ui.router',
         'ngResource',
         'paymentManagement.breadcrumb',
