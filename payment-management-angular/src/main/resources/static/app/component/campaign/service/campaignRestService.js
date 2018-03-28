@@ -76,9 +76,9 @@ import '../app.campaign.module';
          *         The function which will handle error callback.
          * @private
          */
-        function _remove(applicationId, successCallback, errorCallback) {
+        function _remove(id, successCallback, errorCallback) {
             var params = {
-                applicationId: applicationId
+                id: id
             };
             return resources.remove(params, null, successCallback, errorCallback);
         }

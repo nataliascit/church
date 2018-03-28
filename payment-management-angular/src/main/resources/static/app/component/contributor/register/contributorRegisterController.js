@@ -14,15 +14,9 @@ import 'lodash';
 
     const registerContributorModule = angular.module('paymentManagement.contributor');
 
-    function ContributorRegisterController($scope, $state, $stateParams, messageService, formValidatorService, contributorRestService,
-                                           contributionRestService, GENDER_CATALOG, CIVIL_STATE_CATALOG) {
+    function ContributorRegisterController($scope, $state, $stateParams, messageService, formValidatorService,
+                                           contributorRestService, GENDER_CATALOG, CIVIL_STATE_CATALOG) {
         const vm = this;
-
-        /**
-         * List of all the existing contributions.
-         * @type {Array}
-         */
-        vm.contributions = [];
 
         /**
          * The contributor to be edited/created.
@@ -58,8 +52,8 @@ import 'lodash';
          * Function responsible for handling the hook for the initialization of the controller.
          */
         vm.onInit = function() {
-            if($stateParams.id) {
-                _loadContributorById($stateParams.id);
+            if($stateParams.idContributor) {
+                _loadContributorById($stateParams.idContributor);
             }
         };
 
@@ -115,7 +109,7 @@ import 'lodash';
          * @private
          */
         function _isUpdateAction() {
-            return $stateParams.id || vm.contributor.id;
+            return $stateParams.idContributor || vm.contributor.id;
         }
 
         /**
@@ -124,7 +118,7 @@ import 'lodash';
          * @private
          */
         function _isCreateAction() {
-            return !$stateParams.id && !vm.contributor.id;
+            return !$stateParams.idContributor && !vm.contributor.id;
         }
     }
     registerContributorModule.controller('contributorRegisterController', [
@@ -134,7 +128,6 @@ import 'lodash';
         'messageService',
         'formValidatorService',
         'contributorRestService',
-        'contributionRestService',
         'GENDER_CATALOG',
         'CIVIL_STATE_CATALOG',
         ContributorRegisterController

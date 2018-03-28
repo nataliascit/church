@@ -10,7 +10,7 @@ import './register/campaignRegisterController';
 (function () {
     'use strict';
 
-    var module = angular.module('paymentManagement.campaign');
+    const module = angular.module('paymentManagement.campaign');
 
     module.config(['$stateProvider', function ($stateProvider) {
 
@@ -27,11 +27,11 @@ import './register/campaignRegisterController';
             }
         })
         .state('application.campaign.register', {
-            url: '/:id',
+            url: '/:idCampaign',
             templateUrl: 'app/component/campaign/register/campaignRegisterView.html',
             controller: 'campaignRegisterController as vm',
             params: {
-                id: null
+                idCampaign: null
             },
             breadcrumb: {
                 label: 'application.campaign.register.label.title',

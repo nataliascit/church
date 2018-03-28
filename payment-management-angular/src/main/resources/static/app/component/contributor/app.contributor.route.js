@@ -27,11 +27,11 @@ import './register/contributorRegisterController';
             }
         })
         .state('application.contributor.register', {
-            url: '/:id',
+            url: '/:idContributor',
             templateUrl: 'app/component/contributor/register/contributorRegisterView.html',
             controller: 'contributorRegisterController as vm',
             params: {
-                id: null
+                idContributor: null
             },
             breadcrumb: {
                 label: 'application.contributor.register.label.title',
