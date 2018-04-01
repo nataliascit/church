@@ -34,7 +34,7 @@
         "modal": {
           "campaignDeletion": {
             "title" : "Confirmação de exclusão de campanha",
-            "body": "Tem certeza que deseja remover a campanha selectionada?"
+            "body": "Tem certeza que deseja remover a campanha selecionada?"
           }
         },
         "table": {
@@ -149,7 +149,7 @@
         "modal": {
           "contributorDeletion": {
             "title" : "Confirmação de exclusão de contribuinte",
-            "body": "Tem certeza que deseja remover o contribuinte selectionado?"
+            "body": "Tem certeza que deseja remover o contribuinte selecionado?"
           }
         },
         "table": {
