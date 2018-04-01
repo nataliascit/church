@@ -73,7 +73,7 @@ import '../../modal/confirmationModal/confirmationModalService';
          */
         function _findAllContributor() {
             contributorRestService.findAll(function(response) {
-                vm.contributors = response._embedded.contributors;
+                vm.contributors = response._embeddedItems;
             });
         }
 

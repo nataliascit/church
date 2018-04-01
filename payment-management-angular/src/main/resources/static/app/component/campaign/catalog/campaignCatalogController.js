@@ -1,6 +1,7 @@
 import '../app.campaign.module';
 import '../service/campaignRestService';
 import '../../modal/confirmationModal/confirmationModalService';
+import 'lodash';
 
 /**
  * @desc This Controller is responsible for handling the view 'campaignCatalogView.html'
@@ -11,8 +12,8 @@ import '../../modal/confirmationModal/confirmationModalService';
 
     const module = angular.module('paymentManagement.campaign');
 
-    function CampaignCatalogController($stateParams, confirmationModalService, messageService, campaignRestService){
-
+    function CampaignCatalogController($stateParams, confirmationModalService, messageService,
+                                       campaignRestService, springIntegrationService) {
         const vm = this;
 
         /**
@@ -72,7 +73,10 @@ import '../../modal/confirmationModal/confirmationModalService';
          */
         function _findAllCampaign() {
             campaignRestService.findAll(function(response) {
-                vm.campaigns = response._embedded.campaigns;
+                springIntegrationService.retrieveDataFromItemsLinks(response._embeddedItems, ['provingType'])
+                    .then(function() {
+                        vm.campaigns = response._embeddedItems;
+                    });
             });
         }
 
@@ -91,6 +95,7 @@ import '../../modal/confirmationModal/confirmationModalService';
         'confirmationModalService',
         'messageService',
         'campaignRestService',
+        'springIntegrationService',
         CampaignCatalogController
     ]);
 }());

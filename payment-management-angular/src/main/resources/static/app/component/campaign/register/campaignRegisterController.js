@@ -1,10 +1,10 @@
+import 'lodash';
 import '../app.campaign.module';
+import '../../message/messageService';
 import '../service/campaignRestService';
 import '../../church/service/churchRestService';
 import '../../provingType/service/provingTypeRestService';
-import '../../message/messageService';
 import '../../../shared/form/validator/formValidatorService';
-import 'lodash';
 
 /**
  * @desc This Controller is responsible for handling the view 'campaignRegisterView.html'
@@ -17,8 +17,7 @@ import 'lodash';
 
     function CampaignRegisterController($scope, $state, $stateParams, messageService,
                                         formValidatorService, campaignRestService, churchRestService,
-                                        provingTypeRestService) {
-
+                                        provingTypeRestService, springIntegrationService, LINK_PROPERTY_MAPPER) {
         const vm = this;
 
         /**
@@ -64,13 +63,19 @@ import 'lodash';
          * Handle the on click action for the save button of a campaign.
          */
         vm.saveCampaignOnClick = function() {
+
+            var campaign = angular.copy(vm.campaign);
+
+            // Convert all the properties before performing the action.
+            springIntegrationService.convertProperty(campaign, LINK_PROPERTY_MAPPER);
+
             if(_isUpdateAction()) {
-                campaignRestService.update(vm.campaign.id, vm.campaign, function() {
+                campaignRestService.update(campaign.id, campaign, function() {
                     messageService.showSuccessMessage('application.campaign.register.message.successUpdate');
                     $state.go('^', {}, { reload: true }); // redirect to the catalog page.
                 });
             } else if(_isCreateAction()) {
-                campaignRestService.create(vm.campaign, function() {
+                campaignRestService.create(campaign, function() {
                     messageService.showSuccessMessage('application.campaign.register.message.successCreation');
                     $state.go('^', {}, { reload: true }); // redirect to the catalog page.
                 });
@@ -83,8 +88,8 @@ import 'lodash';
          * @param validation The type of the validation to be performed.
          * @returns {boolean}
          */
-        vm.hasError = function(field, validation){
-            return formValidatorService.hasError($scope.campaignRegisterForm, field, validation);
+        vm.hasError = function(field, validation) {
+            formValidatorService.hasError($scope.campaignRegisterForm, field, validation);
         };
 
         /**
@@ -94,7 +99,11 @@ import 'lodash';
          */
         function _loadCampaignById(campaignId) {
             campaignRestService.find(campaignId, function(response) {
-                vm.campaign = response;
+                // Retrieve only the data from the links: 'provingType' and 'church'.
+                springIntegrationService.retrieveDataFromItemLinks(response, ['provingType', 'church'])
+                    .then(function(result) {
+                        vm.campaign = response;
+                    });
             });
         }
 
@@ -103,9 +112,9 @@ import 'lodash';
          * @private
          */
         function _findAllChurch() {
-            churchRestService.findAll(function(response){
-                vm.churches = response._embedded.churches;
-            })
+            churchRestService.findAll(function(response) {
+                vm.churches = response._embeddedItems;
+            });
         }
 
         /**
@@ -113,9 +122,9 @@ import 'lodash';
          * @private
          */
         function _findAllProvingType() {
-            provingTypeRestService.findAll(function(response){
-                vm.provingTypes = response._embedded.provingTypes;
-            })
+            provingTypeRestService.findAll(function(response) {
+                vm.provingTypes = response._embeddedItems;
+            });
         }
 
         /**
@@ -145,6 +154,8 @@ import 'lodash';
         'campaignRestService',
         'churchRestService',
         'provingTypeRestService',
+        'springIntegrationService',
+        'LINK_PROPERTY_MAPPER',
         CampaignRegisterController
     ]);
 }());

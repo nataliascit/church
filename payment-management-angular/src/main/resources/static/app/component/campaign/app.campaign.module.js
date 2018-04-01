@@ -1,9 +1,10 @@
-import '@uirouter/angularjs';
 import 'angular-resource';
+import '@uirouter/angularjs';
 import 'angular-utils-pagination';
-import '../../shared/environment/config/app.environment.constant';
-import '../../shared/environment/app.environment.module';
 import '../breadcrumb/app.breadcrumb.module';
+import '../../shared/environment/app.environment.module';
+import '../../shared/environment/config/app.environment.constant';
+import '../../shared/springIntegration/app.springIntegration.module';
 
 /**
  * @desc Configures the campaign module.
@@ -17,6 +18,7 @@ import '../breadcrumb/app.breadcrumb.module';
         'ui.router',
         'ngResource',
         'paymentManagement.breadcrumb',
-        'paymentManagement.environment'
+        'paymentManagement.environment',
+        'paymentManagement.springIntegration'
     ]);
 }());

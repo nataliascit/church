@@ -5,7 +5,7 @@ module.exports = function () {
     const CopyWebpackPlugin = require('copy-webpack-plugin');
     const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-    const config = {
+    return {
         entry: "./app/app.module",
         output: {
             path: Path.join(__dirname, '..', '..', 'public', 'build'),
@@ -20,21 +20,21 @@ module.exports = function () {
                 },
                 {
                     test: /\.(css|scss)$/,
-                    loader: ExtractTextPlugin.extract({
-                        loader: ['css-loader', 'sass-loader']
+                    use: ExtractTextPlugin.extract({
+                        use: ['css-loader', 'sass-loader']
                     })
                 },
                 {
                     test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-                    loader: 'file-loader?name=fonts/[name].[ext]'
+                    use: 'file-loader?name=fonts/[name].[ext]'
                 },
                 {
                     test: /\.html$/,
-                    loader: 'raw-loader'
+                    use: 'raw-loader'
                 },
                 {
                     test: /\.json$/,
-                    loader: 'json-loader'
+                    use: 'json-loader'
                 }
             ]
         },
@@ -60,5 +60,4 @@ module.exports = function () {
             ])
         ]
     };
-    return config;
 };

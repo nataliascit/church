@@ -36,11 +36,9 @@
         <label for="campaignRegisterChurch" class="required">
           {{ 'application.campaign.register.form.field.church' | translate }}
         </label>
-        <select id="campaignRegisterChurch" name="campaignRegisterChurch"
-                class="form-control" data-ng-model="vm.campaign.church" data-ng-required="true">
-          <option data-ng-repeat="church in vm.churches" value="{{'/churches/' + church.id}}">
-            {{church.name | translate}}
-          </option>
+        <select id="campaignRegisterChurch" name="campaignRegisterChurch" class="form-control"
+                data-ng-options="church.id as church.name for church in vm.churches"
+                data-ng-model="vm.campaign.church.id" data-ng-required="true">
         </select>
         <div data-ng-show="vm.hasError('campaignRegisterChurch', 'required')" class="invalid">
           {{ 'application.campaign.messages.church.empty' | translate }}
@@ -50,11 +48,9 @@
         <label for="campaignRegisterProvingType" class="required">
           {{ 'application.campaign.register.form.field.provingType' | translate }}
         </label>
-        <select id="campaignRegisterProvingType" name="campaignRegisterProvingType"
-                class="form-control" data-ng-model="vm.campaign.provingType" data-ng-required="true">
-          <option data-ng-repeat="provingType in vm.provingTypes" value="{{'/provingTypes/' + provingType.id}}">
-            {{provingType.name | translate}}
-          </option>
+        <select id="campaignRegisterProvingType" name="campaignRegisterProvingType" class="form-control"
+                data-ng-options="provingType.id as provingType.name for provingType in vm.provingTypes"
+                data-ng-model="vm.campaign.provingType.id" data-ng-required="true">
         </select>
         <div data-ng-show="vm.hasError('campaignRegisterProvingType', 'required')" class="invalid">
           {{ 'application.campaign.messages.provingType.empty' | translate }}

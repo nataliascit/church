@@ -80,7 +80,7 @@ import 'lodash';
          * @param validation The type of the validation to be performed.
          * @returns {boolean}
          */
-        vm.hasError = function(field, validation){
+        vm.hasError = function(field, validation) {
             return formValidatorService.hasError($scope.contributorRegisterForm, field, validation);
         };
 
@@ -89,7 +89,7 @@ import 'lodash';
          * @returns {boolean}
          */
         vm.genderFieldHasError = function() {
-            return ($scope.contributorRegisterForm.$submitted && _.isEmpty(vm.contributor.gender));
+           return $scope.contributorRegisterForm.$submitted && _.isEmpty(vm.contributor.gender);
         };
 
         /**

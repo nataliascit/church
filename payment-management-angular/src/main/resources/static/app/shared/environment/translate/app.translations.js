@@ -13,9 +13,9 @@ import './locale/locale-pt_BR.json'
 (function () {
     'use strict';
 
-    var environmentModule = angular.module('paymentManagement.environment');
+    const module = angular.module('paymentManagement.environment');
 
-    environmentModule.config(['$translateProvider', '$qProvider', 'environmentConfig', function ($translateProvider, $qProvider, environmentConfig) {
+    module.config(['$translateProvider', '$qProvider', 'environmentConfig', function ($translateProvider, $qProvider, environmentConfig) {
 
         $qProvider.errorOnUnhandledRejections(false);
 
