@@ -20,8 +20,37 @@
     },
     "campaign": {
       "catalog": {
+        "button": {
+          "addCampaign": "+ Campanha"
+        },
         "label": {
           "title": "Listagem de Campanhas"
+        },
+        "form": {
+          "field": {
+            "campaignName": "Digite o nome"
+          }
+        },
+        "modal": {
+          "campaignDeletion": {
+            "title" : "Confirmação de exclusão de campanha",
+            "body": "Tem certeza que deseja remover a campanha selectionada?"
+          }
+        },
+        "table": {
+          "campaign": {
+            "button": {
+              "editCampaign": "Editar",
+              "deleteCampaign": "Remover"
+            },
+            "column": {
+              "name": "Nome",
+              "creationDate": "Data de Criação",
+              "initialDate": "Data de Inicio",
+              "finalDate": "Data de Termino",
+              "provingType": "Tipo de Pagamento"
+            }
+          }
         }
       },
       "messages": {
@@ -30,6 +59,9 @@
         },
         "church": {
           "empty": "A Igreja é obrigatória."
+        },
+        "initialDate": {
+          "empty": "A Data Inicial é obrigatória."
         },
         "name": {
           "empty": "O Nome é obrigatório."
@@ -41,6 +73,25 @@
       "register": {
         "label": {
           "title": "Registro de Campanha"
+        },
+        "message": {
+          "successCreation": "Campanha criada com sucesso.",
+          "successDeletion": "Campanha removida com sucesso.",
+          "successUpdate": "Campanha atualizada com sucesso."
+        },
+        "form": {
+          "field": {
+            "id": "ID",
+            "name": "Nome",
+            "creationDate": "Data de Criação",
+            "initialDate": "Data de Inicio",
+            "finalDate": "Data de Termino",
+            "church": "Igreja",
+            "provingType": "Tipo de Pagamento"
+          },
+          "button": {
+            "saveCampaign": "Salvar"
+          }
         }
       }
     },
@@ -154,8 +205,7 @@
         "message": {
           "successCreation": "Contribuinte criado com sucesso.",
           "successDeletion": "Contribuinte removido com sucesso.",
-          "successUpdate": "Contribuinte atualizado com sucesso.",
-          "successContributionDeletion": "Contribuição removida com sucesso."
+          "successUpdate": "Contribuinte atualizado com sucesso."
         },
         "form": {
           "field": {
@@ -174,16 +224,6 @@
             "addCampaign": "+ Campanha",
             "deleteContributor": "Excluir",
             "saveContributor": "Salvar"
-          }
-        },
-        "table": {
-          "contribution": {
-            "column": {
-              "id": "ID",
-              "creationDate": "Data de Criação",
-              "amount": "Valor",
-              "campaign": "Campanha"
-            }
           }
         }
       }

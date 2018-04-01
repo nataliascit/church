@@ -8,16 +8,16 @@ import '../app.campaign.module';
 (function () {
     'use strict';
 
-    var campaignModule = angular.module('paymentManagement.campaign');
+    const campaignModule = angular.module('paymentManagement.campaign');
 
     function CampaignRestService(environmentConfig, $resource) {
 
-        var resources = $resource(environmentConfig.apiBaseUrl + '/campaigns/:id', null, {
+        const resources = $resource(environmentConfig.apiBaseUrl + '/campaigns/:id', null, {
             'create': {
                 method: 'POST'
             },
             'update': {
-                method: 'PUT'
+                method: 'PATCH'
             },
             'remove': {
                 method: 'DELETE'
@@ -76,9 +76,9 @@ import '../app.campaign.module';
          *         The function which will handle error callback.
          * @private
          */
-        function _remove(applicationId, successCallback, errorCallback) {
+        function _remove(id, successCallback, errorCallback) {
             var params = {
-                applicationId: applicationId
+                id: id
             };
             return resources.remove(params, null, successCallback, errorCallback);
         }
@@ -124,6 +124,5 @@ import '../app.campaign.module';
             findAll: _findAll
         }
     }
-
     campaignModule.service('campaignRestService', ['environmentConfig', '$resource', CampaignRestService]);
 }());

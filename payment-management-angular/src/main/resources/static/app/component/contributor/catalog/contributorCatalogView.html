@@ -1,5 +1,5 @@
-<section data-ui-view data-ng-init="vm.onInit()">
-  <div class="container">
+<section data-ui-view>
+  <div class="container" data-ng-init="vm.onInit()">
     <div class="col-lg-12">
       <div class="filters">
         <form class="col-lg-12">
@@ -32,7 +32,7 @@
               <td>{{contributor.cellphone}}</td>
               <td>
                 <span class="glyphicon glyphicon-pencil" role="button" aria-hidden="true"
-                      data-ui-sref="application.contributor.register({id: contributor.id})">
+                      data-ui-sref="application.contributor.register({idContributor: contributor.id})">
                   {{ 'application.contributor.catalog.table.contributor.button.editContributor' | translate }}
                 </span>
               </td>
