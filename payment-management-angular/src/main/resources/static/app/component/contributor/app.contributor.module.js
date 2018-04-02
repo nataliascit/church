@@ -1,12 +1,13 @@
 import 'angular-resource';
-import 'angular-utils-pagination';
 import '@uirouter/angularjs';
+import 'angular-utils-pagination';
 import '../modal/app.modal.module';
-import '../breadcrumb/app.breadcrumb.module';
 import '../../shared/form/app.form.module';
+import '../breadcrumb/app.breadcrumb.module';
 import '../../shared/filter/app.filter.module';
 import '../../shared/environment/app.environment.module';
 import '../../shared/environment/config/app.environment.constant';
+import '../../shared/springIntegration/app.springIntegration.module';
 
 /**
  * @desc Configures the contributor module.
@@ -20,10 +21,11 @@ import '../../shared/environment/config/app.environment.constant';
         'ui.router',
         'ngResource',
         'paymentManagement.breadcrumb',
+        'paymentManagement.date',
         'paymentManagement.environment',
-        'paymentManagement.modal',
         'paymentManagement.filter',
         'paymentManagement.form',
-        'paymentManagement.date'
+        'paymentManagement.modal',
+        'paymentManagement.springIntegration'
     ]);
 }());

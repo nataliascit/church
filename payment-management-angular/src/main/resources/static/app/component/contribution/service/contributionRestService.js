@@ -17,7 +17,7 @@ import '../app.contribution.module';
                 method: 'POST'
             },
             'update': {
-                method: 'PUT'
+                method: 'PATCH'
             },
             'remove': {
                 method: 'DELETE'

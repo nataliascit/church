@@ -1,7 +1,6 @@
 import '../app.campaign.module';
 import '../service/campaignRestService';
 import '../../modal/confirmationModal/confirmationModalService';
-import 'lodash';
 
 /**
  * @desc This Controller is responsible for handling the view 'campaignCatalogView.html'
@@ -12,18 +11,18 @@ import 'lodash';
 
     const module = angular.module('paymentManagement.campaign');
 
-    function CampaignCatalogController($stateParams, confirmationModalService, messageService,
+    function CampaignCatalogController(confirmationModalService, messageService,
                                        campaignRestService, springIntegrationService) {
         const vm = this;
 
         /**
-         * List of all the existing contributors.
+         * List of all the existing campaigns.
          * @type {Array}
          */
         vm.campaigns = [];
 
         /**
-         * Criteria used to filter all the existing contributors.
+         * Criteria used to filter all the existing campaigns.
          * @type {{name: null}}
          */
         vm.filter = {
@@ -86,12 +85,11 @@ import 'lodash';
         function _deleteCampaign() {
             campaignRestService.remove(_campaignToDelete.id, function() {
                 vm.campaigns.splice(_campaignToDelete.index,1); // Remove the element from the array.
-                messageService.showSuccessMessage('application.campaign.register.message.successDeletion');
+                messageService.showSuccessMessage('application.campaign.catalog.message.successDeletion');
             });
         }
     }
     module.controller('campaignCatalogController', [
-        '$stateParams',
         'confirmationModalService',
         'messageService',
         'campaignRestService',

@@ -1,6 +1,5 @@
 import '../app.contributor.module';
 import '../service/contributorRestService';
-import '../../contribution/service/contributionRestService';
 import '../../modal/confirmationModal/confirmationModalService';
 
 /**

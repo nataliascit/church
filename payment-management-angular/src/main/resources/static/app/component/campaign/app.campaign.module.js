@@ -19,6 +19,7 @@ import '../../shared/springIntegration/app.springIntegration.module';
         'ngResource',
         'paymentManagement.breadcrumb',
         'paymentManagement.environment',
+        'paymentManagement.filter',
         'paymentManagement.springIntegration'
     ]);
 }());

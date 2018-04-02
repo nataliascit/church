@@ -28,8 +28,14 @@
         },
         "form": {
           "field": {
-            "campaignName": "Digite o nome"
+            "campaign": {
+              "fieldName": "Campanha",
+              "placeholder": "Digite o nome"
+            }
           }
+        },
+        "message": {
+          "successDeletion": "Campanha removida com sucesso."
         },
         "modal": {
           "campaignDeletion": {
@@ -74,11 +80,6 @@
         "label": {
           "title": "Registro de Campanha"
         },
-        "message": {
-          "successCreation": "Campanha criada com sucesso.",
-          "successDeletion": "Campanha removida com sucesso.",
-          "successUpdate": "Campanha atualizada com sucesso."
-        },
         "form": {
           "field": {
             "id": "ID",
@@ -92,6 +93,10 @@
           "button": {
             "saveCampaign": "Salvar"
           }
+        },
+        "message": {
+          "successCreation": "Campanha criada com sucesso.",
+          "successUpdate": "Campanha atualizada com sucesso."
         }
       }
     },
@@ -109,8 +114,49 @@
     },
     "contribution": {
       "catalog": {
+        "button": {
+          "addContribution": "+ Contribuição"
+        },
         "label": {
           "title": "Listagem de Contribuições"
+        },
+        "form": {
+          "field": {
+            "campaign": {
+              "fieldName": "Campanha",
+              "placeholder": "Digite o nome"
+            },
+            "contributor": {
+              "fieldName": "Contribuinte",
+              "placeholder": "Digite o nome"
+            },
+            "creationDate": {
+              "fieldName": "Data de criação"
+            }
+          }
+        },
+        "message": {
+          "successDeletion": "Contribuição removida com sucesso."
+        },
+        "modal": {
+          "contributionDeletion": {
+            "title" : "Confirmação de exclusão de contribuição",
+            "body": "Tem certeza que deseja remover a contribuição selecionada?"
+          }
+        },
+        "table": {
+          "contribution": {
+            "button": {
+              "editContribution": "Editar",
+              "deleteContribution": "Remover"
+            },
+            "column": {
+              "campaignName": "Campanha",
+              "creationDate": "Data de Criação",
+              "contributorName": "Contribuinte",
+              "amount": "Quantia"
+            }
+          }
         }
       },
       "messages": {
@@ -118,7 +164,7 @@
           "empty": "A Data de Criação é obrigatória."
         },
         "amount": {
-          "empty": "O valor da contribuição é obrigatório."
+          "empty": "A quantia da contribuição é obrigatória."
         },
         "campaign": {
           "empty": "A Campanha é obrigatória."
@@ -130,6 +176,20 @@
       "register": {
         "label": {
           "title": "Registro de Contribuição"
+        },
+        "form": {
+          "field": {
+            "contributor": "Contribuinte",
+            "campaign": "Campanha",
+            "amount": "Quantia"
+          },
+          "button": {
+            "saveContribution": "Salvar"
+          }
+        },
+        "message": {
+          "successCreation": "Contribuição registrada com sucesso.",
+          "successUpdate": "Contribuição atualizada com sucesso."
         }
       }
     },
@@ -140,7 +200,10 @@
         },
         "form": {
           "field": {
-            "contributorName": "Digite o nome"
+            "contributor": {
+              "fieldName": "Contribuinte",
+              "placeholder": "Digite o nome"
+            }
           }
         },
         "label": {

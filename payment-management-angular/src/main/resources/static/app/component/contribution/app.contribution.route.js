@@ -9,7 +9,7 @@ import './catalog/contributionCatalogController';
 (function () {
     'use strict';
 
-    var module = angular.module('paymentManagement.contribution');
+    const module = angular.module('paymentManagement.contribution');
 
     module.config(['$stateProvider', function ($stateProvider) {
 
@@ -19,6 +19,20 @@ import './catalog/contributionCatalogController';
             controller: 'contributionCatalogController as vm',
             breadcrumb: {
                 label: 'application.contribution.catalog.label.title',
+                force: true,
+                stateOptions: {
+                    reload: true
+                }
+            }
+        }).state('application.contribution.register', {
+            url: '/contributions/:idContribution',
+            templateUrl: 'app/component/contribution/register/contributionRegisterView.html',
+            controller: 'contributionRegisterController as vm',
+            params: {
+                idContribution: null
+            },
+            breadcrumb: {
+                label: 'application.contribution.register.label.title',
                 force: true,
                 stateOptions: {
                     reload: true

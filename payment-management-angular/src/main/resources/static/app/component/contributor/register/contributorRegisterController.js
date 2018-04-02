@@ -6,13 +6,13 @@ import '../../../shared/form/validator/formValidatorService';
 import 'lodash';
 
 /**
- * @desc This Controller is responsible for handling the view 'contributorRegisterView.html'
+ * @desc This Controller is responsible for handling the view 'contributionRegisterView.html'
  * @author William Custodio
  */
 (function () {
     'use strict';
 
-    const registerContributorModule = angular.module('paymentManagement.contributor');
+    const module = angular.module('paymentManagement.contributor');
 
     function ContributorRegisterController($scope, $state, $stateParams, messageService, formValidatorService,
                                            contributorRestService, GENDER_CATALOG, CIVIL_STATE_CATALOG) {
@@ -61,13 +61,16 @@ import 'lodash';
          * Handle the on click action for the save button of a contributor.
          */
         vm.saveContributorOnClick = function() {
+
+            var contributor = angular.copy(vm.contributor);
+
             if(_isUpdateAction()) {
-                contributorRestService.update(vm.contributor.id, vm.contributor, function() {
+                contributorRestService.update(contributor.id, contributor, function() {
                     messageService.showSuccessMessage('application.contributor.register.message.successUpdate');
                     $state.go('^', {}, { reload: true }); // redirect to the catalog page.
                 });
             } else if(_isCreateAction()) {
-                contributorRestService.create(vm.contributor, function() {
+                contributorRestService.create(contributor, function() {
                     messageService.showSuccessMessage('application.contributor.register.message.successCreation');
                     $state.go('^', {}, { reload: true }); // redirect to the catalog page.
                 });
@@ -121,7 +124,7 @@ import 'lodash';
             return !$stateParams.idContributor && !vm.contributor.id;
         }
     }
-    registerContributorModule.controller('contributorRegisterController', [
+    module.controller('contributorRegisterController', [
         '$scope',
         '$state',
         '$stateParams',

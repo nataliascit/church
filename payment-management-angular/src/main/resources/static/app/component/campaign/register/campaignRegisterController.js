@@ -17,7 +17,7 @@ import '../../../shared/form/validator/formValidatorService';
 
     function CampaignRegisterController($scope, $state, $stateParams, messageService,
                                         formValidatorService, campaignRestService, churchRestService,
-                                        provingTypeRestService, springIntegrationService, LINK_PROPERTY_MAPPER) {
+                                        provingTypeRestService, springIntegrationService, CAMPAIGN_LINK_PROPERTY_MAPPER) {
         const vm = this;
 
         /**
@@ -67,7 +67,7 @@ import '../../../shared/form/validator/formValidatorService';
             var campaign = angular.copy(vm.campaign);
 
             // Convert all the properties before performing the action.
-            springIntegrationService.convertProperty(campaign, LINK_PROPERTY_MAPPER);
+            springIntegrationService.convertProperty(campaign, CAMPAIGN_LINK_PROPERTY_MAPPER);
 
             if(_isUpdateAction()) {
                 campaignRestService.update(campaign.id, campaign, function() {
@@ -155,7 +155,7 @@ import '../../../shared/form/validator/formValidatorService';
         'churchRestService',
         'provingTypeRestService',
         'springIntegrationService',
-        'LINK_PROPERTY_MAPPER',
+        'CAMPAIGN_LINK_PROPERTY_MAPPER',
         CampaignRegisterController
     ]);
 }());
