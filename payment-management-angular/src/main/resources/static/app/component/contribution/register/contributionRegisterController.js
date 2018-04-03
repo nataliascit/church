@@ -14,7 +14,8 @@ import '../../contributor/service/contributorRestService';
 
     function ContributionRegisterController($scope, $state, $stateParams, messageService, formValidatorService,
                                             campaignRestService, contributorRestService,
-                                            contributionRestService, springIntegrationService, CONTRIBUTION_LINK_PROPERTY_MAPPER) {
+                                            contributionRestService, springIntegrationService,
+                                            CONTRIBUTION_LINK_PROPERTY_MAPPER) {
         const vm = this;
 
         /**
