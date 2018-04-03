@@ -1,8 +1,8 @@
-import '@uirouter/angularjs';
+/* Core dependencies */
 import 'angular-resource';
-import '../../shared/environment/config/app.environment.constant';
+/* Shared components */
 import '../../shared/environment/app.environment.module';
-import '../breadcrumb/app.breadcrumb.module';
+import '../../shared/environment/config/app.environment.constant';
 
 /**
  * @desc Configures the proving type module.
@@ -12,9 +12,7 @@ import '../breadcrumb/app.breadcrumb.module';
     'use strict';
 
     angular.module('paymentManagement.provingType', [
-        'ui.router',
         'ngResource',
-        'paymentManagement.breadcrumb',
         'paymentManagement.environment'
     ]);
 }());

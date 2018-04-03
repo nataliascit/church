@@ -77,6 +77,7 @@ import '../../modal/confirmationModal/confirmationModalService';
                 springIntegrationService.retrieveDataFromItemsLinks(response._embeddedItems, ['campaign', 'contributor'])
                     .then(function() {
                         vm.contributions = response._embeddedItems;
+                        console.log(currencyFormatService.getLanguageByCode('pt_BR'));
                     });
             });
         }

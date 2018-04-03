@@ -1,7 +1,13 @@
+/* Core dependencies */
 import 'angular-resource';
 import '@uirouter/angularjs';
+import 'angular-money-mask';
 import 'angular-utils-pagination';
+
+/* Components dependencies */
 import '../breadcrumb/app.breadcrumb.module';
+
+/* Shared dependencies */
 import '../../shared/environment/app.environment.module';
 import '../../shared/environment/config/app.environment.constant';
 import '../../shared/springIntegration/app.springIntegration.module';
@@ -17,6 +23,7 @@ import '../../shared/springIntegration/app.springIntegration.module';
         'angularUtils.directives.dirPagination',
         'ui.router',
         'ngResource',
+        'rw.moneymask',
         'paymentManagement.breadcrumb',
         'paymentManagement.environment',
         'paymentManagement.filter',

@@ -48,7 +48,7 @@
             <td>{{contribution.campaign.name}}</td>
             <td>{{contribution.contributor.name}}</td>
             <td>{{contribution.creationDate | date:'dd/MM/yyyy'}}</td>
-            <td>{{contribution.amount}}</td>
+            <td>{{contribution.amount | brazilianCurrency:'R$':2:true}}</td>
             <td>
                 <span class="glyphicon glyphicon-pencil" role="button" aria-hidden="true"
                       data-ui-sref="application.contribution.register({idContribution: contribution.id})">

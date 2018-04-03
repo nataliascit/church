@@ -1,9 +1,11 @@
 import 'angular-resource';
 import '@uirouter/angularjs';
 import 'angular-utils-pagination';
+
 import '../modal/app.modal.module';
 import '../../shared/form/app.form.module';
 import '../breadcrumb/app.breadcrumb.module';
+
 import '../../shared/filter/app.filter.module';
 import '../../shared/environment/app.environment.module';
 import '../../shared/environment/config/app.environment.constant';

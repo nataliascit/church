@@ -1,9 +1,11 @@
+import 'lodash';
+
 import '../app.contributor.module';
+import '../../message/messageService';
 import '../service/contributorRestService';
 import '../config/app.contributor.constant';
-import '../../message/messageService';
+
 import '../../../shared/form/validator/formValidatorService';
-import 'lodash';
 
 /**
  * @desc This Controller is responsible for handling the view 'contributionRegisterView.html'

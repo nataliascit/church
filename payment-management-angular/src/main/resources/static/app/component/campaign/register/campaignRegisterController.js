@@ -41,7 +41,7 @@ import '../../../shared/form/validator/formValidatorService';
             name: null,
             creationDate: new Date(),
             initialDate: new Date(),
-            finalDate: new Date(),
+            finalDate: null,
             church: null,
             provingType: null,
             contributions: [],
@@ -89,7 +89,7 @@ import '../../../shared/form/validator/formValidatorService';
          * @returns {boolean}
          */
         vm.hasError = function(field, validation) {
-            formValidatorService.hasError($scope.campaignRegisterForm, field, validation);
+            return formValidatorService.hasError($scope.campaignRegisterForm, field, validation);
         };
 
         /**

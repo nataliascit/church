@@ -8,7 +8,7 @@ import '../app.church.module';
 (function () {
     'use strict';
 
-    var churchModule = angular.module('paymentManagement.church');
+    var module = angular.module('paymentManagement.church');
 
     function ChurchRestService(environmentConfig, $resource) {
 
@@ -124,6 +124,5 @@ import '../app.church.module';
             findAll: _findAll
         }
     }
-
-    churchModule.service('churchRestService', ['environmentConfig', '$resource', ChurchRestService]);
+    module.service('churchRestService', ['environmentConfig', '$resource', ChurchRestService]);
 }());

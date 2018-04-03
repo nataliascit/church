@@ -15,10 +15,7 @@
                     {{ 'application.contribution.messages.contributor.empty' | translate }}
                 </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group col-xs4">
+            <div class="form-group col-xs-4">
                 <label for="contributionRegisterCampaign" class="required">
                     {{ 'application.contribution.register.form.field.campaign' | translate }}
                 </label>
@@ -30,16 +27,14 @@
                     {{ 'application.contribution.messages.campaign.empty' | translate }}
                 </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group col-xs4">
+            <div class="form-group col-xs-4">
                 <label for="contributionRegisterAmount" class="required">
                     {{ 'application.contribution.register.form.field.amount' | translate }}
                 </label>
-                <input id="contributionRegisterAmount" name="contributionRegisterAmount" type="number"
-                       class="form-control" data-ng-model="vm.contribution.amount" data-ng-required="true">
-                <div data-ng-show="vm.hasError('contributionRegisterAmount', 'required')" class="invalid">
+                <input id="contributionRegisterAmount" name="contributionRegisterAmount" type="text"
+                       class="form-control" data-ng-model="vm.contribution.amount"
+                       data-money-mask data-money-mask-prepend="R$">
+                <div data-ng-show="vm.amountFieldHasError()" class="invalid">
                     {{ 'application.contribution.messages.amount.empty' | translate }}
                 </div>
             </div>

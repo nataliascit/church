@@ -37,7 +37,8 @@ import '../../contributor/service/contributorRestService';
             id: null,
             campaign: null,
             contributor: null,
-            creationDate: new Date()
+            creationDate: new Date(),
+            amount: 0
         };
 
         /**
@@ -58,8 +59,8 @@ import '../../contributor/service/contributorRestService';
 
             var contribution = angular.copy(vm.contribution);
 
-            // Convert all the properties before performing the action.
-            springIntegrationService.convertProperty(contribution, CONTRIBUTION_LINK_PROPERTY_MAPPER);
+            // Convert all the data before persisting into the database.
+            _convertDataBeforePersist(contribution);
 
             if(_isUpdateAction()) {
                 contributionRestService.update(contribution.id, contribution, function() {
@@ -85,6 +86,14 @@ import '../../contributor/service/contributorRestService';
         };
 
         /**
+         * Verifies if the amount has errors of validation.
+         * @returns {boolean}
+         */
+        vm.amountFieldHasError = function() {
+            return $scope.contributionRegisterForm.$submitted && vm.contribution.amount === 0;
+        };
+
+        /**
          * Load a certain contribution by their identifier.
          * @param {Number} contributionId
          * @private
@@ -95,6 +104,8 @@ import '../../contributor/service/contributorRestService';
                 springIntegrationService.retrieveDataFromItemLinks(response, ['campaign', 'contributor'])
                     .then(function(result) {
                         vm.contribution = response;
+                        // Converts the amount to cents.
+                        vm.contribution.amount = vm.contribution.amount/100;
                     });
             });
         }
@@ -117,6 +128,18 @@ import '../../contributor/service/contributorRestService';
             contributorRestService.findAll(function(response) {
                 vm.contributors = response._embeddedItems;
             });
+        }
+
+        /**
+         * Convert all the data before persisting into the database.
+         * @param contribution The contribution to be persisted.
+         * @private
+         */
+        function _convertDataBeforePersist(contribution) {
+            // Converts the amount to cents.
+            contribution.amount = contribution.amount*100;
+            // Convert all the properties before performing the action.
+            springIntegrationService.convertProperty(contribution, CONTRIBUTION_LINK_PROPERTY_MAPPER);
         }
 
         /**

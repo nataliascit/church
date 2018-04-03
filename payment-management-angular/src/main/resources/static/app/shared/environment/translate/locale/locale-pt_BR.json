@@ -164,7 +164,7 @@
           "empty": "A Data de Criação é obrigatória."
         },
         "amount": {
-          "empty": "A quantia da contribuição é obrigatória."
+          "empty": "A quantia da contribuição não pode ser zero."
         },
         "campaign": {
           "empty": "A Campanha é obrigatória."

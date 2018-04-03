@@ -1,3 +1,4 @@
+/* Components dependencies */
 import './app.contribution.module';
 import './catalog/contributionCatalogController';
 
@@ -25,7 +26,7 @@ import './catalog/contributionCatalogController';
                 }
             }
         }).state('application.contribution.register', {
-            url: '/contributions/:idContribution',
+            url: '/:idContribution',
             templateUrl: 'app/component/contribution/register/contributionRegisterView.html',
             controller: 'contributionRegisterController as vm',
             params: {
