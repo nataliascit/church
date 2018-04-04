@@ -3,7 +3,6 @@ package br.com.payment.management.core.contributor.repository;
 import br.com.payment.management.core.common.configuration.BaseTestRunner;
 import br.com.payment.management.core.common.enumerable.ConfigurationCatalog;
 import br.com.payment.management.core.common.util.JSONUtil;
-import br.com.payment.management.core.contribution.repository.ContributorRepository;
 import br.com.payment.management.core.contributor.model.Contributor;
 import com.fasterxml.jackson.databind.type.TypeFactory;
 import org.junit.Assert;

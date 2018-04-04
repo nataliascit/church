@@ -12,7 +12,7 @@ import '../app.contribution.module';
 
     function ContributionRestService(environmentConfig, $resource) {
 
-        var resources = $resource(environmentConfig.apiBaseUrl + '/contributions/:id', null, {
+        var resources = $resource(environmentConfig.apiBaseUrl + '/contributions/:id/:action/:subAction', null, {
             'create': {
                 method: 'POST'
             },
@@ -26,7 +26,14 @@ import '../app.contribution.module';
                 method: 'GET'
             },
             'findAll': {
-                method: 'GET'
+                method: 'GET',
+                params: {
+                    action: 'search',
+                    subAction: 'findAll',
+                    campaignName: '@campaignName',
+                    contributorName: '@contributorName',
+                    creationDate: '@creationDate'
+                }
             }
         });
 
@@ -86,6 +93,8 @@ import '../app.contribution.module';
         /**
          * Search for all existing contributions on the database.
          *
+         * @param {Object} [filter] The filter to be used for the filtering action.
+         *                          Ex. {{campaignName: null, contributorName: null, creationDate: null}}
          * @params {function} [successCallback]
          *        The function which will handle the success callback.
          * @params {function} [errorCallback]
@@ -93,8 +102,8 @@ import '../app.contribution.module';
          * @return result The list of all existing contributions.
          * @private
          */
-        function _findAll(successCallback, errorCallback) {
-            return resources.findAll(null, null, successCallback, errorCallback);
+        function _findAll(filter, successCallback, errorCallback) {
+            return resources.findAll(filter, null, successCallback, errorCallback);
         }
 
         /**

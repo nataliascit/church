@@ -116,7 +116,7 @@ import '../../contributor/service/contributorRestService';
          * @private
          */
         function _findAllCampaign() {
-            campaignRestService.findAll(function(response) {
+            campaignRestService.findAll(null, function(response) {
                 vm.campaigns = response._embeddedItems;
             });
         }
@@ -126,7 +126,7 @@ import '../../contributor/service/contributorRestService';
          * @private
          */
         function _findAllContributor() {
-            contributorRestService.findAll(function(response) {
+            contributorRestService.findAll(null, function(response) {
                 vm.contributors = response._embeddedItems;
             });
         }

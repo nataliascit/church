@@ -72,9 +72,9 @@ public class CampaignRepositoryTest extends BaseTestRunner {
      */
     @Test
     public void findByName() {
-        final Campaign entity = this.campaignRepository.findByName(TITHE_NAME);
-        Assert.assertNotNull(entity);
-        Assert.assertEquals(TITHE_NAME, entity.getName());
+        final List<Campaign> entities = this.campaignRepository.findAll(TITHE_NAME);
+        Assert.assertNotNull(entities);
+        Assert.assertEquals(TITHE_NAME, entities.get(0).getName());
     }
 
     /**

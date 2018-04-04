@@ -44,7 +44,7 @@ import '../../modal/confirmationModal/confirmationModalService';
          * Function responsible for handling the hook for the initialization of the controller.
          */
         vm.onInit = function() {
-            _findAllContribution();
+            vm.findAll(null);
         };
 
         /**
@@ -70,17 +70,18 @@ import '../../modal/confirmationModal/confirmationModalService';
 
         /**
          * Search for all existing contributions in the database.
+         * @param {Object} [filter] The filter to be used for the filtering action.
+         *                          Ex. {{campaignName: null, contributorName: null, creationDate: null}}
          * @private
          */
-        function _findAllContribution() {
-            contributionRestService.findAll(function(response) {
+        vm.findAll = function(filter) {
+            contributionRestService.findAll(filter, function(response) {
                 springIntegrationService.retrieveDataFromItemsLinks(response._embeddedItems, ['campaign', 'contributor'])
                     .then(function() {
                         vm.contributions = response._embeddedItems;
-                        console.log(currencyFormatService.getLanguageByCode('pt_BR'));
                     });
             });
-        }
+        };
 
         /**
          * Delete a certain contribution by their identifier.

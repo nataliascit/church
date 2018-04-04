@@ -1,6 +1,5 @@
-/* Core dependencies */
 import 'angular-resource';
-/* Shared components */
+
 import '../../shared/environment/app.environment.module';
 import '../../shared/environment/config/app.environment.constant';
 

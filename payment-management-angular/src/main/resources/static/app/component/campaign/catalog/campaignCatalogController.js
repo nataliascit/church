@@ -42,7 +42,7 @@ import '../../modal/confirmationModal/confirmationModalService';
          * Function responsible for handling the hook for the initialization of the controller.
          */
         vm.onInit = function() {
-            _findAllCampaign();
+            vm.findAll(null);
         };
 
         /**
@@ -68,16 +68,17 @@ import '../../modal/confirmationModal/confirmationModalService';
 
         /**
          * Search for all existing campaigns in the database.
+         * @param {Object} [filter] The filter to be used for the filtering action. Ex. {{name: null}}
          * @private
          */
-        function _findAllCampaign() {
-            campaignRestService.findAll(function(response) {
+        vm.findAll = function(filter) {
+            campaignRestService.findAll(filter, function(response) {
                 springIntegrationService.retrieveDataFromItemsLinks(response._embeddedItems, ['provingType'])
                     .then(function() {
                         vm.campaigns = response._embeddedItems;
                     });
             });
-        }
+        };
 
         /**
          * Delete a certain campaign by their identifier.

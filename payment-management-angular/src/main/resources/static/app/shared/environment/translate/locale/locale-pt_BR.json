@@ -21,7 +21,8 @@
     "campaign": {
       "catalog": {
         "button": {
-          "addCampaign": "+ Campanha"
+          "addCampaign": "+ Campanha",
+          "filterCampaign": "Buscar"
         },
         "label": {
           "title": "Listagem de Campanhas"
@@ -115,7 +116,8 @@
     "contribution": {
       "catalog": {
         "button": {
-          "addContribution": "+ Contribuição"
+          "addContribution": "+ Contribuição",
+          "filterContribution": "Buscar"
         },
         "label": {
           "title": "Listagem de Contribuições"
@@ -196,7 +198,8 @@
     "contributor": {
       "catalog": {
         "button": {
-          "addContributor": "+ Contribuinte"
+          "addContributor": "+ Contribuinte",
+          "filterContributor": "Buscar"
         },
         "form": {
           "field": {

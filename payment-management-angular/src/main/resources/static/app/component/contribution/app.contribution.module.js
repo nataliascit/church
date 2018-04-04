@@ -1,13 +1,10 @@
-/* Core dependencies */
 import 'angular-resource';
-import '@uirouter/angularjs';
 import 'angular-money-mask';
+import '@uirouter/angularjs';
 import 'angular-utils-pagination';
 
-/* Components dependencies */
 import '../breadcrumb/app.breadcrumb.module';
 
-/* Shared dependencies */
 import '../../shared/environment/app.environment.module';
 import '../../shared/environment/config/app.environment.constant';
 import '../../shared/springIntegration/app.springIntegration.module';

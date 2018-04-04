@@ -42,7 +42,7 @@ import '../../modal/confirmationModal/confirmationModalService';
          * Function responsible for handling the hook for the initialization of the controller.
          */
         vm.onInit = function() {
-            _findAllContributor();
+            vm.findAll(null);
         };
 
         /**
@@ -68,13 +68,14 @@ import '../../modal/confirmationModal/confirmationModalService';
 
         /**
          * Search for all existing contributors in the database.
+         * @param {Object} [filter] The filter to be used for the filtering action. Ex. {{name: null}}
          * @private
          */
-        function _findAllContributor() {
-            contributorRestService.findAll(function(response) {
+        vm.findAll = function(filter) {
+            contributorRestService.findAll(filter, function(response) {
                 vm.contributors = response._embeddedItems;
             });
-        }
+        };
 
         /**
          * Delete a certain contributor by their identifier.
