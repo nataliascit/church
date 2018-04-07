@@ -28,7 +28,8 @@ import '../../modal/confirmationModal/confirmationModalService';
         vm.filter = {
             campaignName: null,
             contributorName: null,
-            creationDate: null
+            beginCreationDate: new Date(),
+            endCreationDate: new Date(),
         };
 
         /**

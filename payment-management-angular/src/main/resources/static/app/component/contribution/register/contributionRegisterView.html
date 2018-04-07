@@ -2,7 +2,7 @@
     <form id="contributionRegisterForm" name="contributionRegisterForm" class="col-lg-12"
           data-ng-submit="contributionRegisterForm.$valid && vm.saveContributionOnClick()" novalidate>
         <div class="row">
-            <div class="form-group col-xs-4">
+            <div class="form-group col-xs-3">
                 <label for="contributionRegisterContributor" class="required">
                     {{ 'application.contribution.register.form.field.contributor' | translate }}
                 </label>
@@ -15,7 +15,7 @@
                     {{ 'application.contribution.messages.contributor.empty' | translate }}
                 </div>
             </div>
-            <div class="form-group col-xs-4">
+            <div class="form-group col-xs-3">
                 <label for="contributionRegisterCampaign" class="required">
                     {{ 'application.contribution.register.form.field.campaign' | translate }}
                 </label>
@@ -27,7 +27,17 @@
                     {{ 'application.contribution.messages.campaign.empty' | translate }}
                 </div>
             </div>
-            <div class="form-group col-xs-4">
+            <div class="form-group col-xs-3">
+                <label for="contributionRegisterCreationDate" class="required">
+                    {{ 'application.contribution.register.form.field.creationDate' | translate }}
+                </label>
+                <input id="contributionRegisterCreationDate" name="contributionRegisterCreationDate" type="date"
+                       class="form-control" data-ng-model="vm.contribution.creationDate">
+                <div data-ng-show="vm.hasError('contributionRegisterCreationDate', 'required')" class="invalid">
+                    {{ 'application.contribution.messages.creationDate.empty' | translate }}
+                </div>
+            </div>
+            <div class="form-group col-xs-3">
                 <label for="contributionRegisterAmount" class="required">
                     {{ 'application.contribution.register.form.field.amount' | translate }}
                 </label>

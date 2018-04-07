@@ -32,7 +32,8 @@ import '../app.contribution.module';
                     subAction: 'findAll',
                     campaignName: '@campaignName',
                     contributorName: '@contributorName',
-                    creationDate: '@creationDate'
+                    beginCreationDate: '@beginCreationDate',
+                    endCreationDate: '@endCreationDate'
                 }
             }
         });
