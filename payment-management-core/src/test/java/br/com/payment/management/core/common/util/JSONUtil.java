@@ -2,6 +2,8 @@ package br.com.payment.management.core.common.util;
 
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,6 +14,12 @@ import java.io.IOException;
  * @author William Custodio
  */
 public final class JSONUtil {
+
+    private static final ObjectMapper MAPPER = new ObjectMapper();
+    static {
+        MAPPER.registerModule(new JavaTimeModule());
+        MAPPER.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+    }
 
     /**
      * Prevents the class to be instantiated.
@@ -28,8 +36,7 @@ public final class JSONUtil {
      * @throws IOException Error while reading the json file.
      */
     public static Object fileToBean(final String path, final JavaType type) throws IOException {
-        final ObjectMapper objectMapper = new ObjectMapper();
         final File file = new File(JSONUtil.class.getClass().getResource(path).getPath());
-        return objectMapper.readValue(file, type);
+        return MAPPER.readValue(file, type);
     }
 }
