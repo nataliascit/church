@@ -103,7 +103,7 @@ import '../../contributor/service/contributorRestService';
             contributionRestService.find(contributionId, function(response) {
                 // Retrieve only the data from the links: 'campaign' and 'contributor'.
                 springIntegrationService.retrieveDataFromItemLinks(response, ['campaign', 'contributor'])
-                    .then(function(result) {
+                    .then(function() {
                         vm.contribution = response;
                         // Converts the amount to cents.
                         vm.contribution.amount = vm.contribution.amount/100;

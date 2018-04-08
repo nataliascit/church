@@ -32,6 +32,14 @@ import '../app.campaign.module';
                     subAction: 'findAll',
                     name: '@name'
                 }
+            },
+            'findAllByProvingType': {
+                method: 'GET',
+                params: {
+                    'action': 'search',
+                    'subAction': 'findAllByProvingType',
+                    'provingType': '@provingType'
+                }
             }
         });
 
@@ -104,6 +112,25 @@ import '../app.campaign.module';
         }
 
         /**
+         * Search for all existing beads on the database that has a certain proving type.
+         *
+         * @params {string} [provingType]
+         *         The proving type mnemonic. Ex: TLO - Talão.
+         * @params {function} [successCallback]
+         *        The function which will handle the success callback.
+         * @params {function} [errorCallback]
+         *      The function which will handle the error callback.
+         * @return result The list of all existing beads.
+         * @private
+         */
+        function _findAllByProvingType(provingType, successCallback, errorCallback) {
+            var params = {
+                provingType: provingType
+            };
+            return resources.findAll(params, null, successCallback, errorCallback);
+        }
+
+        /**
          * Search for an existing campaign on the database by its identifier.
          *
          * @params {number} [id]
@@ -127,7 +154,8 @@ import '../app.campaign.module';
             update: _update,
             remove: _remove,
             find: _find,
-            findAll: _findAll
+            findAll: _findAll,
+            findAllByProvingType: _findAllByProvingType
         }
     }
     campaignModule.service('campaignRestService', ['environmentConfig', '$resource', CampaignRestService]);

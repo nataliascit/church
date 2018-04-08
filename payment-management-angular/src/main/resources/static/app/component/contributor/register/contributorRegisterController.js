@@ -17,7 +17,8 @@ import '../../../shared/form/validator/formValidatorService';
     const module = angular.module('paymentManagement.contributor');
 
     function ContributorRegisterController($scope, $state, $stateParams, messageService, formValidatorService,
-                                           contributorRestService, GENDER_CATALOG, CIVIL_STATE_CATALOG) {
+                                           contributorRestService, springIntegrationService,
+                                           GENDER_CATALOG, CIVIL_STATE_CATALOG, CONTRIBUTOR_LINK_PROPERTY_MAPPER) {
         const vm = this;
 
         /**
@@ -66,6 +67,9 @@ import '../../../shared/form/validator/formValidatorService';
 
             var contributor = angular.copy(vm.contributor);
 
+            // Convert all the properties before performing the action.
+            springIntegrationService.convertProperty(contributor, CONTRIBUTOR_LINK_PROPERTY_MAPPER, ['beads']);
+
             if(_isUpdateAction()) {
                 contributorRestService.update(contributor.id, contributor, function() {
                     messageService.showSuccessMessage('application.contributor.register.message.successUpdate');
@@ -104,7 +108,15 @@ import '../../../shared/form/validator/formValidatorService';
          */
         function _loadContributorById(contributorId) {
             contributorRestService.find(contributorId, function(response) {
-                vm.contributor = response;
+                // Retrieve only the data from the links: 'beads'.
+                springIntegrationService.retrieveDataFromItemLinks(response, ['beads'])
+                    .then(function() {
+                        // Retrieve all the campaigns associated to each bead.
+                        springIntegrationService.retrieveDataFromItemsLinks(response.beads._embeddedItems, ['campaign'])
+                            .then(function() {
+                                vm.contributor = response;
+                            });
+                    });
             });
         }
 
@@ -133,8 +145,10 @@ import '../../../shared/form/validator/formValidatorService';
         'messageService',
         'formValidatorService',
         'contributorRestService',
+        'springIntegrationService',
         'GENDER_CATALOG',
         'CIVIL_STATE_CATALOG',
+        'CONTRIBUTOR_LINK_PROPERTY_MAPPER',
         ContributorRegisterController
     ]);
 }());

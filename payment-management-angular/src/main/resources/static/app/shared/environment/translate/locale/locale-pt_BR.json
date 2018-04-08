@@ -8,6 +8,15 @@
         "label": {
           "title": "Lista de Talões"
         },
+        "message": {
+          "successDeletion": "Talão removido com sucesso."
+        },
+        "modal": {
+          "beadDeletion": {
+            "title" : "Confirmação de exclusão de talão",
+            "body": "Tem certeza que deseja remover o talão selecionado?"
+          }
+        },
         "table": {
             "bead": {
               "column": {
@@ -359,7 +368,8 @@
     "modal": {
         "button": {
           "cancel": "Cancelar",
-          "ok": "Sim"
+          "ok": "Sim",
+          "save": "Salvar"
         }
     },
     "provingType": {

@@ -2,6 +2,7 @@ import 'angular-resource';
 import '@uirouter/angularjs';
 import 'angular-utils-pagination';
 
+import '../bead/app.bead.module';
 import '../modal/app.modal.module';
 import '../../shared/form/app.form.module';
 import '../breadcrumb/app.breadcrumb.module';
@@ -22,6 +23,7 @@ import '../../shared/springIntegration/app.springIntegration.module';
         'angularUtils.directives.dirPagination',
         'ui.router',
         'ngResource',
+        'paymentManagement.bead',
         'paymentManagement.breadcrumb',
         'paymentManagement.date',
         'paymentManagement.environment',

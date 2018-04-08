@@ -33,4 +33,17 @@ import '../app.contributor.module'
         'value': 'WIDOWER'
     }];
     angular.module('paymentManagement.contributor').constant("CIVIL_STATE_CATALOG", CIVIL_STATE_CATALOG);
+
+    /**
+     * Mapper used to map the name of the property in a contributor JSON object and its representation as link.
+     * @type {*[]}
+     */
+    const CONTRIBUTOR_LINK_PROPERTY_MAPPER = [{
+        name: 'beads',
+        link: '/beads/%s',
+    }, {
+        name: 'contributions',
+        link: '/contributions/%s'
+    }];
+    angular.module('paymentManagement.contributor').constant("CONTRIBUTOR_LINK_PROPERTY_MAPPER", CONTRIBUTOR_LINK_PROPERTY_MAPPER);
 }());

@@ -80,7 +80,7 @@ import '../app.bead.module';
             var params = {
                 id: id
             };
-            return applications.remove(params, null, successCallback, errorCallback);
+            return resources.remove(params, null, successCallback, errorCallback);
         }
 
         /**

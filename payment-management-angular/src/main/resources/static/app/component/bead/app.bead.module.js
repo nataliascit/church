@@ -1,5 +1,7 @@
 import 'angular-resource';
+import 'angular-ui-bootstrap';
 
+import '../../shared/form/app.form.module';
 import '../../shared/environment/app.environment.module';
 import '../../shared/environment/config/app.environment.constant';
 
@@ -12,6 +14,8 @@ import '../../shared/environment/config/app.environment.constant';
 
     angular.module('paymentManagement.bead', [
         'ngResource',
-        'paymentManagement.environment'
+        'ui.bootstrap',
+        'paymentManagement.environment',
+        'paymentManagement.form'
     ]);
 }());
