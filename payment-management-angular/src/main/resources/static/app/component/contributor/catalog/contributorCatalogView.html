@@ -3,11 +3,19 @@
     <div class="col-lg-12">
       <div class="filters">
         <form class="col-lg-12">
-          <div class="form-group col-xs-3 col-md-3 col-lg-3 padding0-left">
+          <div class="form-group col-xs-4 col-md-4 col-lg-4 padding0-left">
+            <label for="contributorCatalogFieldName">
+              {{ 'application.contributor.catalog.form.field.contributor.fieldName' | translate }}
+            </label>
             <input id="contributorCatalogFieldName" type="text" class="form-control" data-ng-model="vm.filter.name"
-                   placeholder="{{ 'application.contributor.catalog.form.field.contributorName' | translate }}">
+                   placeholder="{{ 'application.contributor.catalog.form.field.contributor.placeholder' | translate }}">
           </div>
-          <div class="form-group pull-right">
+          <div class="form-group col-xs-4 col-md-4 col-lg-4 padding0-left">
+            <a class="btn btn-primary" data-ng-click="vm.findAll(vm.filter)" role="button">
+              {{ 'application.contributor.catalog.button.filterContributor' | translate }}
+            </a>
+          </div>
+          <div class="form-group col-xs-4 col-md-4 col-lg-4 pull-right">
             <a class="btn btn-primary" data-ui-sref="application.contributor.register" role="button">
               {{ 'application.contributor.catalog.button.addContributor' | translate }}
             </a>
@@ -26,7 +34,7 @@
           </tr>
           </thead>
           <tbody>
-            <tr data-dir-paginate="contributor in vm.contributors | filterByCriteria:vm.filter:true | itemsPerPage:10">
+            <tr data-dir-paginate="contributor in vm.contributors | itemsPerPage:10">
               <td>{{contributor.name}}</td>
               <td>{{contributor.address}}</td>
               <td>{{contributor.cellphone}}</td>

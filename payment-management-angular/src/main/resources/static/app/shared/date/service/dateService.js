@@ -32,6 +32,35 @@ import '../app.date.module';
         }
 
         /**
+         * Convert all the query param which are dates into string using the pattern 'yyyy-MM-dd'.
+         * @param params The query parameters to be converted.
+         * @private
+         */
+        function _convertQueryParamDates(params) {
+            for(var key in params) {
+                if(params[key] instanceof Date) {
+                    params[key] = _format(params[key]);
+                }
+            }
+        }
+
+        /**
+         * Format a certain date into the pattern 'yyyy-MM-dd'.
+         * @param date The date to be converted.
+         * @returns {string} The converted date in the specific format.
+         * @private
+         */
+        function _format(date) {
+            var newDate = new Date(date),
+            month = '' + (newDate.getMonth() + 1),
+            day = '' + newDate.getDate(),
+            year = newDate.getFullYear();
+            if (month.length < 2) month = '0' + month;
+            if (day.length < 2) day = '0' + day;
+            return [year, month, day].join('-');
+        }
+
+        /**
          * Verifies if the string is a date.
          * @param value The value to be validated.
          * @returns {boolean}
@@ -42,7 +71,8 @@ import '../app.date.module';
         }
 
         return {
-            convertDates : _convertDates
+            convertDates : _convertDates,
+            convertQueryParamDates: _convertQueryParamDates
         }
     }
     module.service('dateService', [

@@ -1,7 +1,9 @@
 import '@uirouter/angularjs';
+
+import '../breadcrumb/app.breadcrumb.module';
+
 import '../../shared/environment/app.environment.module';
 import '../../shared/environment/config/app.environment.constant';
-import '../breadcrumb/app.breadcrumb.module';
 
 /**
  * @desc Configures the home module.

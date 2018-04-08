@@ -1,7 +1,9 @@
 import 'angular-resource';
 import '@uirouter/angularjs';
 import 'angular-utils-pagination';
+
 import '../breadcrumb/app.breadcrumb.module';
+
 import '../../shared/environment/app.environment.module';
 import '../../shared/environment/config/app.environment.constant';
 import '../../shared/springIntegration/app.springIntegration.module';
@@ -19,6 +21,7 @@ import '../../shared/springIntegration/app.springIntegration.module';
         'ngResource',
         'paymentManagement.breadcrumb',
         'paymentManagement.environment',
+        'paymentManagement.filter',
         'paymentManagement.springIntegration'
     ]);
 }());

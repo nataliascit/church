@@ -11,6 +11,7 @@ import org.junit.rules.ExpectedException;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 /**
  * Class responsible for executing unit tests for {@link CampaignServiceValidatorTest}.
@@ -41,9 +42,9 @@ public class CampaignServiceValidatorTest extends BaseTestRunner {
     @Test
     public void testValidateBeforeDeletionWithAssociatedContributionError() throws BusinessException {
         expectedException.expect(BusinessException.class);
-        final Campaign campaign = this.campaignRepository.findByName(TITHE_NAME);
-        Assert.assertNotNull(campaign);
-        Assert.assertFalse(campaign.getContributions().isEmpty());
-        this.campaignServiceValidator.validateBeforeDeletion(campaign);
+        final List<Campaign> campaigns = this.campaignRepository.findAll(TITHE_NAME);
+        Assert.assertNotNull(campaigns);
+        Assert.assertFalse(campaigns.get(0).getContributions().isEmpty());
+        this.campaignServiceValidator.validateBeforeDeletion(campaigns.get(0));
     }
 }

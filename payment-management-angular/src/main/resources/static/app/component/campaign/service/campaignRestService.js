@@ -12,7 +12,7 @@ import '../app.campaign.module';
 
     function CampaignRestService(environmentConfig, $resource) {
 
-        const resources = $resource(environmentConfig.apiBaseUrl + '/campaigns/:id', null, {
+        const resources = $resource(environmentConfig.apiBaseUrl + '/campaigns/:id/:action/:subAction', null, {
             'create': {
                 method: 'POST'
             },
@@ -26,7 +26,12 @@ import '../app.campaign.module';
                 method: 'GET'
             },
             'findAll': {
-                method: 'GET'
+                method: 'GET',
+                params: {
+                    action: 'search',
+                    subAction: 'findAll',
+                    name: '@name'
+                }
             }
         });
 
@@ -84,17 +89,18 @@ import '../app.campaign.module';
         }
 
         /**
-         * Search for all existing churches on the database.
+         * Search for all existing campaigns on the database.
          *
+         * @param {Object} [filter] The filter to be used for the filtering action. Ex. {{name: null}}
          * @params {function} [successCallback]
          *        The function which will handle the success callback.
          * @params {function} [errorCallback]
          *      The function which will handle the error callback.
-         * @return result The list of all existing churches.
+         * @return result The list of all existing campaigns.
          * @private
          */
-        function _findAll(successCallback, errorCallback) {
-            return resources.findAll(null, null, successCallback, errorCallback);
+        function _findAll(filter, successCallback, errorCallback) {
+            return resources.findAll(filter, null, successCallback, errorCallback);
         }
 
         /**

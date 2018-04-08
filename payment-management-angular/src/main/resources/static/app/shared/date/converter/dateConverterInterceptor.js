@@ -13,6 +13,10 @@ import '../service/dateService';
 
         function DateConverterInterceptor(dateService) {
             return {
+                'request': function(config) {
+                    dateService.convertQueryParamDates(config.params);
+                    return config;
+                },
                 'response': function(response) {
                     dateService.convertDates(response.data);
                     return response;

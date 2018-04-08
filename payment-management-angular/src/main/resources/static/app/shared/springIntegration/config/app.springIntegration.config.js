@@ -7,7 +7,8 @@ import '../app.springIntegration.module';
 (function () {
     'use strict';
 
-    angular.module('paymentManagement.springIntegration').config(function (SpringDataRestInterceptorProvider) {
+    function SpringIntegrationConfig(SpringDataRestInterceptorProvider) {
         SpringDataRestInterceptorProvider.apply();
-    });
+    }
+    angular.module('paymentManagement.springIntegration').config(['SpringDataRestInterceptorProvider', SpringIntegrationConfig]);
 }());

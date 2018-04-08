@@ -8,7 +8,7 @@ import '../app.provingType.module';
 (function () {
     'use strict';
 
-    var provingTypeModule = angular.module('paymentManagement.provingType');
+    var module = angular.module('paymentManagement.provingType');
 
     function ProvingTypeRestService(environmentConfig, $resource){
 
@@ -124,6 +124,5 @@ import '../app.provingType.module';
             findAll: _findAll
         }
     }
-
-    provingTypeModule.service('provingTypeRestService', ['environmentConfig', '$resource', ProvingTypeRestService]);
+    module.service('provingTypeRestService', ['environmentConfig', '$resource', ProvingTypeRestService]);
 }());

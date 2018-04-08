@@ -12,7 +12,7 @@ import '../app.contributor.module';
 
     function ContributorRestService(environmentConfig, $resource) {
 
-        var resources = $resource(environmentConfig.apiBaseUrl + '/contributors/:id', null, {
+        var resources = $resource(environmentConfig.apiBaseUrl + '/contributors/:id/:action/:subAction', null, {
             'create': {
                 method: 'POST'
             },
@@ -26,7 +26,12 @@ import '../app.contributor.module';
                 method: 'GET'
             },
             'findAll': {
-                method: 'GET'
+                method: 'GET',
+                params: {
+                    action: 'search',
+                    subAction: 'findAll',
+                    name: '@name'
+                }
             }
         });
 
@@ -86,6 +91,7 @@ import '../app.contributor.module';
         /**
          * Search for all existing contributors on the database.
          *
+         * @param {Object} [filter] The filter to be used for the filtering action. Ex. {{name: null}}
          * @params {function} [successCallback]
          *        The function which will handle the success callback.
          * @params {function} [errorCallback]
@@ -93,8 +99,8 @@ import '../app.contributor.module';
          * @return result The list of all existing contributors.
          * @private
          */
-        function _findAll(successCallback, errorCallback) {
-            return resources.findAll(null, null, successCallback, errorCallback);
+        function _findAll(filter, successCallback, errorCallback) {
+            return resources.findAll(filter, null, successCallback, errorCallback);
         }
 
         /**

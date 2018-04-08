@@ -11,7 +11,7 @@ import '../app.campaign.module';
      * Mapper used to map the name of the property in a campaign JSON object and its representation as link.
      * @type {*[]}
      */
-    const LINK_PROPERTY_MAPPER = [{
+    const CAMPAIGN_LINK_PROPERTY_MAPPER = [{
         name: 'church',
         link: '/churches/%s',
     }, {
@@ -24,5 +24,5 @@ import '../app.campaign.module';
         name: 'beads',
         link: '/beads/%s'
     }];
-    angular.module('paymentManagement.campaign').constant("LINK_PROPERTY_MAPPER", LINK_PROPERTY_MAPPER);
+    angular.module('paymentManagement.campaign').constant("CAMPAIGN_LINK_PROPERTY_MAPPER", CAMPAIGN_LINK_PROPERTY_MAPPER);
 }());

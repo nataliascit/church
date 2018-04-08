@@ -2,8 +2,23 @@
   "application": {
     "bead" : {
       "catalog": {
+        "button": {
+          "addBead": "+ Talão"
+        },
         "label": {
           "title": "Lista de Talões"
+        },
+        "table": {
+            "bead": {
+              "column": {
+                "identificationNumber": "Número de identificação",
+                "campaign": "Campanha"
+              },
+              "button": {
+                "editBead": "Editar",
+                "deleteBead": "Remover"
+              }
+            }
         }
       },
       "messages": {
@@ -16,20 +31,46 @@
         "identificationNumber": {
           "empty": "O Número de Indentificação Fiscal é obrigatório."
         }
+      },
+      "register": {
+        "form": {
+          "field": {
+            "identificationNumber": "Número de indentificação",
+            "contributor": "Contribuinte",
+            "campaign": "Campanha"
+          },
+          "button": {
+            "saveBead": "Salvar"
+          }
+        },
+        "label": {
+          "title": "Registro de Talão"
+        },
+        "message": {
+          "successCreation": "Talão criado com sucesso.",
+          "successUpdate": "Talão atualizado com sucesso."
+        }
       }
     },
     "campaign": {
       "catalog": {
         "button": {
-          "addCampaign": "+ Campanha"
+          "addCampaign": "+ Campanha",
+          "filterCampaign": "Buscar"
         },
         "label": {
           "title": "Listagem de Campanhas"
         },
         "form": {
           "field": {
-            "campaignName": "Digite o nome"
+            "campaign": {
+              "fieldName": "Campanha",
+              "placeholder": "Digite o nome"
+            }
           }
+        },
+        "message": {
+          "successDeletion": "Campanha removida com sucesso."
         },
         "modal": {
           "campaignDeletion": {
@@ -74,11 +115,6 @@
         "label": {
           "title": "Registro de Campanha"
         },
-        "message": {
-          "successCreation": "Campanha criada com sucesso.",
-          "successDeletion": "Campanha removida com sucesso.",
-          "successUpdate": "Campanha atualizada com sucesso."
-        },
         "form": {
           "field": {
             "id": "ID",
@@ -92,6 +128,10 @@
           "button": {
             "saveCampaign": "Salvar"
           }
+        },
+        "message": {
+          "successCreation": "Campanha criada com sucesso.",
+          "successUpdate": "Campanha atualizada com sucesso."
         }
       }
     },
@@ -109,16 +149,59 @@
     },
     "contribution": {
       "catalog": {
+        "button": {
+          "addContribution": "+ Contribuição",
+          "filterContribution": "Buscar"
+        },
         "label": {
           "title": "Listagem de Contribuições"
+        },
+        "form": {
+          "field": {
+            "campaign": {
+              "fieldName": "Campanha",
+              "placeholder": "Digite o nome"
+            },
+            "contributor": {
+              "fieldName": "Contribuinte",
+              "placeholder": "Digite o nome"
+            },
+            "creationDate": {
+              "fieldName": "Data de Lançamento"
+            },
+            "creationDateTo": "até"
+          }
+        },
+        "message": {
+          "successDeletion": "Contribuição removida com sucesso."
+        },
+        "modal": {
+          "contributionDeletion": {
+            "title" : "Confirmação de exclusão de contribuição",
+            "body": "Tem certeza que deseja remover a contribuição selecionada?"
+          }
+        },
+        "table": {
+          "contribution": {
+            "button": {
+              "editContribution": "Editar",
+              "deleteContribution": "Remover"
+            },
+            "column": {
+              "campaignName": "Campanha",
+              "creationDate": "Data de Lançamento",
+              "contributorName": "Contribuinte",
+              "amount": "Quantia"
+            }
+          }
         }
       },
       "messages": {
         "creationDate": {
-          "empty": "A Data de Criação é obrigatória."
+          "empty": "A Data de Lançamento é obrigatória."
         },
         "amount": {
-          "empty": "O valor da contribuição é obrigatório."
+          "empty": "A quantia da contribuição não pode ser zero."
         },
         "campaign": {
           "empty": "A Campanha é obrigatória."
@@ -130,17 +213,36 @@
       "register": {
         "label": {
           "title": "Registro de Contribuição"
+        },
+        "form": {
+          "field": {
+            "contributor": "Contribuinte",
+            "campaign": "Campanha",
+            "creationDate": "Data de Lançamento",
+            "amount": "Quantia"
+          },
+          "button": {
+            "saveContribution": "Salvar"
+          }
+        },
+        "message": {
+          "successCreation": "Contribuição registrada com sucesso.",
+          "successUpdate": "Contribuição atualizada com sucesso."
         }
       }
     },
     "contributor": {
       "catalog": {
         "button": {
-          "addContributor": "+ Contribuinte"
+          "addContributor": "+ Contribuinte",
+          "filterContributor": "Buscar"
         },
         "form": {
           "field": {
-            "contributorName": "Digite o nome"
+            "contributor": {
+              "fieldName": "Contribuinte",
+              "placeholder": "Digite o nome"
+            }
           }
         },
         "label": {
@@ -205,7 +307,14 @@
         "message": {
           "successCreation": "Contribuinte criado com sucesso.",
           "successDeletion": "Contribuinte removido com sucesso.",
-          "successUpdate": "Contribuinte atualizado com sucesso."
+          "successUpdate": "Contribuinte atualizado com sucesso.",
+          "successBeadDeletion": "Talão removido com sucesso."
+        },
+        "modal": {
+          "beadDeletion": {
+            "title" : "Confirmação de exclusão de talão",
+            "body": "Tem certeza que deseja remover o talão selecionado?"
+          }
         },
         "form": {
           "field": {

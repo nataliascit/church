@@ -1,7 +1,7 @@
 import '../../../node_modules/ui-breadcrumb/dist/ui-breadcrumb';
 
 /**
- * @desc Configures the module responsible for holding the environment configuration.
+ * @desc Configures the module responsible for holding the breadcrumb configuration.
  * @author William Custodio
  */
 (function () {

@@ -1,8 +1,7 @@
-/* Import for application main dependencies. */
 import 'angular';
 import 'angular-animate';
 import 'angular-sanitize';
-/* Import for styling. */
+
 import 'bootstrap';
 import '../assets/sass/index.scss';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';

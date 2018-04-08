@@ -17,7 +17,7 @@ import '../../../shared/form/validator/formValidatorService';
 
     function CampaignRegisterController($scope, $state, $stateParams, messageService,
                                         formValidatorService, campaignRestService, churchRestService,
-                                        provingTypeRestService, springIntegrationService, LINK_PROPERTY_MAPPER) {
+                                        provingTypeRestService, springIntegrationService, CAMPAIGN_LINK_PROPERTY_MAPPER) {
         const vm = this;
 
         /**
@@ -41,7 +41,7 @@ import '../../../shared/form/validator/formValidatorService';
             name: null,
             creationDate: new Date(),
             initialDate: new Date(),
-            finalDate: new Date(),
+            finalDate: null,
             church: null,
             provingType: null,
             contributions: [],
@@ -67,7 +67,7 @@ import '../../../shared/form/validator/formValidatorService';
             var campaign = angular.copy(vm.campaign);
 
             // Convert all the properties before performing the action.
-            springIntegrationService.convertProperty(campaign, LINK_PROPERTY_MAPPER);
+            springIntegrationService.convertProperty(campaign, CAMPAIGN_LINK_PROPERTY_MAPPER);
 
             if(_isUpdateAction()) {
                 campaignRestService.update(campaign.id, campaign, function() {
@@ -89,7 +89,7 @@ import '../../../shared/form/validator/formValidatorService';
          * @returns {boolean}
          */
         vm.hasError = function(field, validation) {
-            formValidatorService.hasError($scope.campaignRegisterForm, field, validation);
+            return formValidatorService.hasError($scope.campaignRegisterForm, field, validation);
         };
 
         /**
@@ -155,7 +155,7 @@ import '../../../shared/form/validator/formValidatorService';
         'churchRestService',
         'provingTypeRestService',
         'springIntegrationService',
-        'LINK_PROPERTY_MAPPER',
+        'CAMPAIGN_LINK_PROPERTY_MAPPER',
         CampaignRegisterController
     ]);
 }());

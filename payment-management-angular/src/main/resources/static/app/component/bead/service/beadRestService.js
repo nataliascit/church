@@ -8,7 +8,7 @@ import '../app.bead.module';
 (function () {
     'use strict';
 
-    var beadModule = angular.module('paymentManagement.bead');
+    var module = angular.module('paymentManagement.bead');
 
     function BeadRestService(environmentConfig, $resource) {
 
@@ -124,6 +124,5 @@ import '../app.bead.module';
             findAll: _findAll
         }
     }
-
-    beadModule.service('beadRestService', ['environmentConfig', '$resource', BeadRestService]);
+    module.service('beadRestService', ['environmentConfig', '$resource', BeadRestService]);
 }());

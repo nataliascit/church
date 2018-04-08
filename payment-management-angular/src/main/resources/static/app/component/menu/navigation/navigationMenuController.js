@@ -1,4 +1,5 @@
 import '../app.menu.module';
+
 import '../../../shared/environment/authentication/authenticationRestService';
 
 /**
