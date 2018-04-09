@@ -91,7 +91,11 @@ import '../../contributor/service/contributorRestService';
          * @returns {boolean}
          */
         vm.amountFieldHasError = function() {
-            return $scope.contributionRegisterForm.$submitted && vm.contribution.amount === 0;
+            // Verifies if the field has errors.
+            var hasError = $scope.contributionRegisterForm.$submitted && vm.contribution.amount === 0;
+            // If the field has error change the required value to true.
+            $scope.contributionRegisterForm.contributionRegisterAmount.$setValidity("required", !hasError);
+            return hasError;
         };
 
         /**

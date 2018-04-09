@@ -55,13 +55,11 @@
             <td>
                 <span class="glyphicon glyphicon-pencil" role="button" aria-hidden="true"
                       data-ui-sref="application.contribution.register({idContribution: contribution.id})">
-                  {{ 'application.contribution.catalog.table.contribution.button.editContribution' | translate }}
                 </span>
             </td>
             <td>
-                <span class="glyphicon glyphicon-pencil" role="button" aria-hidden="true"
+                <span class="glyphicon glyphicon-trash" role="button" aria-hidden="true"
                       data-ng-click="vm.setContributionToDelete(contribution.id, $index);vm.openDeleteConfirmationModal();">
-                  {{ 'application.contribution.catalog.table.contribution.button.deleteContribution' | translate }}
                 </span>
             </td>
           </tr>
