@@ -41,7 +41,7 @@ import '../../../../shared/form/validator/formValidatorService';
          * Function responsible for handling the hook for the initialization of the controller.
          */
         vm.onInit = function() {
-            _findAllByProvingType('TLO');
+            _findAllByProvingTypeAndNotAssociatedToUser('TLO', properties.contributor.id);
         };
 
         /**
@@ -86,13 +86,15 @@ import '../../../../shared/form/validator/formValidatorService';
         }
 
         /**
-         * Search for all existing campaigns in the database by a proving type.
+         * Search for all existing campaigns in the database by a proving type and that are not
+         * associated to a certain contributor.
          * @param provingType The proving type mnemonic used for the search.
+         * @param contributorId The contributor's identifier.
          * @private
          */
-        function _findAllByProvingType(provingType) {
+        function _findAllByProvingTypeAndNotAssociatedToUser(provingType, contributorId) {
             // Retrieve only the companies that have the proving type as a bead.
-            campaignRestService.findAllByProvingType(provingType, function(response) {
+            campaignRestService.findAllByProvingTypeAndNotAssociatedToUser(provingType, contributorId, function(response) {
                 vm.campaigns = response._embeddedItems;
             });
         }

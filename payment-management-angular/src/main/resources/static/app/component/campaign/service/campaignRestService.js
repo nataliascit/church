@@ -40,6 +40,15 @@ import '../app.campaign.module';
                     'subAction': 'findAllByProvingType',
                     'provingType': '@provingType'
                 }
+            },
+            'findAllByProvingTypeAndNotAssociatedToUser': {
+                method: 'GET',
+                params: {
+                    'action': 'search',
+                    'subAction': 'findAllByProvingTypeAndNotAssociatedToUser',
+                    'provingType': '@provingType',
+                    'contributorId': '@contributorId'
+                }
             }
         });
 
@@ -131,6 +140,28 @@ import '../app.campaign.module';
         }
 
         /**
+         * Search for all existing beads on the database that has a certain proving type and are not associated to the user.
+         *
+         * @params {string} [provingType]
+         *         The proving type mnemonic. Ex: TLO - Talão.
+         * @params {number} [contributorId]
+         *         The contributor's identifier.
+         * @params {function} [successCallback]
+         *        The function which will handle the success callback.
+         * @params {function} [errorCallback]
+         *      The function which will handle the error callback.
+         * @return result The list of all existing beads.
+         * @private
+         */
+        function _findAllByProvingTypeAndNotAssociatedToUser(provingType, contributorId, successCallback, errorCallback) {
+            var params = {
+                provingType: provingType,
+                contributorId: contributorId
+            };
+            return resources.findAllByProvingTypeAndNotAssociatedToUser(params, null, successCallback, errorCallback);
+        }
+
+        /**
          * Search for an existing campaign on the database by its identifier.
          *
          * @params {number} [id]
@@ -155,7 +186,8 @@ import '../app.campaign.module';
             remove: _remove,
             find: _find,
             findAll: _findAll,
-            findAllByProvingType: _findAllByProvingType
+            findAllByProvingType: _findAllByProvingType,
+            findAllByProvingTypeAndNotAssociatedToUser: _findAllByProvingTypeAndNotAssociatedToUser
         }
     }
     campaignModule.service('campaignRestService', ['environmentConfig', '$resource', CampaignRestService]);

@@ -22,10 +22,6 @@
               "column": {
                 "identificationNumber": "Número de identificação",
                 "campaign": "Campanha"
-              },
-              "button": {
-                "editBead": "Editar",
-                "deleteBead": "Remover"
               }
             }
         }
@@ -92,10 +88,6 @@
         },
         "table": {
           "campaign": {
-            "button": {
-              "editCampaign": "Editar",
-              "deleteCampaign": "Remover"
-            },
             "column": {
               "name": "Nome",
               "creationDate": "Data de Criação",
@@ -201,10 +193,6 @@
         },
         "table": {
           "contribution": {
-            "button": {
-              "editContribution": "Editar",
-              "deleteContribution": "Remover"
-            },
             "column": {
               "campaignName": "Campanha",
               "creationDate": "Data de Lançamento",
@@ -284,10 +272,6 @@
               "name": "Nome",
               "address": "Endereço",
               "cellphone": "Celular"
-            },
-            "button": {
-              "editContributor": "Editar",
-              "deleteContributor": "Remover"
             }
           }
         }

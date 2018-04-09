@@ -30,11 +30,10 @@ public interface CampaignRepository extends JpaRepository<Campaign, Long> {
      * @param provingType The proving type mnemonic. Ex: TLO - Talão.
      * @return The list of found campaigns.
      */
-    @Query("select e from Campaign e where e.id not in ( " +
+    @Query("select e from Campaign e where e.provingType.mnemonic = :provingType and e.id not in ( " +
             "select c.id from Campaign c inner join c.beads b " +
             "where b.contributor.id = :contributorId " +
-            "and c.provingType.mnemonic = :provingType) " +
-            "and e.provingType.mnemonic = :provingType")
+            "and c.provingType.mnemonic = :provingType )")
     List<Campaign> findAllByProvingTypeAndNotAssociatedToUser(
             @Param("contributorId") Long contributorId,
             @Param("provingType") String provingType

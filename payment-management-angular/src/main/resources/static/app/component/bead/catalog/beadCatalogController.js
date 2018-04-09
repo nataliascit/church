@@ -34,7 +34,8 @@ import '../../modal/confirmationModal/confirmationModalService';
         vm.openRegisterModal = function(bead) {
             beadRegisterModalService.open({
                 bead: _buildToPersist(bead),
-                beads: vm.beads
+                beads: vm.beads,
+                contributor: vm.contributor
             });
         };
 
