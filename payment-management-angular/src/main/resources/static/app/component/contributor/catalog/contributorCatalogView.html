@@ -40,14 +40,12 @@
               <td>{{contributor.cellphone}}</td>
               <td>
                 <span class="glyphicon glyphicon-pencil" role="button" aria-hidden="true"
-                      data-ui-sref="application.contributor.register({idContributor: contributor.id})">
-                  {{ 'application.contributor.catalog.table.contributor.button.editContributor' | translate }}
+                      data-ui-sref="application.contributor.register({id: contributor.id})">
                 </span>
               </td>
               <td>
-                <span class="glyphicon glyphicon-pencil" role="button" aria-hidden="true"
+                <span class="glyphicon glyphicon-trash" role="button" aria-hidden="true"
                       data-ng-click="vm.setContributorToDelete(contributor.id, $index);vm.openDeleteConfirmationModal();">
-                  {{ 'application.contributor.catalog.table.contributor.button.deleteContributor' | translate }}
                 </span>
               </td>
             </tr>

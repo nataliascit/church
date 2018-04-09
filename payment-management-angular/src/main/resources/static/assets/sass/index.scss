@@ -92,15 +92,15 @@ h1, h2, h3, h4, h5, h6 {
   border-color: $colorMediumBrown !important;
 }
 
-.form-control, .input-group-addon {
+.form-control {
   border-color: $colorMediumBrown !important;
   background-color: $colorMediumBrownBG !important;
   color: $colorMediumBrown !important;
   font-size: 12px !important;
 }
 
-.input-group-addon {
-  background-color: $colorMediumBrownBG !important;
+.input-group {
+  color: $colorMediumBrown !important;
 }
 
 .padding0-left {
@@ -170,6 +170,18 @@ input[type=number]::-webkit-inner-spin-button {
       opacity: 0.8;
     }
   }
+}
+
+.messageWidth {
+  width: 86.5% !important;
+}
+
+.modal-header, .modal-body, .modal-footer {
+  border: none !important;
+}
+
+.modal-title {
+  display: inline-block;
 }
 
 .footer {
