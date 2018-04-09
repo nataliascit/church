@@ -1,4 +1,7 @@
 <section data-ng-init="vm.onInit()" class="container padding30-lat">
+  <div class="col-xs-12 col-md-12 col-lg-12 text-center">
+    <h2>{{ 'application.campaign.register.title.titlePage' | translate }}</h2>
+  </div>
   <form id="campaignRegisterForm" name="campaignRegisterForm" class="col-lg-12"
         data-ng-submit="campaignRegisterForm.$valid && vm.saveCampaignOnClick()" novalidate>
     <div class="row">

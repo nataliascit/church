@@ -99,8 +99,17 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 12px !important;
 }
 
+.form-inline .form-control {
+  width: 45% !important;
+}
+
 .input-group {
   color: $colorMediumBrown !important;
+}
+
+.padding0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .padding0-left {
@@ -119,7 +128,6 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .breadcrumb {
-  margin: 0 100px;
   text-transform: uppercase;
   background-color: $colorMediumBrownBG !important;
 
@@ -182,6 +190,20 @@ input[type=number]::-webkit-inner-spin-button {
 
 .modal-title {
   display: inline-block;
+}
+
+.dateclass{
+  width: 100%;
+}
+
+.dateclass.placeholderclass::before{
+  width: 100%;
+  content: attr(placeholder);
+}
+
+.dateclass.placeholderclass:hover::before{
+  width: 0%;
+  content: "";
 }
 
 .footer {

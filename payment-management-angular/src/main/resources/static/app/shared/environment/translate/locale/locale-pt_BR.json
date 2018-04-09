@@ -63,6 +63,9 @@
     },
     "campaign": {
       "catalog": {
+        "title": {
+          "titlePage": "Campanhas"
+        },
         "button": {
           "addCampaign": "+ Campanha",
           "filterCampaign": "Buscar"
@@ -74,7 +77,7 @@
           "field": {
             "campaign": {
               "fieldName": "Campanha",
-              "placeholder": "Digite o nome"
+              "placeholder": "Digite o nome da campanha"
             }
           }
         },
@@ -121,6 +124,9 @@
         }
       },
       "register": {
+        "title": {
+          "titlePage": "Registrar campanha"
+        },
         "label": {
           "title": "Registro de Campanha"
         },
@@ -158,6 +164,9 @@
     },
     "contribution": {
       "catalog": {
+        "title": {
+          "titlePage": "Contribuição"
+        },
         "button": {
           "addContribution": "+ Contribuição",
           "filterContribution": "Buscar"
@@ -169,11 +178,11 @@
           "field": {
             "campaign": {
               "fieldName": "Campanha",
-              "placeholder": "Digite o nome"
+              "placeholder": "Digite o nome da campanha"
             },
             "contributor": {
               "fieldName": "Contribuinte",
-              "placeholder": "Digite o nome"
+              "placeholder": "Digite o nome do contribuinte"
             },
             "creationDate": {
               "fieldName": "Data de Lançamento"
@@ -220,6 +229,9 @@
         }
       },
       "register": {
+        "title": {
+          "titlePage": "Registrar contribuição"
+        },
         "label": {
           "title": "Registro de Contribuição"
         },
@@ -242,6 +254,9 @@
     },
     "contributor": {
       "catalog": {
+        "title": {
+          "titlePage": "Contribuinte"
+        },
         "button": {
           "addContributor": "+ Contribuinte",
           "filterContributor": "Buscar"
@@ -250,7 +265,7 @@
           "field": {
             "contributor": {
               "fieldName": "Contribuinte",
-              "placeholder": "Digite o nome"
+              "placeholder": "Digite o nome do contribuinte"
             }
           }
         },
@@ -310,6 +325,9 @@
         }
       },
       "register": {
+        "title": {
+          "titlePage": "Registrar contribuinte"
+        },
         "label": {
           "title": "Registro de Contribuinte"
         },
@@ -329,7 +347,7 @@
           "field": {
             "id": "ID",
             "name": "Nome",
-            "gender": "Genêro",
+            "gender": "Gênero",
             "birthDate": "Data de Nascimento",
             "civilState": "Estado Civil",
             "partnerName": "Nome do cônjuge",
