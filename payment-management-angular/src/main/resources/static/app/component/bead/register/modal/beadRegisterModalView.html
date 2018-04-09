@@ -2,7 +2,7 @@
 <section data-ng-init="vm.onInit()">
 
     <form id="beadRegisterForm" name="beadRegisterForm" role="form"
-          data-ng-submit="beadRegisterForm.$valid && vm.saveBeadOnClick()" novalidate>
+          data-ng-submit="beadRegisterForm.$valid && vm.confirmationOnClick()" novalidate>
 
         <div class="modal-header">
             <h4 class="modal-title">
@@ -47,7 +47,7 @@
             <button type="button" class="btn btn-primary" data-ng-click="vm.closeOnClick()">
                 {{ 'application.modal.button.cancel' | translate }}
             </button>
-            <button class="btn btn-primary" data-ng-click="vm.confirmationOnClick();" data-dismiss="modal">
+            <button class="btn btn-primary" data-dismiss="modal">
                 {{ 'application.modal.button.save' | translate }}
             </button>
         </div>

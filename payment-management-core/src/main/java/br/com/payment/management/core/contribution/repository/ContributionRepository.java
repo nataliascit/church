@@ -30,7 +30,8 @@ public interface ContributionRepository extends JpaRepository<Contribution, Long
             "and ( ( ( :beginCreationDate is not null and :endCreationDate is not null ) and ( e.creationDate between :beginCreationDate and :endCreationDate) ) " +
             " or ( ( :beginCreationDate is not null and :endCreationDate is null ) and e.creationDate >= :beginCreationDate ) " +
             " or ( ( :beginCreationDate is null and :endCreationDate is not null ) and e.creationDate <= :endCreationDate ) " +
-            " or ( :beginCreationDate is null and :endCreationDate is null ) )")
+            " or ( :beginCreationDate is null and :endCreationDate is null ) ) " +
+            "order by e.creationDate desc")
     List<Contribution> findAll(
             @Param("campaignName") String campaignName,
             @Param("contributorName") String contributorName,

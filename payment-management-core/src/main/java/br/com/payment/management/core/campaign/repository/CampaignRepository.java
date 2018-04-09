@@ -20,7 +20,9 @@ public interface CampaignRepository extends JpaRepository<Campaign, Long> {
      * @param name The name of the campaigns to be searched.
      * @return The found list of {@link Campaign}.
      */
-    @Query("select e from Campaign e where :name is null or upper(e.name) like concat('%',upper(:name),'%')")
+    @Query("select e from Campaign e where :name is null " +
+            "or upper(e.name) like concat('%',upper(:name),'%') " +
+            "order by e.id desc")
     List<Campaign> findAll(@Param("name") String name);
 
     /**
@@ -33,7 +35,8 @@ public interface CampaignRepository extends JpaRepository<Campaign, Long> {
     @Query("select e from Campaign e where e.provingType.mnemonic = :provingType and e.id not in ( " +
             "select c.id from Campaign c inner join c.beads b " +
             "where b.contributor.id = :contributorId " +
-            "and c.provingType.mnemonic = :provingType )")
+            "and c.provingType.mnemonic = :provingType ) " +
+            "order by e.name asc")
     List<Campaign> findAllByProvingTypeAndNotAssociatedToUser(
             @Param("contributorId") Long contributorId,
             @Param("provingType") String provingType
@@ -44,6 +47,6 @@ public interface CampaignRepository extends JpaRepository<Campaign, Long> {
      * @param provingType The proving type mnemonic. Ex: TLO - Talão.
      * @return The list of found campaigns.
      */
-    @Query("select e from Campaign e where e.provingType.mnemonic = :provingType")
+    @Query("select e from Campaign e where e.provingType.mnemonic = :provingType order by e.name asc")
     List<Campaign> findAllByProvingType(@Param("provingType") String provingType);
 }

@@ -98,7 +98,11 @@ import '../../../shared/form/validator/formValidatorService';
          * @returns {boolean}
          */
         vm.genderFieldHasError = function() {
-           return $scope.contributorRegisterForm.$submitted && _.isEmpty(vm.contributor.gender);
+            // Verifies if the field has errors.
+            var hasError = $scope.contributorRegisterForm.$submitted && _.isEmpty(vm.contributor.gender);
+            // If the field has error change the required value to true.
+            $scope.contributorRegisterForm.contributorRegisterFieldGender.$setValidity("required", !hasError);
+            return hasError;
         };
 
         /**

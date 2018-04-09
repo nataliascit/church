@@ -31,7 +31,8 @@
         </label>
         <div id="contributorRegisterFieldGender">
           <label data-ng-repeat="gender in vm.genders" class="radio-inline">
-            <input type="radio" data-ng-model="vm.contributor.gender" value="{{gender.value}}"> {{gender.label | translate}}
+            <input name="contributorRegisterFieldGender" type="radio"
+                   data-ng-model="vm.contributor.gender" value="{{gender.value}}"> {{gender.label | translate}}
           </label>
         </div>
         <div data-ng-show="vm.genderFieldHasError()" class="invalid">

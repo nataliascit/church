@@ -19,6 +19,8 @@ public interface ContributorRepository extends JpaRepository<Contributor, Long> 
      * @param name The name of the contributors to be searched.
      * @return The found list of {@link Contributor}.
      */
-    @Query("select e from Contributor e where :name is null or upper(e.name) like concat('%',upper(:name),'%')")
+    @Query("select e from Contributor e where :name is null " +
+            "or upper(e.name) like concat('%',upper(:name),'%') " +
+            "order by e.name desc")
     List<Contributor> findAll(@Param("name") String name);
 }
