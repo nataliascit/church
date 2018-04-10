@@ -8,7 +8,7 @@ package br.com.payment.management.core.campaign.enumerable;
 public enum CampaignValidationError {
 
     DELETION_ASSOCIATED_CONTRIBUTION("application.campaign.messages.contribution.associated",
-            "It is not possible to delete the campaign because there are contributions associated to it. [CAMPAIGN_ID]=%s");
+            "It is not possible to deleteAssociations the campaign because there are contributions associated to it. [CAMPAIGN_ID]=%s");
 
     private String key;
 

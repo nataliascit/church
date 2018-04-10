@@ -30,7 +30,11 @@ import '../app.contributor.module';
                 params: {
                     action: 'search',
                     subAction: 'findAll',
-                    name: '@name'
+                    name: '@name',
+                    beginBirthDate: '@beginBirthDate',
+                    endBirthDate: '@endBirthDate',
+                    beginMarriageDate: '@beginMarriageDate',
+                    endMarriageDate: '@endMarriageDate'
                 }
             }
         });
@@ -91,7 +95,8 @@ import '../app.contributor.module';
         /**
          * Search for all existing contributors on the database.
          *
-         * @param {Object} [filter] The filter to be used for the filtering action. Ex. {{name: null}}
+         * @param {Object} [filter] The filter to be used for the filtering action.
+         * Ex. {{name: null, beginBirthDate: null, endBirthDate: null, beginMarriageDate: null, endMarriageDate: null}}
          * @params {function} [successCallback]
          *        The function which will handle the success callback.
          * @params {function} [errorCallback]

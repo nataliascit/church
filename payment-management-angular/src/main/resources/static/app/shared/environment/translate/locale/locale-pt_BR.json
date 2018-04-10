@@ -14,7 +14,7 @@
         "modal": {
           "beadDeletion": {
             "title" : "Confirmação de exclusão de talão",
-            "body": "Tem certeza que deseja remover o talão selecionado?"
+            "body": "Todas as contibuções associadas serão removidas. Tem certeza que deseja remover o talão selecionado?"
           }
         },
         "table": {
@@ -72,7 +72,6 @@
         "form": {
           "field": {
             "campaign": {
-              "fieldName": "Campanha",
               "placeholder": "Digite o nome da campanha"
             }
           }
@@ -83,7 +82,7 @@
         "modal": {
           "campaignDeletion": {
             "title" : "Confirmação de exclusão de campanha",
-            "body": "Tem certeza que deseja remover a campanha selecionada?"
+            "body": "Todas os talões e contribuições associadas serão removidas. Tem certeza que deseja remover a campanha selecionada?"
           }
         },
         "table": {
@@ -169,18 +168,13 @@
         "form": {
           "field": {
             "campaign": {
-              "fieldName": "Campanha",
               "placeholder": "Digite o nome da campanha"
             },
             "contributor": {
-              "fieldName": "Contribuinte",
               "placeholder": "Digite o nome do contribuinte"
             },
             "creationDate": {
               "fieldName": "Data de Lançamento"
-            },
-            "contributionDate": {
-              "placeholder": "Digite a data de cadastro"
             },
             "creationDateTo": "até"
           }
@@ -200,8 +194,7 @@
               "campaignName": "Campanha",
               "creationDate": "Data de Lançamento",
               "contributorName": "Contribuinte",
-              "amount": "Quantia",
-              "contributionDate": "Data de cadastro"
+              "amount": "Quantia"
             }
           }
         }
@@ -218,6 +211,9 @@
         },
         "contributor": {
           "empty": "O Contribuinte é obrigatório."
+        },
+        "bead": {
+          "empty": "O Contribuinte não tem um talão associado a campanha selecionada."
         }
       },
       "register": {
@@ -256,15 +252,15 @@
         "form": {
           "field": {
             "contributor": {
-              "fieldName": "Contribuinte",
               "placeholder": "Digite o nome do contribuinte"
             },
-            "contributorDate": {
-              "placeholder": "Digite a data de cadastro"
+            "beginBirthDate": {
+              "placeholder": "Digite a data de aniversário inicial"
             },
-            "contributorBirthDate": {
-              "placeholder": "Digite a data de nascimento"
-            }
+            "endBirthDate": {
+              "placeholder": "Digite a data de aniversário final"
+            },
+            "creationDateTo": "até"
           }
         },
         "label": {
@@ -273,7 +269,7 @@
         "modal": {
           "contributorDeletion": {
             "title" : "Confirmação de exclusão de contribuinte",
-            "body": "Tem certeza que deseja remover o contribuinte selecionado?"
+            "body": "Todas as contribuições e talões associados serão removidos. Tem certeza que deseja remover o contribuinte selecionado?"
           }
         },
         "table": {

@@ -23,12 +23,14 @@ import '../../modal/confirmationModal/confirmationModalService';
 
         /**
          * Criteria used to filter all the existing contributors.
-         * @type {{name: null}}
+         * @type {{name: null, beginBirthDate: null, endBirthDate: null, beginMarriageDate: null, endMarriageDate: null}}
          */
         vm.filter = {
             name: null,
-            registerDate: new Date(),
-            birthDate: new Date()
+            beginBirthDate: new Date(),
+            endBirthDate: new Date(),
+            beginMarriageDate: new Date(),
+            endMarriageDate: new Date()
         };
 
         /**

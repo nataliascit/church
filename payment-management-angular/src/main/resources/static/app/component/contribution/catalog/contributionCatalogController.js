@@ -29,8 +29,7 @@ import '../../modal/confirmationModal/confirmationModalService';
             campaignName: null,
             contributorName: null,
             beginCreationDate: new Date(),
-            endCreationDate: new Date(),
-            contributionDate: new Date()
+            endCreationDate: new Date()
         };
 
         /**
