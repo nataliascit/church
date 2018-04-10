@@ -182,7 +182,7 @@
             "contributionDate": {
               "placeholder": "Digite a data de cadastro"
             },
-            "creationDateTo": "até",
+            "creationDateTo": "até"
           }
         },
         "message": {
