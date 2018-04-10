@@ -179,7 +179,10 @@
             "creationDate": {
               "fieldName": "Data de Lançamento"
             },
-            "creationDateTo": "até"
+            "contributionDate": {
+              "placeholder": "Digite a data de cadastro"
+            },
+            "creationDateTo": "até",
           }
         },
         "message": {
@@ -197,7 +200,8 @@
               "campaignName": "Campanha",
               "creationDate": "Data de Lançamento",
               "contributorName": "Contribuinte",
-              "amount": "Quantia"
+              "amount": "Quantia",
+              "contributionDate": "Data de cadastro"
             }
           }
         }
@@ -254,6 +258,12 @@
             "contributor": {
               "fieldName": "Contribuinte",
               "placeholder": "Digite o nome do contribuinte"
+            },
+            "contributorDate": {
+              "placeholder": "Digite a data de cadastro"
+            },
+            "contributorBirthDate": {
+              "placeholder": "Digite a data de nascimento"
             }
           }
         },
@@ -271,7 +281,9 @@
             "column": {
               "name": "Nome",
               "address": "Endereço",
-              "cellphone": "Celular"
+              "cellphone": "Celular",
+              "registerDate": "Data de cadastro",
+              "birthDate" : "Data de aniversário"
             }
           }
         }

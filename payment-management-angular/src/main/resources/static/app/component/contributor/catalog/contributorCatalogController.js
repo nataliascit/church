@@ -26,7 +26,9 @@ import '../../modal/confirmationModal/confirmationModalService';
          * @type {{name: null}}
          */
         vm.filter = {
-            name: null
+            name: null,
+            registerDate: new Date(),
+            birthDate: new Date()
         };
 
         /**

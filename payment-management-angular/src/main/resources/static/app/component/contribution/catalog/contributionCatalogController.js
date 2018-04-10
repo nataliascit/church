@@ -30,6 +30,7 @@ import '../../modal/confirmationModal/confirmationModalService';
             contributorName: null,
             beginCreationDate: new Date(),
             endCreationDate: new Date(),
+            contributionDate: new Date()
         };
 
         /**

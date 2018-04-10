@@ -35,6 +35,10 @@ body {
 }
 
 header {
+  .navbar {
+    margin-bottom: 0;
+  }
+
   .navbar-default {
     background-color: $colorMediumBrown;
     border-color: transparent;
@@ -47,9 +51,19 @@ header {
   }
 
   .navbar-nav, .navbar-nav > li {
-    height: 100%;
     font-size: 16px;
     text-transform: uppercase;
+    background-color: $colorMediumBrown;
+    z-index: 1;
+  }
+
+  .navbar-nav {
+    height: 11.9rem;
+    margin: 0 -15px;
+  }
+
+  .navbar-collapse.in {
+    min-height: 201px;
   }
 
   .navbar-default .navbar-nav > li > a,
@@ -130,6 +144,10 @@ input[type=number]::-webkit-inner-spin-button {
 .breadcrumb {
   text-transform: uppercase;
   background-color: $colorMediumBrownBG !important;
+
+  li:first-child {
+    margin-left: 7%;
+  }
 
   > li + li:before {
     color: $colorDarkBrown !important;
@@ -234,4 +252,10 @@ input[type=number]::-webkit-inner-spin-button {
 
 .filters {
   background-color: #eee;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-nav, .navbar-nav > li {
+    height: 100%;
+  }
 }
